@@ -2,6 +2,7 @@ import { AnimatePresence, motion, useMotionTemplate, useScroll, useTransform } f
 import { ChevronLeft, ChevronRight, Images, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { CLOUDINARY_ASSETS, resolveAssetUrl } from '../lib/assets'
+import useIsMobileView from '../lib/useIsMobileView'
 
 const GALLERY_IMAGES = [
   { id: 'g1', src: CLOUDINARY_ASSETS.hero1, alt: 'Universitet kampusi umumiy ko‘rinish', className: 'gallery-item-a' },
@@ -15,6 +16,7 @@ const GALLERY_IMAGES = [
 
 function GallerySection() {
   const sectionRef = useRef(null)
+  const isMobileView = useIsMobileView()
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start end', 'end start'],
@@ -58,21 +60,25 @@ function GallerySection() {
       <section id="gallery" ref={sectionRef} className="gallery-section" aria-label="Universitet galereyasi">
         <motion.div
           className="gallery-shell"
-          style={{
-            opacity: sectionOpacity,
-            y: sectionY,
-            scale: sectionScale,
-            rotateY: sectionRotateY,
-            filter: sectionFilter,
-            transformStyle: 'preserve-3d',
-          }}
+          style={
+            isMobileView
+              ? undefined
+              : {
+                  opacity: sectionOpacity,
+                  y: sectionY,
+                  scale: sectionScale,
+                  rotateY: sectionRotateY,
+                  filter: sectionFilter,
+                  transformStyle: 'preserve-3d',
+                }
+          }
         >
           <motion.div
             className="gallery-head"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            initial={isMobileView ? false : { opacity: 0, y: 24 }}
+            whileInView={isMobileView ? undefined : { opacity: 1, y: 0 }}
+            viewport={isMobileView ? undefined : { once: true, amount: 0.3 }}
+            transition={isMobileView ? undefined : { duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
             <h2 className="gallery-title">
               <Images size={24} />
@@ -90,10 +96,14 @@ function GallerySection() {
                 type="button"
                 className={`gallery-item ${item.className}`}
                 onClick={() => openLightbox(index)}
-                initial={{ opacity: 0, y: 18, scale: 0.98 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.52, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                initial={isMobileView ? false : { opacity: 0, y: 18, scale: 0.98 }}
+                whileInView={isMobileView ? undefined : { opacity: 1, y: 0, scale: 1 }}
+                viewport={isMobileView ? undefined : { once: true, amount: 0.2 }}
+                transition={
+                  isMobileView
+                    ? undefined
+                    : { duration: 0.52, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }
+                }
               >
                 <img
                   src={item.src}

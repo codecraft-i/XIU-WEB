@@ -3,11 +3,13 @@ import { ArrowUpRight } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { useSiteContent } from '../i18n/useSiteContent'
 import { CLOUDINARY_ASSETS } from '../lib/assets'
+import useIsMobileView from '../lib/useIsMobileView'
 
 function AboutSection() {
   const { content } = useSiteContent()
   const aboutContent = content.home.about
   const sectionRef = useRef(null)
+  const isMobileView = useIsMobileView()
   const [isStackedLayout, setIsStackedLayout] = useState(() =>
     typeof window !== 'undefined' ? window.innerWidth <= 1024 : false
   )
@@ -50,21 +52,25 @@ function AboutSection() {
       <div className="about-stage">
         <motion.div
           className="about-shell"
-          style={{ opacity: shellOpacity, y: shellY, scale: shellScale }}
+          style={isMobileView ? undefined : { opacity: shellOpacity, y: shellY, scale: shellScale }}
         >
           <motion.div
             className="about-content"
-            style={{
-              opacity: contentOpacity,
-              y: contentY,
-              scale: contentScale,
-              rotateX: contentRotateX,
-              filter: contentFilter,
-            }}
+            style={
+              isMobileView
+                ? undefined
+                : {
+                    opacity: contentOpacity,
+                    y: contentY,
+                    scale: contentScale,
+                    rotateX: contentRotateX,
+                    filter: contentFilter,
+                  }
+            }
           >
             <motion.figure
               className="about-image-wrap"
-              style={isStackedLayout ? undefined : { x: imageX, y: imageY }}
+              style={isMobileView || isStackedLayout ? undefined : { x: imageX, y: imageY }}
             >
               <img
                 src={CLOUDINARY_ASSETS.about}
@@ -76,7 +82,7 @@ function AboutSection() {
 
             <motion.article
               className="about-text"
-              style={isStackedLayout ? undefined : { x: textX }}
+              style={isMobileView || isStackedLayout ? undefined : { x: textX }}
             >
               <span className="about-kicker">{aboutContent.kicker}</span>
               <h2 className="about-title">{aboutContent.title}</h2>

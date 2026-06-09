@@ -6,6 +6,7 @@ import { useRef } from 'react'
 import { useSiteContent } from '../i18n/useSiteContent'
 import { formatLocalizedDate } from '../i18n/formatters'
 import { resolveAssetUrl } from '../lib/assets'
+import useIsMobileView from '../lib/useIsMobileView'
 import 'swiper/css'
 
 const sortLatest = (items) =>
@@ -17,6 +18,7 @@ function NewsSection() {
   const newsPageItems = content.listingPages.newsItems
   const announcementsPageItems = content.listingPages.announcementItems
   const sectionRef = useRef(null)
+  const isMobileView = useIsMobileView()
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start end', 'end start'],
@@ -35,22 +37,26 @@ function NewsSection() {
     <section id="news" ref={sectionRef} className="news-section" aria-label={sectionContent.aria}>
       <motion.div
         className="news-shell"
-        style={{
-          opacity: sectionOpacity,
-          y: sectionY,
-          scale: sectionScale,
-          rotateX: sectionRotateX,
-          filter: sectionFilter,
-          transformStyle: 'preserve-3d',
-        }}
+        style={
+          isMobileView
+            ? undefined
+            : {
+                opacity: sectionOpacity,
+                y: sectionY,
+                scale: sectionScale,
+                rotateX: sectionRotateX,
+                filter: sectionFilter,
+                transformStyle: 'preserve-3d',
+              }
+        }
       >
         <div className="news-main">
           <motion.div
             className="news-left"
-            initial={{ opacity: 0, y: 36 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.24 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            initial={isMobileView ? false : { opacity: 0, y: 36 }}
+            whileInView={isMobileView ? undefined : { opacity: 1, y: 0 }}
+            viewport={isMobileView ? undefined : { once: true, amount: 0.24 }}
+            transition={isMobileView ? undefined : { duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="news-head">
               <span className="news-kicker" aria-hidden="true" />
@@ -94,10 +100,12 @@ function NewsSection() {
 
           <motion.aside
             className="announcements-right"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.24 }}
-            transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
+            initial={isMobileView ? false : { opacity: 0, x: 30 }}
+            whileInView={isMobileView ? undefined : { opacity: 1, x: 0 }}
+            viewport={isMobileView ? undefined : { once: true, amount: 0.24 }}
+            transition={
+              isMobileView ? undefined : { duration: 0.72, ease: [0.22, 1, 0.36, 1], delay: 0.08 }
+            }
           >
             <div className="announcements-layout">
               <div className="announcements-intro">
