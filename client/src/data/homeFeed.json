@@ -1,0 +1,156 @@
+{
+  "news": [
+    {
+      "id": "news-01",
+      "title": "Xorazm Iqtisodiyot Universitetida xalqaro forum bo‘lib o‘tdi",
+      "excerpt": "Forum doirasida ta’lim sifati, raqamli transformatsiya va akademik almashinuv masalalari muhokama qilindi.",
+      "department": "Matbuot xizmati",
+      "date": "2026-05-24",
+      "image": "/hero/hero1.jpeg"
+    },
+    {
+      "id": "news-02",
+      "title": "Biznes boshqaruvi fakultetida ochiq ma’ruza tashkil etildi",
+      "excerpt": "Yirik kompaniya ekspertlari talabalar bilan mehnat bozori va zamonaviy boshqaruv usullari bo‘yicha suhbatlashdi.",
+      "department": "Biznes boshqaruvi fakulteti",
+      "date": "2026-05-22",
+      "image": "/hero/hero2.jpg"
+    },
+    {
+      "id": "news-03",
+      "title": "Raqamli texnologiyalar markazida startap haftaligi boshlandi",
+      "excerpt": "Talabalar jamoalari mentorlar bilan birga real mahsulot konsepsiyalarini ishlab chiqmoqda.",
+      "department": "Innovatsiyalar bo‘limi",
+      "date": "2026-05-21",
+      "image": "/hero/hero3.jpg"
+    },
+    {
+      "id": "news-04",
+      "title": "Universitet kutubxonasiga 1 200 dan ortiq yangi adabiyot topshirildi",
+      "excerpt": "Ilmiy fond iqtisodiyot, IT va boshqaruv yo‘nalishlari bo‘yicha zamonaviy manbalar bilan boyitildi.",
+      "department": "Axborot-resurs markazi",
+      "date": "2026-05-19",
+      "image": "/hero/hero2.jpg"
+    },
+    {
+      "id": "news-05",
+      "title": "Talabalar uchun xalqaro grantlar bo‘yicha seminar o‘tkazildi",
+      "excerpt": "Seminarda hujjat tayyorlash, motivatsion xat yozish va intervyu bosqichlari bo‘yicha yo‘riqnoma berildi.",
+      "department": "Xalqaro aloqalar bo‘limi",
+      "date": "2026-05-17",
+      "image": "/hero/hero1.jpeg"
+    },
+    {
+      "id": "news-06",
+      "title": "Karyera markazi tomonidan ish beruvchilar yarmarkasi tashkil qilindi",
+      "excerpt": "30 dan ortiq kompaniya bitiruvchi va talabalar uchun amaliyot hamda ish o‘rinlarini taqdim etdi.",
+      "department": "Karyera markazi",
+      "date": "2026-05-15",
+      "image": "/hero/hero3.jpg"
+    },
+    {
+      "id": "news-07",
+      "title": "Iqtisodiyot yo‘nalishida yangi qo‘shma ta’lim dasturi yo‘lga qo‘yildi",
+      "excerpt": "Dastur xorijiy hamkor universitet bilan birgalikda olib boriladi va dual diplom imkoniyatini beradi.",
+      "department": "O‘quv-uslubiy boshqarma",
+      "date": "2026-05-12",
+      "image": "/hero/hero2.jpg"
+    },
+    {
+      "id": "news-08",
+      "title": "Universitet jamoasi respublika tanlovida g‘oliblikni qo‘lga kiritdi",
+      "excerpt": "Ilmiy loyiha ta’lim jarayonida sun’iy intellektdan foydalanish samaradorligi bo‘yicha yuqori baholandi.",
+      "department": "Ilmiy bo‘lim",
+      "date": "2026-05-10",
+      "image": "/hero/hero1.jpeg"
+    },
+    {
+      "id": "news-09",
+      "title": "Talabalar turar joyida yangi coworking hududi ishga tushdi",
+      "excerpt": "Yangi hududda 24/7 internet, uchrashuv xonalari va mini-kutubxona tashkil etildi.",
+      "department": "Talabalar ishlari bo‘limi",
+      "date": "2026-05-07",
+      "image": "/hero/hero3.jpg"
+    },
+    {
+      "id": "news-10",
+      "title": "Universitet sport jamoasi viloyat chempionatida birinchi o‘rinni oldi",
+      "excerpt": "Talabalar basketbol jamoasi final o‘yinida ishonchli g‘alaba qayd etdi.",
+      "department": "Sport klubi",
+      "date": "2026-05-05",
+      "image": "/hero/hero2.jpg"
+    }
+  ],
+  "announcements": [
+    {
+      "id": "ad-01",
+      "title": "2026/2027 o‘quv yili uchun qabul jarayoni boshlandi",
+      "summary": "Bakalavr va magistratura yo‘nalishlari bo‘yicha hujjatlar onlayn qabul qilinmoqda.",
+      "department": "Qabul komissiyasi",
+      "date": "2026-05-25"
+    },
+    {
+      "id": "ad-02",
+      "title": "Yosh analitiklar klubi uchun yangi a’zolar qabul qilinadi",
+      "summary": "Tanlovdan o‘tgan talabalar mentorlik dasturi va amaliy case-larda qatnashadi.",
+      "department": "Talabalar markazi",
+      "date": "2026-05-23"
+    },
+    {
+      "id": "ad-03",
+      "title": "IELTS tayyorlov kurslariga ro‘yxatdan o‘tish ochiq",
+      "summary": "Kurslar tajribali trenerlar ishtirokida haftasiga 3 kun formatida olib boriladi.",
+      "department": "Til markazi",
+      "date": "2026-05-22"
+    },
+    {
+      "id": "ad-04",
+      "title": "Akademik qarzdorlikni yopish muddatlari e’lon qilindi",
+      "summary": "Qayta topshirish jadvali va auditoriyalar dekanat portalida joylashtirildi.",
+      "department": "O‘quv bo‘limi",
+      "date": "2026-05-20"
+    },
+    {
+      "id": "ad-05",
+      "title": "Startup Weekend uchun jamoalar ro‘yxati shakllantirilmoqda",
+      "summary": "Ishtirokchilar biznes g‘oya pitching va prototiplash bosqichlarida qatnashadi.",
+      "department": "Innovatsiyalar bo‘limi",
+      "date": "2026-05-18"
+    },
+    {
+      "id": "ad-06",
+      "title": "Talabalar stipendiyasi uchun qo‘shimcha grant tanlovi",
+      "summary": "Ijtimoiy faol va yuqori o‘zlashtirish ko‘rsatkichiga ega talabalar hujjat topshirishi mumkin.",
+      "department": "Moliya bo‘limi",
+      "date": "2026-05-16"
+    },
+    {
+      "id": "ad-07",
+      "title": "Xorijiy almashinuv dasturi suhbatlari 28-may kuni o‘tkaziladi",
+      "summary": "Nomzodlar pasport nusxasi va sertifikatlarini oldindan topshirishlari shart.",
+      "department": "Xalqaro hamkorlik bo‘limi",
+      "date": "2026-05-14"
+    },
+    {
+      "id": "ad-08",
+      "title": "Yangi semestr uchun darsga yozilish haftaligi boshlandi",
+      "summary": "Fan tanlash va individual reja shakllantirish talabalar kabineti orqali amalga oshiriladi.",
+      "department": "Registrator ofisi",
+      "date": "2026-05-12"
+    },
+    {
+      "id": "ad-09",
+      "title": "Kutubxonada imtihon oldi 24/7 rejim joriy etildi",
+      "summary": "Sessiya davrida o‘quv zallari tunu-kun ochiq bo‘ladi.",
+      "department": "Axborot-resurs markazi",
+      "date": "2026-05-10"
+    },
+    {
+      "id": "ad-10",
+      "title": "Bitiruvchilar uchun Career Bootcamp dasturiga ariza qabul qilinadi",
+      "summary": "CV klinikasi, mock interview va kompaniya uchrashuvlari bir haftalik formatda o‘tkaziladi.",
+      "department": "Karyera markazi",
+      "date": "2026-05-08"
+    }
+  ]
+}
