@@ -1,21 +1,20 @@
 import { CalendarDays, BellRing } from 'lucide-react'
 import { useEffect } from 'react'
-import { announcementsPageItems } from '../data/newsPagesData'
-
-const formatDate = (value) =>
-  new Intl.DateTimeFormat('uz-UZ', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  }).format(new Date(value))
+import { useSiteContent } from '../i18n/useSiteContent'
+import { formatLocalizedDate } from '../i18n/formatters'
+import { resolveAssetUrl } from '../lib/assets'
 
 function AnnouncementsPage() {
+  const { content, locale } = useSiteContent()
+  const pageContent = content.listingPages.announcements
+  const announcementsPageItems = content.listingPages.announcementItems
+
   useEffect(() => {
-    document.title = "Barcha e'lonlar | Xorazm Iqtisodiyot Universiteti"
-  }, [])
+    document.title = content.app.pageTitles.announcements
+  }, [content.app.pageTitles.announcements])
 
   return (
-    <section className="listing-page" aria-label="Barcha e'lonlar">
+    <section className="listing-page" aria-label={pageContent.aria}>
       <div className="listing-page-shell">
         <section className="ann-hero">
           <span className="ann-glow ann-glow-one" />
@@ -23,12 +22,9 @@ function AnnouncementsPage() {
           <div className="ann-pattern-circle" />
 
           <div className="ann-content">
-            <h1 className="ann-title">Barcha e’lonlar</h1>
+            <h1 className="ann-title">{pageContent.title}</h1>
 
-            <p className="ann-description">
-              Universitet faoliyati, hamkorlik va muhim tashkiliy yangilanishlarga oid dolzarb
-              e’lonlar shu sahifada jamlandi.
-            </p>
+            <p className="ann-description">{pageContent.description}</p>
 
             <div className="ann-actions">
               <div className="ann-mini-card">
@@ -43,7 +39,7 @@ function AnnouncementsPage() {
                     />
                   </svg>
                 </span>
-                Rasmiy e’lonlar
+                {pageContent.miniCard}
               </div>
             </div>
           </div>
@@ -65,9 +61,9 @@ function AnnouncementsPage() {
               </svg>
             </div>
 
-            <h3>Muhim ma’lumotlar</h3>
+            <h3>{pageContent.sideTitle}</h3>
 
-            <p>Qabul, uchrashuvlar va tashkiliy jarayonlar bo‘yicha e’lonlarni kuzatib boring.</p>
+            <p>{pageContent.sideText}</p>
           </div>
         </section>
 
@@ -81,7 +77,7 @@ function AnnouncementsPage() {
 
               {item.image && (
                 <img
-                  src={`${import.meta.env.BASE_URL}${item.image.replace(/^\//, '')}`}
+                  src={resolveAssetUrl(item.image)}
                   alt={item.title}
                   className="listing-announcement-image"
                   loading="lazy"
@@ -91,7 +87,7 @@ function AnnouncementsPage() {
               <div className="listing-announcement-body">
                 <div className="listing-announcement-date">
                   <CalendarDays size={15} />
-                  {formatDate(item.date)}
+                  {formatLocalizedDate(item.date, locale)}
                 </div>
                 <h2>{item.title}</h2>
                 <p>{item.summary}</p>

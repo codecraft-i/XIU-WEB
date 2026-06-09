@@ -6,7 +6,7 @@
       "excerpt": "Forum doirasida ta’lim sifati, raqamli transformatsiya va akademik almashinuv masalalari muhokama qilindi.",
       "department": "Matbuot xizmati",
       "date": "2026-05-24",
-      "image": "/hero/hero1.jpeg"
+      "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993533/hero1_clahzh.jpg"
     },
     {
       "id": "news-02",
@@ -14,7 +14,7 @@
       "excerpt": "Yirik kompaniya ekspertlari talabalar bilan mehnat bozori va zamonaviy boshqaruv usullari bo‘yicha suhbatlashdi.",
       "department": "Biznes boshqaruvi fakulteti",
       "date": "2026-05-22",
-      "image": "/hero/hero2.jpg"
+      "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero2_fbqst2.jpg"
     },
     {
       "id": "news-03",
@@ -22,7 +22,7 @@
       "excerpt": "Talabalar jamoalari mentorlar bilan birga real mahsulot konsepsiyalarini ishlab chiqmoqda.",
       "department": "Innovatsiyalar bo‘limi",
       "date": "2026-05-21",
-      "image": "/hero/hero3.jpg"
+      "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero3_ebj36t.jpg"
     },
     {
       "id": "news-04",
@@ -30,7 +30,7 @@
       "excerpt": "Ilmiy fond iqtisodiyot, IT va boshqaruv yo‘nalishlari bo‘yicha zamonaviy manbalar bilan boyitildi.",
       "department": "Axborot-resurs markazi",
       "date": "2026-05-19",
-      "image": "/hero/hero2.jpg"
+      "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero2_fbqst2.jpg"
     },
     {
       "id": "news-05",
@@ -38,7 +38,7 @@
       "excerpt": "Seminarda hujjat tayyorlash, motivatsion xat yozish va intervyu bosqichlari bo‘yicha yo‘riqnoma berildi.",
       "department": "Xalqaro aloqalar bo‘limi",
       "date": "2026-05-17",
-      "image": "/hero/hero1.jpeg"
+      "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993533/hero1_clahzh.jpg"
     },
     {
       "id": "news-06",
@@ -46,7 +46,7 @@
       "excerpt": "30 dan ortiq kompaniya bitiruvchi va talabalar uchun amaliyot hamda ish o‘rinlarini taqdim etdi.",
       "department": "Karyera markazi",
       "date": "2026-05-15",
-      "image": "/hero/hero3.jpg"
+      "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero3_ebj36t.jpg"
     },
     {
       "id": "news-07",
@@ -54,7 +54,7 @@
       "excerpt": "Dastur xorijiy hamkor universitet bilan birgalikda olib boriladi va dual diplom imkoniyatini beradi.",
       "department": "O‘quv-uslubiy boshqarma",
       "date": "2026-05-12",
-      "image": "/hero/hero2.jpg"
+      "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero2_fbqst2.jpg"
     },
     {
       "id": "news-08",
@@ -62,7 +62,7 @@
       "excerpt": "Ilmiy loyiha ta’lim jarayonida sun’iy intellektdan foydalanish samaradorligi bo‘yicha yuqori baholandi.",
       "department": "Ilmiy bo‘lim",
       "date": "2026-05-10",
-      "image": "/hero/hero1.jpeg"
+      "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993533/hero1_clahzh.jpg"
     },
     {
       "id": "news-09",
@@ -70,7 +70,7 @@
       "excerpt": "Yangi hududda 24/7 internet, uchrashuv xonalari va mini-kutubxona tashkil etildi.",
       "department": "Talabalar ishlari bo‘limi",
       "date": "2026-05-07",
-      "image": "/hero/hero3.jpg"
+      "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero3_ebj36t.jpg"
     },
     {
       "id": "news-10",
@@ -78,7 +78,7 @@
       "excerpt": "Talabalar basketbol jamoasi final o‘yinida ishonchli g‘alaba qayd etdi.",
       "department": "Sport klubi",
       "date": "2026-05-05",
-      "image": "/hero/hero2.jpg"
+      "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero2_fbqst2.jpg"
     }
   ],
   "announcements": [

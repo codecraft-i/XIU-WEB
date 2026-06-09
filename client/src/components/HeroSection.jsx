@@ -4,50 +4,27 @@ import { Autoplay, EffectFade } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useRef, useState } from 'react'
 import HeroSlide from './HeroSlide'
+import { useSiteContent } from '../i18n/useSiteContent'
+import { resolveAssetUrl } from '../lib/assets'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 
-const SLIDES = [
-  {
-    id: 1,
-    image: `${import.meta.env.BASE_URL}hero/hero1.jpg`,
-    tag: 'Amaliy auditoriyalar',
-    title: 'Nazariya va amaliyot bir joyda',
-    summary: 'Darslar seminar, workshop va real keyslar bilan olib boriladi.',
-  },
-  {
-    id: 2,
-    image: `${import.meta.env.BASE_URL}hero/hero2.jpeg`,
-    tag: 'Talaba muhiti',
-    title: 'Faol va qulay kampus hayoti',
-    summary: 'Klublar, uchrashuvlar va jamoaviy tashabbuslar doimiy ritm yaratadi.',
-  },
-  {
-    id: 3,
-    image: `${import.meta.env.BASE_URL}hero/hero3.jpg`,
-    tag: 'Raqamli ta’lim',
-    title: 'Zamonaviy o‘quv jarayoni',
-    summary: 'Platformalar, laboratoriyalar va mentorlik orqali o‘qish tizimli quriladi.',
-  },
-  {
-    id: 4,
-    image: `${import.meta.env.BASE_URL}hero/hero4.jpg`,
-    tag: 'Kasbiy yo‘nalish',
-    title: 'Kelajak kasbiga aniq tayyorgarlik',
-    summary: 'Bozor ehtiyojiga mos ko‘nikmalar bilan o‘qish va rivojlanish birga boradi.',
-  },
-]
-
 function HeroSection() {
+  const { content } = useSiteContent()
+  const heroContent = content.home.hero
+  const slides = heroContent.slides.map((slide) => ({
+    ...slide,
+    image: resolveAssetUrl(slide.image),
+  }))
   const [activeSlide, setActiveSlide] = useState(0)
   const swiperRef = useRef(null)
-  const activeSlideInfo = SLIDES[activeSlide] ?? SLIDES[0]
+  const activeSlideInfo = slides[activeSlide] ?? slides[0]
 
   return (
     <section
       id="hero"
       className="hero-section"
-      aria-label="Xorazm Iqtisodiyot Universiteti bosh sahifa hero qismi"
+      aria-label={heroContent.aria}
     >
       <Swiper
         modules={[Autoplay, EffectFade]}
@@ -64,7 +41,7 @@ function HeroSection() {
         onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
         className="hero-swiper"
       >
-        {SLIDES.map((slide) => (
+        {slides.map((slide) => (
           <SwiperSlide key={slide.id} className="hero-swiper-slide">
             {({ isActive }) => <HeroSlide slide={slide} isActive={isActive} />}
           </SwiperSlide>
@@ -76,7 +53,7 @@ function HeroSection() {
       <div className="hero-content-wrap">
         <div className="hero-content">
           <div className="hero-content-inner">
-            <h1 className="hero-main-title">Xorazm Iqtisodiyot Universiteti</h1>
+            <h1 className="hero-main-title">{heroContent.title}</h1>
 
             <div className="hero-divider" />
 
@@ -96,12 +73,12 @@ function HeroSection() {
                   </motion.article>
                 </AnimatePresence>
 
-                <div className="hero-nav-controls" aria-label="Hero navigation">
+                <div className="hero-nav-controls" aria-label={heroContent.navigationLabel}>
                   <button
                     type="button"
                     className="hero-nav-btn"
                     onClick={() => swiperRef.current?.slidePrev()}
-                    aria-label="Oldingi slayd"
+                    aria-label={heroContent.prevSlide}
                   >
                     <ChevronLeft size={20} />
                   </button>
@@ -109,7 +86,7 @@ function HeroSection() {
                     type="button"
                     className="hero-nav-btn"
                     onClick={() => swiperRef.current?.slideNext()}
-                    aria-label="Keyingi slayd"
+                    aria-label={heroContent.nextSlide}
                   >
                     <ChevronRight size={20} />
                   </button>

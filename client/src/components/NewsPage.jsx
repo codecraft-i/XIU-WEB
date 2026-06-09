@@ -1,33 +1,29 @@
 import { CalendarDays } from 'lucide-react'
 import { useEffect } from 'react'
-import { newsPageItems } from '../data/newsPagesData'
-
-const formatDate = (value) =>
-  new Intl.DateTimeFormat('uz-UZ', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  }).format(new Date(value))
+import { useSiteContent } from '../i18n/useSiteContent'
+import { formatLocalizedDate } from '../i18n/formatters'
+import { resolveAssetUrl } from '../lib/assets'
 
 function NewsPage() {
+  const { content, locale } = useSiteContent()
+  const pageContent = content.listingPages.news
+  const newsPageItems = content.listingPages.newsItems
+
   useEffect(() => {
-    document.title = 'Barcha yangiliklar | Xorazm Iqtisodiyot Universiteti'
-  }, [])
+    document.title = content.app.pageTitles.news
+  }, [content.app.pageTitles.news])
 
   return (
-    <section className="listing-page" aria-label="Barcha yangiliklar">
+    <section className="listing-page" aria-label={pageContent.aria}>
       <div className="listing-page-shell">
         <section className="news-hero-compact">
           <span className="news-hero-orb news-hero-orb-one" />
           <span className="news-hero-orb news-hero-orb-two" />
 
           <div className="news-hero-content">
-            <h1 className="news-hero-title">Barcha yangiliklar</h1>
+            <h1 className="news-hero-title">{pageContent.title}</h1>
 
-            <p className="news-hero-description">
-              Universitet hayoti, kampus voqealari va akademik tashabbuslar bo‘yicha eng so‘nggi
-              yangiliklar shu sahifada jamlandi.
-            </p>
+            <p className="news-hero-description">{pageContent.description}</p>
 
             <div className="news-hero-bottom">
               <div className="news-hero-chip">
@@ -39,7 +35,7 @@ function NewsPage() {
                     strokeLinecap="round"
                   />
                 </svg>
-                So‘nggi yangiliklar
+                {pageContent.chip}
               </div>
             </div>
           </div>
@@ -56,9 +52,9 @@ function NewsPage() {
               </svg>
             </div>
 
-            <h3>Universitet yangiliklari bir joyda</h3>
+            <h3>{pageContent.cardTitle}</h3>
 
-            <p>Qabul, ta’lim jarayoni va muhim tashabbuslar bo‘yicha ma’lumotlar.</p>
+            <p>{pageContent.cardText}</p>
           </div>
         </section>
 
@@ -66,7 +62,7 @@ function NewsPage() {
           {newsPageItems.map((item) => (
             <article key={item.id} className="listing-news-card">
               <img
-                src={`${import.meta.env.BASE_URL}${item.image.replace(/^\//, '')}`}
+                src={resolveAssetUrl(item.image)}
                 alt={item.title}
                 className="listing-news-image"
                 loading="lazy"
@@ -77,7 +73,7 @@ function NewsPage() {
                   <span>{item.department}</span>
                   <span>
                     <CalendarDays size={15} />
-                    {formatDate(item.date)}
+                    {formatLocalizedDate(item.date, locale)}
                   </span>
                 </div>
 

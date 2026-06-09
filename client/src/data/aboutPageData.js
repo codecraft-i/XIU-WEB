@@ -57,36 +57,8 @@ export const programs = [
     text: 'Iqtisodiy jarayonlar, bozor mexanizmlari, makro va mikroiqtisodiy tahlil asoslarini o‘rgatuvchi yo‘nalish.',
   },
   {
-    title: 'Moliya',
-    text: 'Moliyaviy boshqaruv, investitsiya, byudjetlashtirish va korporativ moliya bo‘yicha bilim beruvchi yo‘nalish.',
-  },
-  {
-    title: 'Bank ishi',
-    text: 'Bank tizimi, kreditlash, moliyaviy xizmatlar va bank operatsiyalari bo‘yicha amaliy bilimlar beradi.',
-  },
-  {
-    title: 'Buxgalteriya hisobi',
-    text: 'Hisob, audit, moliyaviy hisobot va korxona mablag‘larini boshqarish bo‘yicha mutaxassislik.',
-  },
-  {
-    title: 'Marketing',
-    text: 'Bozor tahlili, brend boshqaruvi, reklama strategiyasi va mijozlar bilan ishlash ko‘nikmalarini shakllantiradi.',
-  },
-  {
-    title: 'Menejment',
-    text: 'Tashkilotlarni boshqarish, liderlik, strategik rejalashtirish va samarali qaror qabul qilishga yo‘naltirilgan.',
-  },
-  {
-    title: 'Biznes boshqaruvi',
-    text: 'Tadbirkorlik, biznes jarayonlari, startap loyihalar va kompaniya boshqaruvi bo‘yicha bilim beradi.',
-  },
-  {
-    title: 'Logistika',
-    text: 'Ta’minot zanjiri, transport, omborxona va resurslar harakatini samarali boshqarishga o‘rgatadi.',
-  },
-  {
-    title: 'Raqamli iqtisodiyot',
-    text: 'Iqtisodiyotda raqamli texnologiyalar, ma’lumotlar tahlili va innovatsion biznes modellarini o‘rganishga yo‘naltirilgan.',
+    title: 'Tarix',
+    text: 'Tarixiy jarayonlar, jamiyat taraqqiyoti va milliy hamda jahon tarixi bo‘yicha chuqur bilim beruvchi yo‘nalish.',
   },
 ]
 
@@ -154,8 +126,8 @@ export const values = [
 ]
 
 export const campusImages = [
-  { alt: 'Auditoriya rasmi', image: 'hero/hero1.jpg' },
-  { alt: 'Kutubxona rasmi', image: 'hero/hero2.jpeg' },
-  { alt: 'Talabalar hayoti rasmi', image: 'hero/hero3.jpg' },
-  { alt: 'Seminar yoki laboratoriya rasmi', image: 'hero/hero4.jpg' },
+  { alt: 'Auditoriya rasmi', image: 'https://res.cloudinary.com/dz5h75un2/image/upload/v1780993533/hero1_clahzh.jpg' },
+  { alt: 'Kutubxona rasmi', image: 'https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero2_fbqst2.jpg' },
+  { alt: 'Talabalar hayoti rasmi', image: 'https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero3_ebj36t.jpg' },
+  { alt: 'Seminar yoki laboratoriya rasmi', image: 'https://res.cloudinary.com/dz5h75un2/image/upload/v1780993532/hero4_b356w1.jpg' },
 ]

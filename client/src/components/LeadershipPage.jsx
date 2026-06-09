@@ -13,6 +13,22 @@ const fadeUp = {
   transition: { duration: 0.4, ease: 'easeOut' },
 }
 
+const LEADERSHIP_TEXT = {
+  title: 'Leadership | Khorezm University of Economics',
+  memberMeta: '{{name}} profile, role, and areas of responsibility.',
+  listMeta: 'Leadership information and staff profiles of the university.',
+  back: 'Back to leadership list',
+  tabAria: 'Leader information',
+  sectionBadge: 'Leadership',
+  notFoundTitle: 'Profile not found',
+  notFoundText: 'The requested profile does not exist or the URL is incorrect.',
+  notFoundCta: 'Back to list',
+  employeeId: 'Employee ID',
+  details: 'Details',
+  emptyTitle: 'Leadership information will be published soon',
+  emptyText: 'Temporary test leadership entries have been removed. Official profiles will be added after confirmation.',
+}
+
 function RevealShell({ className, children }) {
   return (
     <motion.div
@@ -47,7 +63,7 @@ function LeaderPortrait({ member, className }) {
   return <div className={`${className} leadership-portrait-fallback`} style={style} aria-hidden="true" />
 }
 
-function LeadershipCard({ member }) {
+function LeadershipCard({ member, labels }) {
   return (
     <motion.article className="leadership-directory-card" {...fadeUp}>
       <div className="leadership-directory-media">
@@ -59,7 +75,7 @@ function LeadershipCard({ member }) {
         <p className="leadership-directory-role">{member.role}</p>
         <p className="leadership-directory-summary">{member.shortDescription}</p>
         <a href={`/rahbariyat/${member.slug}`} className="leadership-directory-link">
-          Batafsil
+          {labels.details}
           <ArrowRight size={16} />
         </a>
       </div>
@@ -67,7 +83,11 @@ function LeadershipCard({ member }) {
   )
 }
 
-function LeadershipListPage() {
+function LeadershipListPage({ labels }) {
+  if (leadershipGroups.length === 0) {
+    return <main className="about-page about-page-v2 leadership-page leadership-page-detail" />
+  }
+
   return (
     <main className="about-page about-page-v2 leadership-page">
       <div className="leadership-page-content">
@@ -78,7 +98,7 @@ function LeadershipListPage() {
             </RevealShell>
             <div className="leadership-directory-grid">
               {group.members.map((member) => (
-                <LeadershipCard key={member.slug} member={member} />
+                <LeadershipCard key={member.slug} member={member} labels={labels} />
               ))}
             </div>
           </section>
@@ -88,7 +108,7 @@ function LeadershipListPage() {
   )
 }
 
-function LeadershipDetailPage({ member }) {
+function LeadershipDetailPage({ member, labels }) {
   const [activeTabId, setActiveTabId] = useState(() => member.tabs[0].id)
 
   useEffect(() => {
@@ -107,7 +127,7 @@ function LeadershipDetailPage({ member }) {
           <RevealShell className="about-page-shell leadership-detail-shell">
             <a href="/rahbariyat" className="leadership-detail-back">
               <ArrowLeft size={16} />
-              Rahbariyat ro‘yxatiga qaytish
+              {labels.back}
             </a>
             <div className="leadership-detail-hero">
               <div className="leadership-detail-media">
@@ -116,7 +136,7 @@ function LeadershipDetailPage({ member }) {
               <div className="leadership-detail-meta">
                 <span className="about-page-badge">{member.degree}</span>
                 <h1 className="about-page-title leadership-detail-name">{member.name}</h1>
-                <p className="leadership-detail-id">ID raqam: {member.employeeId}</p>
+                <p className="leadership-detail-id">{labels.employeeId}: {member.employeeId}</p>
                 <p className="leadership-detail-role">{member.role}</p>
                 <div className="leadership-detail-contact">
                   <span>
@@ -134,7 +154,7 @@ function LeadershipDetailPage({ member }) {
         </section>
 
         <section className="about-page-section leadership-detail-tabs-section">
-          <div className="leadership-detail-tabs" role="tablist" aria-label="Rahbar ma’lumotlari">
+          <div className="leadership-detail-tabs" role="tablist" aria-label={labels.tabAria}>
             {member.tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -165,19 +185,17 @@ function LeadershipDetailPage({ member }) {
   )
 }
 
-function LeadershipNotFound() {
+function LeadershipNotFound({ labels }) {
   return (
     <main className="about-page about-page-v2 leadership-page leadership-page-detail">
       <div className="leadership-page-content">
         <section className="about-page-section leadership-detail-section">
           <RevealShell className="about-page-shell leadership-not-found">
-            <span className="about-page-badge">Rahbariyat</span>
-            <h1 className="about-page-title">Xodim topilmadi</h1>
-            <p className="about-page-p">
-              So‘ralgan profil mavjud emas yoki manzil noto‘g‘ri kiritilgan.
-            </p>
+            <span className="about-page-badge">{labels.sectionBadge}</span>
+            <h1 className="about-page-title">{labels.notFoundTitle}</h1>
+            <p className="about-page-p">{labels.notFoundText}</p>
             <a href="/rahbariyat" className="leadership-directory-link">
-              Ro‘yxatga qaytish
+              {labels.notFoundCta}
               <ArrowRight size={16} />
             </a>
           </RevealShell>
@@ -188,41 +206,40 @@ function LeadershipNotFound() {
 }
 
 function LeadershipPage({ slug = null }) {
+  const labels = LEADERSHIP_TEXT
   const member = slug ? getLeadershipMember(slug) : null
 
   useEffect(() => {
     if (member) {
-      document.title = `${member.name} | Rahbariyat | Xorazm Iqtisodiyot Universiteti`
-    } else if (slug) {
-      document.title = 'Rahbariyat | Xorazm Iqtisodiyot Universiteti'
+      document.title = `${member.name} | ${LEADERSHIP_TEXT.title}`
     } else {
-      document.title = 'Rahbariyat | Xorazm Iqtisodiyot Universiteti'
+      document.title = LEADERSHIP_TEXT.title
     }
 
     const meta = document.querySelector('meta[name="description"]')
-    const content = member
-      ? `${member.name} profili, lavozimi va faoliyat yo‘nalishlari.`
-      : 'Universitet rahbariyati tarkibi va alohida xodim profillari.'
+    const metaContent = member
+      ? LEADERSHIP_TEXT.memberMeta.replace('{{name}}', member.name)
+      : LEADERSHIP_TEXT.listMeta
 
     if (meta) {
-      meta.setAttribute('content', content)
+      meta.setAttribute('content', metaContent)
     } else {
       const metaTag = document.createElement('meta')
       metaTag.setAttribute('name', 'description')
-      metaTag.setAttribute('content', content)
+      metaTag.setAttribute('content', metaContent)
       document.head.appendChild(metaTag)
     }
   }, [member, slug])
 
   if (slug && !member) {
-    return <LeadershipNotFound />
+    return <LeadershipNotFound labels={labels} />
   }
 
   if (member) {
-    return <LeadershipDetailPage member={member} />
+    return <LeadershipDetailPage member={member} labels={labels} />
   }
 
-  return <LeadershipListPage />
+  return <LeadershipListPage labels={labels} />
 }
 
 export default LeadershipPage

@@ -1,8 +1,12 @@
 import { motion, useMotionTemplate, useScroll, useTransform } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
+import { useSiteContent } from '../i18n/useSiteContent'
+import { CLOUDINARY_ASSETS } from '../lib/assets'
 
 function AboutSection() {
+  const { content } = useSiteContent()
+  const aboutContent = content.home.about
   const sectionRef = useRef(null)
   const [isStackedLayout, setIsStackedLayout] = useState(() =>
     typeof window !== 'undefined' ? window.innerWidth <= 1024 : false
@@ -41,7 +45,7 @@ function AboutSection() {
       id="about"
       ref={sectionRef}
       className="about-section"
-      aria-label="Universitet haqida"
+      aria-label={aboutContent.aria}
     >
       <div className="about-stage">
         <motion.div
@@ -63,8 +67,8 @@ function AboutSection() {
               style={isStackedLayout ? undefined : { x: imageX, y: imageY }}
             >
               <img
-                src={`${import.meta.env.BASE_URL}about.jpg`}
-                alt="Xorazm Iqtisodiyot Universiteti kampusi"
+                src={CLOUDINARY_ASSETS.about}
+                alt={aboutContent.imageAlt}
                 className="about-image"
                 loading="lazy"
               />
@@ -74,24 +78,17 @@ function AboutSection() {
               className="about-text"
               style={isStackedLayout ? undefined : { x: textX }}
             >
-              <span className="about-kicker">Biz haqimizda</span>
-              <h2 className="about-title">Xorazm Iqtisodiyot Universiteti</h2>
+              <span className="about-kicker">{aboutContent.kicker}</span>
+              <h2 className="about-title">{aboutContent.title}</h2>
 
-              <p className="about-paragraph">
-                Xorazm Iqtisodiyot Universiteti iqtisodiyot, biznes va boshqaruv
-                yo‘nalishlarida amaliy fikrlaydigan, zamonaviy mutaxassislar
-                tayyorlashga yo‘naltirilgan oliy ta’lim maskanidir.
-              </p>
-
-              <p className="about-paragraph">
-                Bu yerda nazariy bilimlar real loyihalar, raqamli ko‘nikmalar va
-                talabaga yo‘naltirilgan muhit bilan uyg‘unlashadi. Maqsadimiz
-                mehnat bozoriga tayyor, tahliliy va tashabbuskor kadrlarni
-                shakllantirishdir.
-              </p>
+              {aboutContent.paragraphs.map((paragraph) => (
+                <p key={paragraph} className="about-paragraph">
+                  {paragraph}
+                </p>
+              ))}
 
               <a href="/about" className="about-more-link">
-                Batafsil
+                {aboutContent.cta}
                 <ArrowUpRight size={16} />
               </a>
             </motion.article>

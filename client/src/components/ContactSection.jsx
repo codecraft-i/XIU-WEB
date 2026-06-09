@@ -1,41 +1,22 @@
 import { Clock3, Mail, MapPin, MessageSquareText, Phone } from 'lucide-react'
-
-const CONTACT_ITEMS = [
-  {
-    id: 'phone',
-    Icon: Phone,
-    label: 'Telefon raqam',
-    content: '+998999642613',
-    href: 'tel:+998999642613',
-  },
-  {
-    id: 'email',
-    Icon: Mail,
-    label: 'Email manzil',
-    content: 'xiuniuz@gmail.com',
-    href: 'mailto:xiuniuz@gmail.com',
-  },
-  {
-    id: 'address',
-    Icon: MapPin,
-    label: 'Universitet manzili',
-    content: "Oyoq bogʻ MFY, Xiva ko'chasi , 41-uy",
-  },
-  {
-    id: 'hours',
-    Icon: Clock3,
-    label: 'Ish vaqti',
-    content: 'Dushanba - Shanba, 09:00 - 18:00',
-  },
-]
+import { useSiteContent } from '../i18n/useSiteContent'
 
 function ContactSection() {
+  const { content } = useSiteContent()
+  const sectionContent = content.contactSection
+  const icons = {
+    phone: Phone,
+    email: Mail,
+    address: MapPin,
+    hours: Clock3,
+  }
+
   return (
-    <section id="contact-section" className="contact-section" aria-label="Biz bilan bog'laning">
+    <section id="contact-section" className="contact-section" aria-label={sectionContent.aria}>
       <div className="contact-container">
         <div className="map-card">
           <iframe
-            title="XIUNI xaritada"
+            title={sectionContent.mapTitle}
             src="https://www.google.com/maps?q=41.519130,60.569178&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -48,7 +29,7 @@ function ContactSection() {
             rel="noopener noreferrer"
           >
             <MapPin size={18} />
-            Xaritada ochish
+            {sectionContent.openMap}
           </a>
 
           <div className="map-gradient" aria-hidden="true" />
@@ -56,12 +37,12 @@ function ContactSection() {
           <div className="location-panel">
             <div className="location-label">
               <MapPin size={15} />
-              Bizning manzil
+              {sectionContent.locationLabel}
             </div>
 
             <div className="location-text">
               <MapPin size={24} />
-              <p>Oyoq bogʻ MFY, Xiva ko'chasi , 41-uy</p>
+              <p>{sectionContent.address}</p>
             </div>
           </div>
         </div>
@@ -69,23 +50,22 @@ function ContactSection() {
         <div className="info-card">
           <div className="section-badge">
             <Phone size={17} />
-            Aloqa markazi
+            {sectionContent.badge}
           </div>
 
           <h2 className="section-title">
-            Biz bilan <span>bog'laning</span>
+            {sectionContent.title[0]} <span>{sectionContent.title[1]}</span>
           </h2>
 
-          <p className="section-desc">
-            Savol, taklif yoki qabul jarayoni bo‘yicha murojaatingiz bo‘lsa, quyidagi aloqa
-            ma’lumotlari orqali biz bilan bog‘lanishingiz mumkin.
-          </p>
+          <p className="section-desc">{sectionContent.description}</p>
 
           <div className="contact-list">
-            {CONTACT_ITEMS.map((item) => (
+            {sectionContent.items.map((item) => {
+              const Icon = icons[item.id]
+              return (
               <div key={item.id} className="contact-item">
                 <div className="icon-box">
-                  <item.Icon size={22} />
+                  <Icon size={22} />
                 </div>
 
                 <div className="contact-item-content">
@@ -93,25 +73,22 @@ function ContactSection() {
                   {item.href ? <a href={item.href}>{item.content}</a> : <p>{item.content}</p>}
                 </div>
               </div>
-            ))}
+            )})}
           </div>
 
           <div className="action-row">
             <a className="primary-btn" href="tel:+998999642613">
               <Phone size={21} />
-              Qo‘ng‘iroq qilish
+              {sectionContent.call}
             </a>
 
             <a className="secondary-btn" href="/send-message">
               <MessageSquareText size={21} />
-              Xabar yozish
+              {sectionContent.message}
             </a>
           </div>
 
-          <div className="mini-note">
-            Qabul, hujjatlar, yo‘nalishlar yoki universitet faoliyati bo‘yicha savollaringizga
-            ish vaqtida javob beramiz.
-          </div>
+          <div className="mini-note">{sectionContent.note}</div>
         </div>
       </div>
     </section>

@@ -1,0 +1,1240 @@
+{
+  "app": {
+    "brand": [
+      "Хорезмский",
+      "университет экономики"
+    ],
+    "pageTitles": {
+      "home": "Хорезмский университет экономики",
+      "about": "Об университете | Хорезмский университет экономики",
+      "leadership": "Руководство | Хорезмский университет экономики",
+      "campus": "Жизнь кампуса | Хорезмский университет экономики",
+      "admission": "Онлайн-заявка | Хорезмский университет экономики",
+      "message": "Написать сообщение | Хорезмский университет экономики",
+      "news": "Все новости | Хорезмский университет экономики",
+      "announcements": "Все объявления | Хорезмский университет экономики"
+    },
+    "meta": {
+      "about": "О Хорезмском университете экономики: миссия, программы, преимущества, ценности и среда кампуса.",
+      "campus": "Жизнь кампуса Хорезмского университета экономики: клубы, события, спорт, галерея и студенческие проекты.",
+      "leadershipList": "Состав руководства университета и профили сотрудников.",
+      "leadershipMember": "Профиль {{name}}, должность и направления деятельности."
+    }
+  },
+  "header": {
+    "topContacts": [
+      {
+        "id": "address",
+        "text": "МФЙ Оёк бог, улица Хива, дом 41",
+        "href": "#"
+      },
+      {
+        "id": "phone",
+        "text": "+998999642613",
+        "href": "tel:+998999642613"
+      },
+      {
+        "id": "email",
+        "text": "xiuniuz@gmail.com",
+        "href": "mailto:xiuniuz@gmail.com"
+      }
+    ],
+    "messageLink": "Написать сообщение",
+    "hemis": {
+      "label": "Hemis",
+      "links": [
+        {
+          "id": "hemis-students",
+          "label": "Hemis (Студенты)",
+          "href": "#"
+        },
+        {
+          "id": "hemis-staff",
+          "label": "Hemis (Сотрудники)",
+          "href": "#"
+        }
+      ]
+    },
+    "languageLabel": "Выбрать язык",
+    "navItems": [
+      {
+        "id": "university",
+        "label": "Университет",
+        "badge": "Университет",
+        "heading": "Жизнь университета и управление",
+        "description": "Быстрый доступ к миссии университета, структуре управления, среде кампуса и ключевым разделам.",
+        "actionLabel": "Перейти в приемный отдел",
+        "actionHref": "/admission",
+        "submenu": [
+          {
+            "label": "О нас",
+            "description": "Миссия университета, ценности и направление развития",
+            "href": "/about",
+            "icon": "building"
+          },
+          {
+            "label": "Руководство",
+            "description": "Познакомьтесь с управленческой командой университета",
+            "href": "/rahbariyat",
+            "icon": "user"
+          },
+          {
+            "label": "Жизнь кампуса",
+            "description": "Студенческая среда, мероприятия и клубная активность",
+            "href": "/campus-life",
+            "icon": "campus"
+          },
+          {
+            "label": "Контакты и адрес",
+            "description": "Локация, телефон и каналы обращения",
+            "href": "#contact-section",
+            "icon": "location"
+          }
+        ]
+      },
+      {
+        "id": "programs",
+        "label": "Направления",
+        "badge": "Направления",
+        "heading": "Образовательные программы и прием",
+        "description": "Программы бакалавриата и магистратуры, процесс приема и международные академические возможности.",
+        "actionLabel": "Посмотреть программы",
+        "actionHref": "/admission",
+        "submenu": [
+          {
+            "label": "Экономика",
+            "href": "#",
+            "icon": "cap"
+          },
+          {
+            "label": "История",
+            "href": "#",
+            "icon": "document"
+          }
+        ]
+      },
+      {
+        "id": "students",
+        "label": "Студентам",
+        "badge": "Студенты",
+        "heading": "Студенческая жизнь и возможности",
+        "description": "Стипендии, карьерный центр, клубы и сервисы академической поддержки в одном месте.",
+        "actionLabel": "Перейти в студенческий раздел",
+        "actionHref": "#",
+        "submenu": [
+          {
+            "label": "Стипендии",
+            "description": "Гранты, скидки и программы для талантливых студентов",
+            "href": "#",
+            "icon": "spark"
+          },
+          {
+            "label": "Карьерный центр",
+            "description": "Стажировки, менторство и помощь с трудоустройством",
+            "href": "#",
+            "icon": "briefcase"
+          },
+          {
+            "label": "Студенческие клубы",
+            "description": "Социальные, спортивные и профессиональные сообщества",
+            "href": "#",
+            "icon": "campus"
+          },
+          {
+            "label": "Библиотека",
+            "description": "Печатные и цифровые ресурсы, доступ к научным базам",
+            "href": "#",
+            "icon": "document"
+          },
+          {
+            "label": "Студенческие сервисы",
+            "description": "Заявления, справки и внутренние сервисы",
+            "href": "#",
+            "icon": "support"
+          },
+          {
+            "label": "Международный обмен",
+            "description": "Университеты-партнеры и программы мобильности",
+            "href": "#",
+            "icon": "location"
+          }
+        ]
+      },
+      {
+        "id": "news",
+        "label": "Новости",
+        "badge": "Медиа",
+        "heading": "Новости, события и объявления",
+        "description": "Следите за последними событиями университета, медиа-материалами и ближайшими мероприятиями.",
+        "actionLabel": "Все новости",
+        "actionHref": "/news",
+        "submenu": [
+          {
+            "label": "Последние новости",
+            "description": "Актуальные обновления из жизни кампуса и академической среды",
+            "href": "/news",
+            "icon": "megaphone"
+          },
+          {
+            "label": "События",
+            "description": "Календарь форумов, семинаров и открытых занятий",
+            "href": "#",
+            "icon": "campus"
+          },
+          {
+            "label": "Объявления",
+            "description": "Важные объявления о приеме, грантах и внутренних процессах",
+            "href": "/announcements",
+            "icon": "document"
+          },
+          {
+            "label": "Интервью",
+            "description": "Беседы со студентами, наставниками и преподавателями",
+            "href": "#",
+            "icon": "user"
+          }
+        ]
+      },
+      {
+        "id": "contact",
+        "label": "Контакты",
+        "badge": "Связь",
+        "heading": "Связаться с нами",
+        "description": "Доступ к приемному отделу, адресу университета, форме связи и каналам быстрой поддержки.",
+        "actionLabel": "Открыть раздел контактов",
+        "actionHref": "#contact-section",
+        "submenu": [
+          {
+            "label": "Приемный отдел",
+            "description": "Подача заявки и обращения по вопросам приема",
+            "href": "/admission",
+            "icon": "cap"
+          },
+          {
+            "label": "Форма связи",
+            "description": "Основной канал для вопросов, предложений и обращений",
+            "href": "/send-message",
+            "icon": "document"
+          },
+          {
+            "label": "Call-center",
+            "description": "Быстрая помощь и информация по телефону",
+            "href": "tel:+998999642613",
+            "icon": "support"
+          }
+        ]
+      }
+    ],
+    "mobileMenu": {
+      "title": "Меню",
+      "close": "Закрыть",
+      "cta": "Онлайн-заявка",
+      "footnote": "Хорезмский университет экономики"
+    }
+  },
+  "home": {
+    "hero": {
+      "aria": "Главный hero-блок Хорезмского университета экономики",
+      "title": "Хорезмский университет экономики",
+      "navigationLabel": "Навигация hero",
+      "prevSlide": "Предыдущий слайд",
+      "nextSlide": "Следующий слайд",
+      "slides": [
+        {
+          "id": 1,
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993533/hero1_clahzh.jpg",
+          "tag": "Практические аудитории",
+          "title": "Теория и практика в одном месте",
+          "summary": "Занятия проходят в формате семинаров, воркшопов и реальных кейсов."
+        },
+        {
+          "id": 2,
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero2_fbqst2.jpg",
+          "tag": "Студенческая среда",
+          "title": "Активная и комфортная жизнь кампуса",
+          "summary": "Клубы, встречи и совместные инициативы формируют живой ритм кампуса."
+        },
+        {
+          "id": 3,
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero3_ebj36t.jpg",
+          "tag": "Цифровое обучение",
+          "title": "Современный учебный процесс",
+          "summary": "Обучение строится системно через платформы, лаборатории и наставничество."
+        },
+        {
+          "id": 4,
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993532/hero4_b356w1.jpg",
+          "tag": "Профессиональный трек",
+          "title": "Точная подготовка к будущей профессии",
+          "summary": "Обучение и развитие идут вместе с навыками, востребованными рынком."
+        }
+      ]
+    },
+    "about": {
+      "aria": "Об университете",
+      "kicker": "О нас",
+      "title": "Хорезмский университет экономики",
+      "paragraphs": [
+        "Хорезмский университет экономики готовит современных специалистов с практическим мышлением в сферах экономики, бизнеса и управления.",
+        "Здесь теория сочетается с реальными проектами, цифровыми навыками и студентоориентированной средой. Наша цель — формировать аналитичных и инициативных выпускников, готовых к рынку труда."
+      ],
+      "imageAlt": "Кампус Хорезмского университета экономики",
+      "cta": "Подробнее"
+    },
+    "news": {
+      "aria": "Новости и объявления",
+      "title": "Новости из жизни университета",
+      "lead": "Следите за последними событиями, инициативами и важными встречами с участием студентов, преподавателей и команды университета.",
+      "allNews": "Все новости",
+      "announcementsKicker": "Объявления",
+      "announcementsTitle": "Важные объявления и возможности",
+      "announcementsDescription": "Следите за актуальными объявлениями о приеме, грантах, курсах и программах обмена.",
+      "allAnnouncements": "Все объявления",
+      "prevAnnouncement": "Предыдущее объявление",
+      "nextAnnouncement": "Следующее объявление",
+      "details": "Подробнее"
+    }
+  },
+  "aboutPage": {
+    "introBadge": "О нас",
+    "title": "Хорезмский университет экономики",
+    "intro": [
+      "Хорезмский университет экономики — современное высшее учебное заведение, ориентированное на подготовку специалистов нового поколения в области экономики, бизнеса и управления.",
+      "Мы объединяем академические знания, практику, цифровые навыки и открытую образовательную среду, чтобы выпускники уверенно работали в быстро меняющемся мире."
+    ],
+    "features": [
+      {
+        "title": "Практико-ориентированное обучение",
+        "text": "Преподавание на основе реальных проектов и бизнес-ситуаций."
+      },
+      {
+        "title": "Экономическое мышление",
+        "text": "Развитие навыков в бизнесе, финансах и управлении."
+      }
+    ],
+    "primaryCta": "Посмотреть направления",
+    "secondaryCta": "О приеме",
+    "introImageAlt": "Здание Хорезмского университета экономики",
+    "floatingCard": {
+      "title": "Современная университетская среда",
+      "text": "Комфортный для студентов подход к обучению, ориентированный на практику и будущие профессии."
+    },
+    "nextSection": "Перейти к следующему разделу",
+    "programs": {
+      "eyebrow": "Образовательные направления",
+      "title": "Основные образовательные направления",
+      "description": "Университет предлагает современные программы по ключевым направлениям экономики, бизнеса и управления.",
+      "all": "Все направления",
+      "details": "Подробнее",
+      "items": [
+        {
+          "title": "Экономика",
+          "text": "Направление, формирующее понимание экономических процессов, рыночных механизмов и основ макро- и микроэкономического анализа."
+        },
+        {
+          "title": "История",
+          "text": "Направление, дающее глубокие знания по историческим процессам, развитию общества, национальной и мировой истории."
+        }
+      ]
+    },
+    "benefits": {
+      "eyebrow": "Почему XIU",
+      "title": "Причины выбрать университет",
+      "description": "Преимущества, направленные на формирование современной и конкурентной среды с реальной практической ценностью для студентов.",
+      "items": [
+        {
+          "title": "Iqtisodiyotga ixtisoslashgan ta’lim",
+          "text": "Dasturlar iqtisodiyot, biznes, moliya va boshqaruv sohalarining amaliy ehtiyojlariga mos ishlab chiqiladi."
+        },
+        {
+          "title": "Amaliy mashg‘ulotlar",
+          "text": "Talabalar nazariy bilimlarni real loyiha, tahlil va amaliy topshiriqlar orqali mustahkamlaydi."
+        },
+        {
+          "title": "Zamonaviy o‘quv muhiti",
+          "text": "Talabalar uchun qulay auditoriyalar, raqamli resurslar va innovatsion o‘quv yondashuvlari yaratiladi."
+        },
+        {
+          "title": "Mehnat bozoriga mos tayyorgarlik",
+          "text": "Bitiruvchilar ish beruvchilar talab qiladigan bilim va ko‘nikmalarga ega bo‘lishi maqsad qilinadi."
+        },
+        {
+          "title": "Tadbirkorlik ruhini rivojlantirish",
+          "text": "Universitet talabalarni yangi g‘oyalar, biznes loyihalar va tashabbuslarni amalga oshirishga undaydi."
+        },
+        {
+          "title": "Xalqaro qarash",
+          "text": "Ta’lim jarayonida xalqaro standartlar, global iqtisodiy tendensiyalar va zamonaviy tajribalar inobatga olinadi."
+        }
+      ]
+    },
+    "values": {
+      "eyebrow": "Ценности",
+      "title": "Принципы, которые нас формируют",
+      "description": "Культура университета строится на знаниях, ответственности и открытом мышлении.",
+      "items": [
+        {
+          "title": "Bilim",
+          "text": "Har bir talabaning chuqur va sifatli bilim olishi universitet faoliyatining asosiy mezonidir."
+        },
+        {
+          "title": "Mas’uliyat",
+          "text": "Talabalar jamiyat, iqtisodiyot va kasbiy faoliyat oldidagi mas’uliyatni anglagan holda tarbiyalanadi."
+        },
+        {
+          "title": "Innovatsiya",
+          "text": "Ta’lim jarayonida yangicha fikrlash, raqamli texnologiyalar va zamonaviy yondashuvlar qo‘llanadi."
+        },
+        {
+          "title": "Halollik",
+          "text": "Akademik halollik, adolat va ochiqlik universitet madaniyatining muhim qismidir."
+        },
+        {
+          "title": "Tashabbuskorlik",
+          "text": "Talabalar mustaqil fikrlash, yangi g‘oyalar yaratish va ularni amalga oshirishga rag‘batlantiriladi."
+        },
+        {
+          "title": "Raqobatbardoshlik",
+          "text": "Bitiruvchilar mahalliy va xalqaro mehnat bozorida o‘z o‘rnini topa oladigan mutaxassis sifatida shakllanadi."
+        }
+      ]
+    },
+    "gallery": {
+      "eyebrow": "Среда кампуса",
+      "title": "Кампус и учебная среда",
+      "description": "Аудитории, библиотека, площадки для семинаров и зоны практических занятий организованы в соответствии с современными образовательными требованиями.",
+      "images": [
+        {
+          "alt": "Auditoriya rasmi",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993533/hero1_clahzh.jpg"
+        },
+        {
+          "alt": "Kutubxona rasmi",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero2_fbqst2.jpg"
+        },
+        {
+          "alt": "Talabalar hayoti rasmi",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero3_ebj36t.jpg"
+        },
+        {
+          "alt": "Seminar yoki laboratoriya rasmi",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993532/hero4_b356w1.jpg"
+        }
+      ]
+    },
+    "why": {
+      "badge": "Современное экономическое образование",
+      "title": "Почему Хорезмский университет экономики?",
+      "description": "Университет ориентирован на подготовку студентов через современные экономические знания, практический опыт и навыки для профессий будущего.",
+      "cardTitle": "Преимущества университета",
+      "cardSubtitle": "Практические знания, сильная среда и подготовка к профессиям будущего",
+      "valuesTitle": "Ценности",
+      "valuesSubtitle": "Ключевые ориентиры университетской культуры",
+      "internationalTitle": "Международное сотрудничество",
+      "internationalSubtitle": "Глобальное мышление и международный опыт",
+      "internationalItems": [
+        {
+          "title": "Международные стандарты",
+          "text": "В основе обучения лежат глобальные академические стандарты и современные программы."
+        },
+        {
+          "title": "Партнерские программы",
+          "text": "Развиваются связи с зарубежными вузами и бизнес-сообществами."
+        },
+        {
+          "title": "Глобальный рынок труда",
+          "text": "Выпускники готовятся мыслить и работать на уровне требований международного рынка."
+        }
+      ],
+      "bottomTitle": "От знаний к практическому результату",
+      "bottomText": "Хорезмский университет экономики дает студентам не только теорию, но и экономические, бизнес- и управленческие навыки, применимые в реальной жизни.",
+      "bottomTag": "XIU · Future Ready"
+    },
+    "campus": {
+      "title": "Кампус и учебная среда",
+      "description": "Аудитории, библиотека, площадки для семинаров и зоны практических занятий организованы в соответствии с современными образовательными требованиями."
+    }
+  },
+  "campusPage": {
+    "allFilter": "Все",
+    "badge": "Campus Life",
+    "title": "Жизнь кампуса",
+    "subtitle": "Студенты, клубы, события и современная атмосфера кампуса в одном месте.",
+    "description": "В Хорезмском университете экономики обучение продолжается и за пределами аудитории: через сообщества, проекты, спорт и активную международную среду.",
+    "primaryCta": {
+      "label": "Подать заявку",
+      "href": "/admission"
+    },
+    "secondaryCta": {
+      "label": "Познакомиться с университетом",
+      "href": "#campus-gallery"
+    },
+    "stats": [
+      {
+        "value": "18+",
+        "label": "Talabalar klubi"
+      },
+      {
+        "value": "75+",
+        "label": "Yillik tadbir"
+      },
+      {
+        "value": "24/7",
+        "label": "Faol kampus ruhi"
+      }
+    ],
+    "collage": [
+      {
+        "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993375/about_xq6qja.jpg",
+        "alt": "Talabalar kampus hududida"
+      },
+      {
+        "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993533/hero1_clahzh.jpg",
+        "alt": "Dars jarayonlari"
+      },
+      {
+        "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero3_ebj36t.jpg",
+        "alt": "Tadbir maydoni"
+      },
+      {
+        "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993532/hero4_b356w1.jpg",
+        "alt": "Talabalar jamoasi"
+      }
+    ],
+    "highlights": {
+      "kicker": "Campus Highlights",
+      "title": "Активная, современная и student-centered среда",
+      "items": [
+        {
+          "title": "Talabalar klublari",
+          "text": "Qiziqish va kasbiy yo‘nalish bo‘yicha shakllangan faol jamoalar.",
+          "icon": "Users"
+        },
+        {
+          "title": "Sport faoliyati",
+          "text": "Musobaqalar, kundalik mashg‘ulotlar va sog‘lom turmush formati.",
+          "icon": "Trophy"
+        },
+        {
+          "title": "Tadbir va festivallar",
+          "text": "Forumlar, bayramlar, sahna va networking tadbirlari.",
+          "icon": "CalendarDays"
+        },
+        {
+          "title": "Talabalar loyihalari",
+          "text": "Startuplar, tadqiqotlar va real muammolar ustida jamoaviy ish.",
+          "icon": "Lightbulb"
+        }
+      ]
+    },
+    "organizations": {
+      "kicker": "Student Organizations",
+      "title": "Студенческие организации",
+      "details": "Подробнее",
+      "membersSuffix": "участников",
+      "items": [
+        {
+          "title": "Marketing Club",
+          "text": "Brending, kontent va kampaniya strategiyalari ustida ishlovchi jamoa.",
+          "members": "120+",
+          "icon": "Megaphone"
+        },
+        {
+          "title": "Startup Club",
+          "text": "Biznes g‘oya, pitch va MVP ustida ishlashga yo‘naltirilgan klub.",
+          "members": "95+",
+          "icon": "Rocket"
+        },
+        {
+          "title": "Finance Club",
+          "text": "Moliyaviy tahlil, case study va investment fundamentals muhitida.",
+          "members": "84+",
+          "icon": "BadgeDollarSign"
+        },
+        {
+          "title": "English Speaking Club",
+          "text": "Speaking sessions, debate va xalqaro kommunikatsiyani kuchaytiruvchi platforma.",
+          "members": "140+",
+          "icon": "Languages"
+        },
+        {
+          "title": "IT Club",
+          "text": "Frontend, product thinking va digital tools bilan ishlash jamoasi.",
+          "members": "110+",
+          "icon": "Laptop2"
+        },
+        {
+          "title": "Book Club",
+          "text": "Kitob muhokamalari, critical reading va leadership literature uchrashuvlari.",
+          "members": "68+",
+          "icon": "BookOpen"
+        }
+      ]
+    },
+    "gallery": {
+      "kicker": "Campus Gallery",
+      "title": "Моменты из жизни кампуса",
+      "description": "Избранные кадры с учебного процесса, мероприятий и студенческой жизни.",
+      "open": "Ko‘rish",
+      "close": "Yopish",
+      "items": [
+        {
+          "title": "Dars jarayonlari",
+          "category": "Dars jarayonlari",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993533/hero1_clahzh.jpg",
+          "alt": "Dars jarayonlari",
+          "size": "large"
+        },
+        {
+          "title": "Talabalar hayoti",
+          "category": "Talabalar hayoti",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993375/about_xq6qja.jpg",
+          "alt": "Talabalar hayoti",
+          "size": "medium"
+        },
+        {
+          "title": "Sport musobaqalari",
+          "category": "Sport musobaqalari",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero3_ebj36t.jpg",
+          "alt": "Sport musobaqalari",
+          "size": "medium"
+        },
+        {
+          "title": "Tadbirlar",
+          "category": "Tadbirlar",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993532/hero4_b356w1.jpg",
+          "alt": "Tadbirlar",
+          "size": "tall"
+        },
+        {
+          "title": "Seminarlar",
+          "category": "Seminarlar",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993533/hero1_clahzh.jpg",
+          "alt": "Seminarlar",
+          "size": "small"
+        },
+        {
+          "title": "Bitiruv marosimlari",
+          "category": "Bitiruv marosimlari",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero3_ebj36t.jpg",
+          "alt": "Bitiruv marosimlari",
+          "size": "small"
+        }
+      ]
+    },
+    "sports": {
+      "kicker": "Sports & Wellness",
+      "title": "Спорт и возможности для здорового образа жизни",
+      "description": "Университет создает условия, чтобы студенты развивали физическую активность и командный дух параллельно с учебой.",
+      "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero3_ebj36t.jpg",
+      "stats": [
+        {
+          "value": 12,
+          "suffix": "+",
+          "label": "Sport yo‘nalishi"
+        },
+        {
+          "value": 6,
+          "suffix": " ta",
+          "label": "Ichki musobaqa formati"
+        },
+        {
+          "value": 4,
+          "suffix": " ta",
+          "label": "Wellness zona"
+        }
+      ],
+      "sports": [
+        "Futbol",
+        "Voleybol",
+        "Basketbol",
+        "Stol tennisi",
+        "Shaxmat",
+        "Fitness"
+      ]
+    },
+    "facilities": {
+      "kicker": "Facilities",
+      "title": "Инфраструктура кампуса",
+      "items": [
+        {
+          "title": "Smart auditoriyalar",
+          "icon": "MonitorPlay"
+        },
+        {
+          "title": "Kutubxona",
+          "icon": "LibraryBig"
+        },
+        {
+          "title": "Kompyuter laboratoriyalari",
+          "icon": "Cpu"
+        },
+        {
+          "title": "Konferensiya zallari",
+          "icon": "Presentation"
+        },
+        {
+          "title": "Talabalar kafesi",
+          "icon": "Coffee"
+        },
+        {
+          "title": "Wi-Fi kampus",
+          "icon": "Wifi"
+        },
+        {
+          "title": "Dam olish hududlari",
+          "icon": "Trees"
+        },
+        {
+          "title": "Avtoturargoh",
+          "icon": "ParkingSquare"
+        }
+      ]
+    },
+    "cta": {
+      "kicker": "Apply Now",
+      "title": "Станьте частью кампусной жизни Хорезмского университета экономики",
+      "primary": "Подать заявку",
+      "secondary": "Связаться"
+    },
+    "lightboxClose": "Закрыть лайтбокс",
+    "close": "Закрыть",
+    "sportsImageAlt": "Спортивная жизнь кампуса"
+  },
+  "leadershipPage": {
+    "back": "Вернуться к списку руководства",
+    "tabAria": "Информация о руководителе",
+    "sectionBadge": "Руководство",
+    "notFoundTitle": "Сотрудник не найден",
+    "notFoundText": "Запрошенный профиль отсутствует или адрес введен неверно.",
+    "notFoundCta": "Вернуться к списку",
+    "employeeId": "ID",
+    "details": "Подробнее",
+    "statusGroups": [
+      {
+        "id": "rektorat",
+        "title": "Rektorat",
+        "members": [
+          {
+            "slug": "sharifzoda-sardorbek-orazboy-tabib-ogli",
+            "name": "Sharifzoda Sardorbek O'razboy Tabib O'g'li",
+            "degree": "Fan doktori (DSc), professor",
+            "role": "Rektor vazifasini bajaruvchi",
+            "shortDescription": "Universitetning strategik rivojlanishi, akademik siyosati va tashqi hamkorlik yo‘nalishlarini muvofiqlashtiradi.",
+            "employeeId": "XIU-001",
+            "email": "rector@xiuni.uz",
+            "reception": "Dushanba, 15:00 - 17:00",
+            "accent": {
+              "from": "#f1f5f9",
+              "to": "#dbeafe",
+              "ink": "#0f2d4b"
+            },
+            "tabs": [
+              {
+                "id": "biografiya",
+                "label": "Biografiya",
+                "paragraphs": [
+                  "Sharifzoda Sardorbek O'razboy Tabib O'g'li universitet rahbari sifatida boshqaruv qarorlari, ta’lim siyosati va rivojlanish ustuvor yo‘nalishlarini yagona strategiya asosida olib boradi.",
+                  "Uning kundalik faoliyati akademik sifatni mustahkamlash, jamoa faoliyatini muvofiqlashtirish va universitetning ochiq boshqaruv tamoyillarini kuchaytirishga qaratilgan."
+                ]
+              },
+              {
+                "id": "ilmiy-faoliyat",
+                "label": "Ilmiy va pedagogik faoliyat",
+                "paragraphs": [
+                  "Rahbarlik faoliyati bilan birga ta’lim mazmunini zamonaviy yondashuvlar asosida yangilash, o‘quv jarayonida sifat monitoringini kuchaytirish va professor-o‘qituvchilar salohiyatini qo‘llab-quvvatlash masalalariga e’tibor qaratadi.",
+                  "Ilmiy va pedagogik tashabbuslarda fan, amaliyot hamda boshqaruv o‘rtasidagi bog‘liqlikni kuchaytirish ustuvor yo‘nalish sifatida ko‘riladi."
+                ]
+              },
+              {
+                "id": "loyihalar",
+                "label": "Tadqiqotlar va loyihalar",
+                "paragraphs": [
+                  "Strategik rejalashtirish, xalqaro hamkorliklarni kengaytirish va universitetning institutsional rivojlanish ko‘rsatkichlarini yaxshilash bo‘yicha loyihalarni boshqaradi.",
+                  "Ta’lim sifati, raqamlashtirish va infratuzilma yangilanishi bilan bog‘liq tashabbuslar rahbariyat darajasida muntazam nazorat qilinadi."
+                ]
+              },
+              {
+                "id": "qabul",
+                "label": "Qabul va bog‘lanish",
+                "paragraphs": [
+                  "Qabulga yozilish uchun murojaat mavzusini qisqa bayon qilib elektron pochta orqali oldindan bog‘lanish tavsiya etiladi.",
+                  "Rasmiy uchrashuvlar va xizmat yozishmalari universitet ichki tartibi asosida ko‘rib chiqiladi."
+                ]
+              }
+            ]
+          },
+          {
+            "slug": "avazov-xushnud-xolmuratovich",
+            "name": "Avazov Xushnud Xolmuratovich",
+            "degree": "Rektor maslahatchisi",
+            "role": "Talabalar orasida ijtimoiy-ma'naviy muhit barqarorligini ta'minlash bo‘yicha maslahatchi",
+            "shortDescription": "Talabalar bilan ishlash, ichki muhit barqarorligi va tarbiyaviy yo‘nalishdagi tashabbuslarni tahlil qiladi.",
+            "employeeId": "XIU-002",
+            "email": "advisor.students@xiuni.uz",
+            "reception": "Seshanba, 14:00 - 16:00",
+            "accent": {
+              "from": "#fff7ed",
+              "to": "#ffedd5",
+              "ink": "#9a3412"
+            },
+            "tabs": [
+              {
+                "id": "biografiya",
+                "label": "Biografiya",
+                "paragraphs": [
+                  "Avazov Xushnud Xolmuratovich talabalar orasida sog‘lom ijtimoiy va ma'naviy muhitni shakllantirishga doir tashabbuslarni rektorat darajasida muvofiqlashtiradi.",
+                  "Uning faoliyati ichki profilaktika, kommunikatsiya sifati va talabalar bilan ishlash jarayonlarini tizimli tashkil etishga qaratilgan."
+                ]
+              },
+              {
+                "id": "ilmiy-faoliyat",
+                "label": "Ilmiy va pedagogik faoliyat",
+                "paragraphs": [
+                  "Talabalar bilan ishlashga oid metodik yondashuvlar, ma’naviy-ma’rifiy dasturlar va tarbiyaviy jarayon samaradorligini oshirish bo‘yicha amaliy tavsiyalar tayyorlaydi.",
+                  "Pedagogik jamoa bilan birgalikda talabalarning universitet muhitiga moslashuvi va ijtimoiy faolligini qo‘llab-quvvatlashga xizmat qiluvchi mexanizmlarni ishlab chiqadi."
+                ]
+              },
+              {
+                "id": "loyihalar",
+                "label": "Tadqiqotlar va loyihalar",
+                "paragraphs": [
+                  "Talabalar murojaatlari tahlili, ichki muhit monitoringi va profilaktik faoliyatni kuchaytirish bo‘yicha loyihalarda ishtirok etadi.",
+                  "Universitetdagi ma’naviy muhitni mustahkamlash va jamoaviy madaniyatni rivojlantirishga qaratilgan ichki tashabbuslarni kuzatib boradi."
+                ]
+              },
+              {
+                "id": "qabul",
+                "label": "Qabul va bog‘lanish",
+                "paragraphs": [
+                  "Talabalar bilan bog‘liq masalalarda murojaat yuborishda vaziyat tavsifi va kutilayotgan yechim qisqa va aniq ko‘rsatilishi tavsiya etiladi.",
+                  "Murojaatlar elektron pochta va qabul vaqti doirasida qabul qilinadi."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prorektorlar",
+        "title": "Prorektorlar",
+        "members": [
+          {
+            "slug": "nurjonov-arslonbek-otanazarovich",
+            "name": "Nurjonov Arslonbek Otanazarovich",
+            "degree": "Rektor maslahatchisi",
+            "role": "Strategik rivojlantirish bo‘yicha rektor maslahatchisi",
+            "shortDescription": "Rivojlanish strategiyasi, institutsional o‘sish va boshqaruv samaradorligi bo‘yicha tahliliy takliflar tayyorlaydi.",
+            "employeeId": "XIU-003",
+            "email": "strategy@xiuni.uz",
+            "reception": "Chorshanba, 10:00 - 12:00",
+            "accent": {
+              "from": "#eff6ff",
+              "to": "#bfdbfe",
+              "ink": "#1d4ed8"
+            },
+            "tabs": [
+              {
+                "id": "biografiya",
+                "label": "Biografiya",
+                "paragraphs": [
+                  "Nurjonov Arslonbek Otanazarovich universitetning uzoq muddatli rivojlanish yo‘nalishlari, ichki samaradorlik ko‘rsatkichlari va boshqaruv jarayonlarini takomillashtirish bo‘yicha maslahat beradi.",
+                  "U strategik tashabbuslarni amaliy jarayonlar bilan bog‘lash, natijadorlik indikatorlarini kuzatish va yangi o‘sish imkoniyatlarini aniqlash bilan shug‘ullanadi."
+                ]
+              },
+              {
+                "id": "ilmiy-faoliyat",
+                "label": "Ilmiy va pedagogik faoliyat",
+                "paragraphs": [
+                  "Ta’lim boshqaruvi, rivojlanish rejalashtiruvi va ichki sifat tizimini mustahkamlashga qaratilgan tashkiliy yechimlar ustida ishlaydi.",
+                  "Akademik bo‘linmalar bilan hamkorlikda o‘quv muhitini yaxshilash va boshqaruv qarorlarini ma’lumotlarga tayangan holda shakllantirishga e’tibor qaratadi."
+                ]
+              },
+              {
+                "id": "loyihalar",
+                "label": "Tadqiqotlar va loyihalar",
+                "paragraphs": [
+                  "Strategik xarita, samaradorlik indikatorlari va bo‘limlar kesimidagi monitoring mexanizmlarini yaratish bo‘yicha loyihalarda ishtirok etadi.",
+                  "Raqamlashtirish, ichki integratsiya va jarayonlarni soddalashtirishga xizmat qiluvchi yechimlarni ishlab chiqishga ko‘maklashadi."
+                ]
+              },
+              {
+                "id": "qabul",
+                "label": "Qabul va bog‘lanish",
+                "paragraphs": [
+                  "Strategiya, rivojlanish yoki ichki jarayonlar bo‘yicha murojaatlarda masala doirasi, kutilayotgan natija va mavjud holatni qisqacha ko‘rsatish tavsiya etiladi.",
+                  "Oldindan yozilish orqali uchrashuv va maslahat shakli belgilanadi."
+                ]
+              }
+            ]
+          },
+          {
+            "slug": "rejapov-izzatbek-olimbayevich",
+            "name": "Rejapov Izzatbek Olimbayevich",
+            "degree": "Falsafa doktori (PhD), dotsent",
+            "role": "Xalqaro hamkorlik bo‘yicha prorektor",
+            "shortDescription": "Xalqaro sherikliklar, akademik almashinuv va tashqi aloqalar portfelini rivojlantiradi.",
+            "employeeId": "XIU-004",
+            "email": "international@xiuni.uz",
+            "reception": "Chorshanba, 14:00 - 16:00",
+            "accent": {
+              "from": "#eef2ff",
+              "to": "#c7d2fe",
+              "ink": "#3730a3"
+            },
+            "tabs": [
+              {
+                "id": "biografiya",
+                "label": "Biografiya",
+                "paragraphs": [
+                  "Rejapov Izzatbek Olimbayevich universitetning xalqaro ochiqligi, hamkorlik loyihalari va tashqi akademik aloqalarini rivojlantirishga mas’ul rahbarlardan biri hisoblanadi.",
+                  "U xorijiy hamkorlar bilan aloqa, memorandumlar, qo‘shma tashabbuslar va akademik mobilitet masalalarini boshqaradi."
+                ]
+              },
+              {
+                "id": "ilmiy-faoliyat",
+                "label": "Ilmiy va pedagogik faoliyat",
+                "paragraphs": [
+                  "Xalqaro standartlar, o‘quv hamkorliklari va professor-o‘qituvchilar almashinuvi asosida ta’lim jarayoniga yangi tajribalarni olib kirishga e’tibor qaratadi.",
+                  "Xorijiy ta’lim muassasalari bilan o‘zaro tajriba almashinuvi va qo‘shma dasturlarni muvofiqlashtiradi."
+                ]
+              },
+              {
+                "id": "loyihalar",
+                "label": "Tadqiqotlar va loyihalar",
+                "paragraphs": [
+                  "Hamkor universitetlar bilan qo‘shma dasturlar, konferensiyalar va delegatsion uchrashuvlar doirasidagi tashabbuslarni olib boradi.",
+                  "Universitetning xalqaro reytinglar, akademik ko‘rinish va institutsional hamkorlik salohiyatini oshirishga qaratilgan yo‘nalishlarda ishlaydi."
+                ]
+              },
+              {
+                "id": "qabul",
+                "label": "Qabul va bog‘lanish",
+                "paragraphs": [
+                  "Xalqaro hamkorlik bo‘yicha murojaatlarda hamkor tashkilot nomi, taklif turi va kutilayotgan format ko‘rsatilishi maqsadga muvofiq.",
+                  "Elektron pochta orqali oldindan yuborilgan qisqa konsepsiya ko‘rib chiqish jarayonini tezlashtiradi."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "listingPages": {
+    "news": {
+      "aria": "Все новости",
+      "title": "Все новости",
+      "description": "На этой странице собраны последние новости о жизни университета, событиях кампуса и академических инициативах.",
+      "chip": "Последние новости",
+      "cardTitle": "Новости университета в одном месте",
+      "cardText": "Информация о приеме, учебном процессе и важных инициативах."
+    },
+    "announcements": {
+      "aria": "Все объявления",
+      "title": "Все объявления",
+      "description": "Здесь собраны актуальные объявления о деятельности университета, сотрудничестве и важных организационных обновлениях.",
+      "miniCard": "Официальные объявления",
+      "sideTitle": "Важная информация",
+      "sideText": "Следите за объявлениями о приеме, встречах и организационных процессах."
+    },
+    "newsItems": [
+      {
+        "id": "news-page-01",
+        "title": "Хорезмский университет экономики скоро начнет свою деятельность",
+        "excerpt": "Хорезмский университет экономики готовится начать работу как новое высшее учебное заведение, ориентированное на современное образование в сферах экономики, бизнеса, маркетинга и управления.",
+        "department": "Пресс-служба",
+        "date": "2026-06-08",
+        "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993457/news1_hyespo.jpg",
+        "content": [
+          "Ожидается, что Хорезмский университет экономики в ближайшее время начнет свою деятельность. Основная цель университета — создать качественную образовательную среду для молодежи по направлениям экономики, бизнеса, маркетинга, менеджмента и современным профессиональным трекам.",
+          "В университете поэтапно будут внедрены современные учебные процессы, объединяющие теоретические знания с практическими навыками, комфортные условия обучения и возможности для развития студентов."
+        ]
+      },
+      {
+        "id": "news-page-02",
+        "title": "Стартовал прием на 2026/2027 учебный год",
+        "excerpt": "В XIU ведутся подготовительные работы по организации приемной кампании на 2026/2027 учебный год. Необходимая информация для абитуриентов будет публиковаться поэтапно.",
+        "department": "Приемная комиссия",
+        "date": "2026-06-06",
+        "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993444/news2_cmwhfq.png",
+        "content": [
+          "В Хорезмском университете экономики начался прием на 2026/2027 учебный год. Университет организует для абитуриентов удобный процесс подачи документов, выбора направлений обучения, ознакомления с требованиями и получения консультаций.",
+          "Во время приемной кампании абитуриенты смогут получить подробную информацию о направлениях, возможностях обучения и порядке подачи документов. Процесс будет организован открыто, понятно и удобно."
+        ]
+      }
+    ],
+    "announcementItems": [
+      {
+        "id": "announcement-page-01",
+        "title": "Хорезмский университет экономики скоро начнет свою деятельность",
+        "summary": "Хорезмский университет экономики готовится начать работу как новое высшее учебное заведение, ориентированное на современное образование в сферах экономики, бизнеса, маркетинга и управления.",
+        "department": "Пресс-служба",
+        "date": "2026-06-08",
+        "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993457/news1_hyespo.jpg",
+        "content": [
+          "С запуском университета студентам будут предложены современные аудитории, практические занятия и обучение в формате реальных проектов.",
+          "Дополнительная информация об официальном открытии и программах будет опубликована на информационных каналах университета."
+        ]
+      },
+      {
+        "id": "announcement-page-02",
+        "title": "Приглашаем квалифицированных специалистов к сотрудничеству",
+        "summary": "В рамках подготовки к запуску Хорезмский университет экономики приглашает к сотрудничеству квалифицированных, ответственных и инициативных специалистов в сферах образования, управления и организационной деятельности.",
+        "department": "Отдел кадров и развития",
+        "date": "2026-06-07",
+        "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993448/news5_yy9dpq.png",
+        "content": [
+          "Университет создает новое пространство возможностей для специалистов с опытом в своей сфере, открытых к новому и умеющих работать в команде.",
+          "Подробная информация и порядок подачи заявок будут опубликованы на официальных информационных страницах."
+        ]
+      }
+    ]
+  },
+  "admissionPage": {
+    "aria": "Страница онлайн-заявки",
+    "backHome": "Вернуться на главную",
+    "onlineApplication": "Онлайн-заявка",
+    "sidebarTitle": "Подайте заявку в несколько шагов",
+    "sidebarText": "Процесс регистрации в Хорезмский университет экономики упрощен. Отправьте заявку и ожидайте связи с оператором.",
+    "stepsAria": "Этапы заявки",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Telefon raqamini kiriting",
+        "text": "Ariza jarayonini boshlash uchun asosiy raqamingizni tasdiqlang."
+      },
+      {
+        "number": "02",
+        "title": "Shaxsiy ma’lumotlarni to‘ldiring",
+        "text": "O‘zingizga mos ta’lim parametrlari va yo‘nalishni tanlang."
+      },
+      {
+        "number": "03",
+        "title": "Ariza holatini kuzating",
+        "text": "Ma’lumotlar saqlanadi va operator siz bilan bog‘lanadi."
+      }
+    ],
+    "sideNote": "Ваши данные будут рассмотрены только приемной комиссией.",
+    "stepOne": {
+      "title": "Ваш номер телефона",
+      "text": "Введите основной контактный номер, чтобы начать процесс подачи заявки.",
+      "phoneLabel": "Номер телефона",
+      "continue": "Продолжить"
+    },
+    "stepTwo": {
+      "title": "Личные данные",
+      "text": "Заполните информацию и выберите подходящее направление обучения.",
+      "primaryPhone": "Ваш основной номер",
+      "edit": "Изменить",
+      "name": "Имя",
+      "surname": "Фамилия",
+      "extraPhone": "Дополнительный номер телефона",
+      "educationTitle": "Параметры обучения",
+      "educationText": "Выберите форму, уровень, язык и направление обучения.",
+      "educationType": "Уровень обучения",
+      "educationForm": "Форма обучения",
+      "educationLanguage": "Язык обучения",
+      "direction": "Направление обучения",
+      "select": "Выберите",
+      "selectDirection": "Выберите направление",
+      "back": "Назад",
+      "submit": "Подтвердить",
+      "submitting": "Отправка..."
+    },
+    "stepThree": {
+      "title": "Ваша заявка принята",
+      "text": "Наши операторы свяжутся с вами в ближайшее время. Ваши данные успешно сохранены.",
+      "statusTitle": "Статус обращения",
+      "statusText": "На рассмотрении. Данные отправлены в приемный отдел.",
+      "finish": "Вернуться на главную"
+    },
+    "summary": {
+      "phone": "Телефон",
+      "extraPhone": "Дополнительный телефон",
+      "notEntered": "Не указано",
+      "fullName": "Ф.И.О.",
+      "educationType": "Уровень обучения",
+      "educationForm": "Форма обучения",
+      "educationLanguage": "Язык обучения",
+      "direction": "Направление обучения"
+    },
+    "options": {
+      "educationTypes": [
+        "Бакалавриат",
+        "Магистратура"
+      ],
+      "educationForms": [
+        "Очная"
+      ],
+      "educationLanguages": [
+        "Русский"
+      ],
+      "directions": [
+        "Экономика",
+        "История"
+      ]
+    },
+    "errors": {
+      "phoneRequired": "Введите полный номер телефона",
+      "nameShort": "Имя должно содержать минимум 2 символа",
+      "surnameShort": "Фамилия должна содержать минимум 2 символа",
+      "extraPhoneShort": "Введите дополнительный номер полностью",
+      "educationTypeRequired": "Выберите уровень обучения",
+      "educationFormRequired": "Выберите форму обучения",
+      "educationLanguageRequired": "Выберите язык обучения",
+      "directionRequired": "Выберите направление обучения",
+      "submitFailed": "Не удалось отправить заявку."
+    }
+  },
+  "messagePage": {
+    "aria": "Страница отправки сообщения",
+    "toast": "Ваше сообщение получено.",
+    "backHome": "Вернуться на главную",
+    "badge": "Контактный центр университета",
+    "title": "Отправьте свой вопрос университету",
+    "description": "Ваше обращение будет передано ответственному отделу. Чем точнее данные, тем быстрее вы получите ответ.",
+    "infoItems": [
+      {
+        "title": "Телефон",
+        "text": "При желании вы можете оставить номер для быстрой связи"
+      },
+      {
+        "title": "Email",
+        "text": "Ответ также можно получить по электронной почте"
+      },
+      {
+        "title": "Быстрое рассмотрение",
+        "text": "Четкий текст сообщения ускоряет маршрутизацию в нужный отдел"
+      }
+    ],
+    "note": "Совет: укажите в обращении факультет, направление, группу или название нужного отдела.",
+    "formTitle": "Форма обращения",
+    "name": "Имя",
+    "phone": "Номер телефона",
+    "email": "Email",
+    "message": "Текст сообщения",
+    "required": "*",
+    "namePlaceholder": "Введите ваше имя",
+    "phonePlaceholder": "+998 90 123 45 67",
+    "emailPlaceholder": "you@example.com",
+    "messagePlaceholder": "Введите текст вашего сообщения",
+    "privacy": "Оставленные данные используются только для ответа на ваше обращение.",
+    "cancel": "Отмена",
+    "submit": "Отправить",
+    "sending": "Отправка...",
+    "errors": {
+      "nameShort": "Имя должно содержать минимум 2 символа",
+      "phoneShort": "Введите полный номер телефона",
+      "emailInvalid": "Email введен неверно",
+      "messageShort": "Сообщение должно содержать минимум 10 символов",
+      "submitFailed": "Не удалось отправить сообщение."
+    }
+  },
+  "contactSection": {
+    "aria": "Свяжитесь с нами",
+    "mapTitle": "XIU на карте",
+    "openMap": "Открыть на карте",
+    "locationLabel": "Наш адрес",
+    "address": "МФЙ Оёк бог, улица Хива, дом 41",
+    "badge": "Контактный центр",
+    "title": [
+      "Свяжитесь",
+      "с нами"
+    ],
+    "description": "Если у вас есть вопрос, предложение или обращение по процессу приема, вы можете связаться с нами по указанным ниже контактам.",
+    "items": [
+      {
+        "id": "phone",
+        "label": "Телефон",
+        "content": "+998999642613",
+        "href": "tel:+998999642613"
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "content": "xiuniuz@gmail.com",
+        "href": "mailto:xiuniuz@gmail.com"
+      },
+      {
+        "id": "address",
+        "label": "Адрес университета",
+        "content": "МФЙ Оёк бог, улица Хива, дом 41"
+      },
+      {
+        "id": "hours",
+        "label": "Часы работы",
+        "content": "Понедельник - Суббота, 09:00 - 18:00"
+      }
+    ],
+    "call": "Позвонить",
+    "message": "Написать сообщение",
+    "note": "Мы ответим на вопросы о приеме, документах, направлениях и деятельности университета в рабочее время."
+  },
+  "footer": {
+    "aria": "Подвал сайта",
+    "connect": "Связаться с XIU",
+    "socialsAria": "Социальные сети",
+    "addressTitle": "Хорезмский университет экономики",
+    "addressLines": [
+      "МФЙ Оёк бог, улица Хива, дом 41",
+      "Хорезмская область, 700000",
+      "Узбекистан"
+    ],
+    "note": "XIU работает как частный университет, объединяющий современное образование, международное сотрудничество и прикладную научную деятельность.",
+    "navAria": "Навигация в подвале",
+    "columns": [
+      {
+        "title": "Образование",
+        "links": [
+          "Направления бакалавриата",
+          "Программы магистратуры",
+          "Требования к приему",
+          "Подать онлайн-заявку",
+          "Стипендиальные возможности",
+          "Международные программы",
+          "Краткосрочные курсы",
+          "Академический календарь"
+        ]
+      },
+      {
+        "title": "Исследования",
+        "links": [
+          "Научные центры",
+          "Профессорско-преподавательский состав",
+          "Конференции",
+          "Научные журналы",
+          "Партнерские проекты",
+          "Лаборатория инноваций",
+          "База экспертов"
+        ]
+      },
+      {
+        "title": "Студенческая жизнь",
+        "links": [
+          "Студенческое общежитие",
+          "Жизнь кампуса",
+          "Клубы и сообщества",
+          "Карьерный центр",
+          "Библиотека",
+          "Волонтерская программа",
+          "Поддержка студентов",
+          "Календарь мероприятий"
+        ]
+      },
+      {
+        "title": "Дополнительно",
+        "links": [
+          "Об университете",
+          "Новости и объявления",
+          "Медиацентр",
+          "Вакансии",
+          "Карта кампуса",
+          "Контакты",
+          "Политика конфиденциальности",
+          "Условия использования"
+        ]
+      }
+    ]
+  }
+}

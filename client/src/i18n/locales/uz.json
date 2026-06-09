@@ -1,0 +1,1240 @@
+{
+  "app": {
+    "brand": [
+      "Xorazm",
+      "Iqtisodiyot Universiteti"
+    ],
+    "pageTitles": {
+      "home": "Xorazm Iqtisodiyot Universiteti",
+      "about": "Universitet haqida | Xorazm Iqtisodiyot Universiteti",
+      "leadership": "Rahbariyat | Xorazm Iqtisodiyot Universiteti",
+      "campus": "Kampus hayoti | Xorazm Iqtisodiyot Universiteti",
+      "admission": "Online ariza | Xorazm Iqtisodiyot Universiteti",
+      "message": "Xabar yozish | Xorazm Iqtisodiyot Universiteti",
+      "news": "Barcha yangiliklar | Xorazm Iqtisodiyot Universiteti",
+      "announcements": "Barcha e'lonlar | Xorazm Iqtisodiyot Universiteti"
+    },
+    "meta": {
+      "about": "Xorazm Iqtisodiyot Universiteti haqida: missiya, ta’lim yo‘nalishlari, afzalliklar, qadriyatlar va kampus muhiti.",
+      "campus": "Xorazm Iqtisodiyot Universiteti kampus hayoti: klublar, tadbirlar, sport, galereya va talabalar loyihalari.",
+      "leadershipList": "Universitet rahbariyati tarkibi va alohida xodim profillari.",
+      "leadershipMember": "{{name}} profili, lavozimi va faoliyat yo‘nalishlari."
+    }
+  },
+  "header": {
+    "topContacts": [
+      {
+        "id": "address",
+        "text": "Oyoq bogʻ MFY, Xiva ko'chasi, 41-uy",
+        "href": "#"
+      },
+      {
+        "id": "phone",
+        "text": "+998999642613",
+        "href": "tel:+998999642613"
+      },
+      {
+        "id": "email",
+        "text": "xiuniuz@gmail.com",
+        "href": "mailto:xiuniuz@gmail.com"
+      }
+    ],
+    "messageLink": "Xabar yozish",
+    "hemis": {
+      "label": "Hemis",
+      "links": [
+        {
+          "id": "hemis-students",
+          "label": "Hemis (Talabalar)",
+          "href": "#"
+        },
+        {
+          "id": "hemis-staff",
+          "label": "Hemis (Xodimlar)",
+          "href": "#"
+        }
+      ]
+    },
+    "languageLabel": "Tilni tanlash",
+    "navItems": [
+      {
+        "id": "university",
+        "label": "Universitet",
+        "badge": "Universitet",
+        "heading": "Universitet hayoti va boshqaruvi",
+        "description": "Universitet missiyasi, boshqaruv tuzilmasi, kampus muhiti va asosiy bo‘limlarga tezkor kirish.",
+        "actionLabel": "Qabul bo'limiga o'tish",
+        "actionHref": "/admission",
+        "submenu": [
+          {
+            "label": "Biz haqimizda",
+            "description": "Universitetning missiyasi, qadriyatlari va rivojlanish yo'nalishi",
+            "href": "/about",
+            "icon": "building"
+          },
+          {
+            "label": "Rahbariyat",
+            "description": "Universitet boshqaruvi va mas'ul jamoa bilan tanishing",
+            "href": "/rahbariyat",
+            "icon": "user"
+          },
+          {
+            "label": "Kampus hayoti",
+            "description": "Talabalar muhiti, tadbirlar va klub faoliyatlari",
+            "href": "/campus-life",
+            "icon": "campus"
+          },
+          {
+            "label": "Aloqa va manzil",
+            "description": "Lokatsiya, telefon va murojaat kanallari",
+            "href": "#contact-section",
+            "icon": "location"
+          }
+        ]
+      },
+      {
+        "id": "programs",
+        "label": "Yo'nalishlar",
+        "badge": "Yo'nalishlar",
+        "heading": "Ta'lim dasturlari va qabul",
+        "description": "Bakalavr va magistratura dasturlari, qabul jarayoni hamda xalqaro akademik imkoniyatlar.",
+        "actionLabel": "Dasturlarni ko'rish",
+        "actionHref": "/admission",
+        "submenu": [
+          {
+            "label": "Iqtisodiyot",
+            "href": "#",
+            "icon": "cap"
+          },
+          {
+            "label": "Tarix",
+            "href": "#",
+            "icon": "document"
+          }
+        ]
+      },
+      {
+        "id": "students",
+        "label": "Talabalar uchun",
+        "badge": "Talabalar",
+        "heading": "Talabalar hayoti va imkoniyatlar",
+        "description": "Stipendiyalar, karyera markazi, klublar va akademik qo‘llab-quvvatlash xizmatlari bir joyda.",
+        "actionLabel": "Talabalar bo'limiga o'tish",
+        "actionHref": "#",
+        "submenu": [
+          {
+            "label": "Stipendiyalar",
+            "description": "Grantlar, chegirmalar va iqtidorli talabalar dasturlari",
+            "href": "#",
+            "icon": "spark"
+          },
+          {
+            "label": "Karyera markazi",
+            "description": "Amaliyot, mentoring va ishga joylashish yordami",
+            "href": "#",
+            "icon": "briefcase"
+          },
+          {
+            "label": "Talabalar klublari",
+            "description": "Ijtimoiy, sport va professional hamjamiyatlar",
+            "href": "#",
+            "icon": "campus"
+          },
+          {
+            "label": "Kutubxona",
+            "description": "Bosma va raqamli resurslar, ilmiy bazalarga kirish",
+            "href": "#",
+            "icon": "document"
+          },
+          {
+            "label": "Talaba servislari",
+            "description": "Arizalar, ma’lumotnomalar va ichki servislar",
+            "href": "#",
+            "icon": "support"
+          },
+          {
+            "label": "Xalqaro almashinuv",
+            "description": "Hamkor universitetlar va mobility dasturlari",
+            "href": "#",
+            "icon": "location"
+          }
+        ]
+      },
+      {
+        "id": "news",
+        "label": "Yangiliklar",
+        "badge": "Media",
+        "heading": "Yangiliklar, tadbirlar va e’lonlar",
+        "description": "Universitetdagi so‘nggi voqealar, media chiqishlar va yaqinlashayotgan tadbirlarni kuzating.",
+        "actionLabel": "Barcha yangiliklar",
+        "actionHref": "/news",
+        "submenu": [
+          {
+            "label": "So‘nggi yangiliklar",
+            "description": "Kampus va akademik hayotdagi dolzarb yangilanishlar",
+            "href": "/news",
+            "icon": "megaphone"
+          },
+          {
+            "label": "Tadbirlar",
+            "description": "Forumlar, seminarlar va ochiq darslar kalendari",
+            "href": "#",
+            "icon": "campus"
+          },
+          {
+            "label": "E’lonlar",
+            "description": "Qabul, grant va ichki jarayonlar bo‘yicha muhim e’lonlar",
+            "href": "/announcements",
+            "icon": "document"
+          },
+          {
+            "label": "Intervyular",
+            "description": "Talaba, mentor va professorlar bilan suhbatlar",
+            "href": "#",
+            "icon": "user"
+          }
+        ]
+      },
+      {
+        "id": "contact",
+        "label": "Bog‘lanish",
+        "badge": "Aloqa",
+        "heading": "Biz bilan bog'lanish",
+        "description": "Qabul bo‘limi, universitet manzili, aloqa formasi va tezkor support kanallariga kirish.",
+        "actionLabel": "Contact bo'limini ochish",
+        "actionHref": "#contact-section",
+        "submenu": [
+          {
+            "label": "Qabul bo‘limi",
+            "description": "Ariza topshirish va qabul bo‘yicha murojaatlar",
+            "href": "/admission",
+            "icon": "cap"
+          },
+          {
+            "label": "Aloqa formasi",
+            "description": "Savol, taklif va murojaatlar uchun asosiy kanal",
+            "href": "/send-message",
+            "icon": "document"
+          },
+          {
+            "label": "Call-center",
+            "description": "Telefon orqali tezkor yordam va ma’lumot olish",
+            "href": "tel:+998999642613",
+            "icon": "support"
+          }
+        ]
+      }
+    ],
+    "mobileMenu": {
+      "title": "Menyu",
+      "close": "Yopish",
+      "cta": "Online ariza",
+      "footnote": "Xorazm Iqtisodiyot Universiteti"
+    }
+  },
+  "home": {
+    "hero": {
+      "aria": "Xorazm Iqtisodiyot Universiteti bosh sahifa hero qismi",
+      "title": "Xorazm Iqtisodiyot Universiteti",
+      "navigationLabel": "Hero navigation",
+      "prevSlide": "Oldingi slayd",
+      "nextSlide": "Keyingi slayd",
+      "slides": [
+        {
+          "id": 1,
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993533/hero1_clahzh.jpg",
+          "tag": "Amaliy auditoriyalar",
+          "title": "Nazariya va amaliyot bir joyda",
+          "summary": "Darslar seminar, workshop va real keyslar bilan olib boriladi."
+        },
+        {
+          "id": 2,
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero2_fbqst2.jpg",
+          "tag": "Talaba muhiti",
+          "title": "Faol va qulay kampus hayoti",
+          "summary": "Klublar, uchrashuvlar va jamoaviy tashabbuslar doimiy ritm yaratadi."
+        },
+        {
+          "id": 3,
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero3_ebj36t.jpg",
+          "tag": "Raqamli ta’lim",
+          "title": "Zamonaviy o‘quv jarayoni",
+          "summary": "Platformalar, laboratoriyalar va mentorlik orqali o‘qish tizimli quriladi."
+        },
+        {
+          "id": 4,
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993532/hero4_b356w1.jpg",
+          "tag": "Kasbiy yo‘nalish",
+          "title": "Kelajak kasbiga aniq tayyorgarlik",
+          "summary": "Bozor ehtiyojiga mos ko‘nikmalar bilan o‘qish va rivojlanish birga boradi."
+        }
+      ]
+    },
+    "about": {
+      "aria": "Universitet haqida",
+      "kicker": "Biz haqimizda",
+      "title": "Xorazm Iqtisodiyot Universiteti",
+      "paragraphs": [
+        "Xorazm Iqtisodiyot Universiteti iqtisodiyot, biznes va boshqaruv yo‘nalishlarida amaliy fikrlaydigan, zamonaviy mutaxassislar tayyorlashga yo‘naltirilgan oliy ta’lim maskanidir.",
+        "Bu yerda nazariy bilimlar real loyihalar, raqamli ko‘nikmalar va talabaga yo‘naltirilgan muhit bilan uyg‘unlashadi. Maqsadimiz mehnat bozoriga tayyor, tahliliy va tashabbuskor kadrlarni shakllantirishdir."
+      ],
+      "imageAlt": "Xorazm Iqtisodiyot Universiteti kampusi",
+      "cta": "Batafsil"
+    },
+    "news": {
+      "aria": "Yangiliklar va e'lonlar",
+      "title": "Universitet hayotidan yangiliklar",
+      "lead": "Talabalar, professor-o‘qituvchilar va universitet jamoasi ishtirokidagi eng so‘nggi voqealar, tashabbuslar va muhim uchrashuvlarni kuzatib boring.",
+      "allNews": "Barcha yangiliklar",
+      "announcementsKicker": "E'lonlar",
+      "announcementsTitle": "Muhim e'lonlar va imkoniyatlar",
+      "announcementsDescription": "Qabul, grant, kurs va almashinuv dasturlariga oid dolzarb e'lonlarni shu bo‘limda kuzatib boring.",
+      "allAnnouncements": "Barcha e'lonlar",
+      "prevAnnouncement": "Oldingi e'lon",
+      "nextAnnouncement": "Keyingi e'lon",
+      "details": "Batafsil"
+    }
+  },
+  "aboutPage": {
+    "introBadge": "Biz haqimizda",
+    "title": "Xorazm Iqtisodiyot Universiteti",
+    "intro": [
+      "Xorazm Iqtisodiyot Universiteti iqtisodiyot, biznes va boshqaruv yo‘nalishlarida amaliy fikrlaydigan, zamonaviy mutaxassislar tayyorlashga yo‘naltirilgan oliy ta’lim maskanidir.",
+      "Bu yerda nazariy bilimlar real loyihalar, raqamli ko‘nikmalar va talabaga yo‘naltirilgan muhit bilan uyg‘unlashadi. Maqsadimiz mehnat bozoriga tayyor, tahliliy va tashabbuskor kadrlarni shakllantirishdir."
+    ],
+    "features": [
+      {
+        "title": "Amaliy ta’lim",
+        "text": "Real loyiha va biznes holatlariga asoslangan o‘qitish."
+      },
+      {
+        "title": "Iqtisodiy fikrlash",
+        "text": "Biznes, moliya va boshqaruv ko‘nikmalarini rivojlantirish."
+      }
+    ],
+    "primaryCta": "Yo‘nalishlarni ko‘rish",
+    "secondaryCta": "Qabul haqida",
+    "introImageAlt": "Xorazm Iqtisodiyot Universiteti binosi",
+    "floatingCard": {
+      "title": "Zamonaviy universitet muhiti",
+      "text": "Talabaga qulay, amaliy bilimga yo‘naltirilgan va kelajak kasblariga mos ta’lim yondashuvi."
+    },
+    "nextSection": "Keyingi bo‘limga o‘tish",
+    "programs": {
+      "eyebrow": "Ta’lim yo‘nalishlari",
+      "title": "Asosiy ta’lim yo‘nalishlari",
+      "description": "Universitet iqtisodiyot, biznes va boshqaruv sohasining eng muhim yo‘nalishlari bo‘yicha zamonaviy ta’lim dasturlarini taklif etadi.",
+      "all": "Barcha yo‘nalishlar",
+      "details": "Batafsil ko‘rish",
+      "items": [
+        {
+          "title": "Iqtisodiyot",
+          "text": "Iqtisodiy jarayonlar, bozor mexanizmlari, makro va mikroiqtisodiy tahlil asoslarini o‘rgatuvchi yo‘nalish."
+        },
+        {
+          "title": "Tarix",
+          "text": "Tarixiy jarayonlar, jamiyat taraqqiyoti va milliy hamda jahon tarixi bo‘yicha chuqur bilim beruvchi yo‘nalish."
+        }
+      ]
+    },
+    "benefits": {
+      "eyebrow": "Nima uchun XIU",
+      "title": "Universitetni tanlash uchun asoslar",
+      "description": "Talabalarga amaliy qiymat beradigan, zamonaviy va raqobatbardosh muhitni shakllantirishga qaratilgan afzalliklar.",
+      "items": [
+        {
+          "title": "Iqtisodiyotga ixtisoslashgan ta’lim",
+          "text": "Dasturlar iqtisodiyot, biznes, moliya va boshqaruv sohalarining amaliy ehtiyojlariga mos ishlab chiqiladi."
+        },
+        {
+          "title": "Amaliy mashg‘ulotlar",
+          "text": "Talabalar nazariy bilimlarni real loyiha, tahlil va amaliy topshiriqlar orqali mustahkamlaydi."
+        },
+        {
+          "title": "Zamonaviy o‘quv muhiti",
+          "text": "Talabalar uchun qulay auditoriyalar, raqamli resurslar va innovatsion o‘quv yondashuvlari yaratiladi."
+        },
+        {
+          "title": "Mehnat bozoriga mos tayyorgarlik",
+          "text": "Bitiruvchilar ish beruvchilar talab qiladigan bilim va ko‘nikmalarga ega bo‘lishi maqsad qilinadi."
+        },
+        {
+          "title": "Tadbirkorlik ruhini rivojlantirish",
+          "text": "Universitet talabalarni yangi g‘oyalar, biznes loyihalar va tashabbuslarni amalga oshirishga undaydi."
+        },
+        {
+          "title": "Xalqaro qarash",
+          "text": "Ta’lim jarayonida xalqaro standartlar, global iqtisodiy tendensiyalar va zamonaviy tajribalar inobatga olinadi."
+        }
+      ]
+    },
+    "values": {
+      "eyebrow": "Qadriyatlar",
+      "title": "Bizni shakllantiradigan tamoyillar",
+      "description": "Universitet madaniyati bilim, mas’uliyat va ochiq fikrlash asosida quriladi.",
+      "items": [
+        {
+          "title": "Bilim",
+          "text": "Har bir talabaning chuqur va sifatli bilim olishi universitet faoliyatining asosiy mezonidir."
+        },
+        {
+          "title": "Mas’uliyat",
+          "text": "Talabalar jamiyat, iqtisodiyot va kasbiy faoliyat oldidagi mas’uliyatni anglagan holda tarbiyalanadi."
+        },
+        {
+          "title": "Innovatsiya",
+          "text": "Ta’lim jarayonida yangicha fikrlash, raqamli texnologiyalar va zamonaviy yondashuvlar qo‘llanadi."
+        },
+        {
+          "title": "Halollik",
+          "text": "Akademik halollik, adolat va ochiqlik universitet madaniyatining muhim qismidir."
+        },
+        {
+          "title": "Tashabbuskorlik",
+          "text": "Talabalar mustaqil fikrlash, yangi g‘oyalar yaratish va ularni amalga oshirishga rag‘batlantiriladi."
+        },
+        {
+          "title": "Raqobatbardoshlik",
+          "text": "Bitiruvchilar mahalliy va xalqaro mehnat bozorida o‘z o‘rnini topa oladigan mutaxassis sifatida shakllanadi."
+        }
+      ]
+    },
+    "gallery": {
+      "eyebrow": "Kampus muhiti",
+      "title": "Kampusdan lavhalar",
+      "description": "Ta’lim, hamkorlik va talabalar hayotini aks ettiruvchi muhit.",
+      "images": [
+        {
+          "alt": "Auditoriya rasmi",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993533/hero1_clahzh.jpg"
+        },
+        {
+          "alt": "Kutubxona rasmi",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero2_fbqst2.jpg"
+        },
+        {
+          "alt": "Talabalar hayoti rasmi",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero3_ebj36t.jpg"
+        },
+        {
+          "alt": "Seminar yoki laboratoriya rasmi",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993532/hero4_b356w1.jpg"
+        }
+      ]
+    },
+    "why": {
+      "badge": "Zamonaviy iqtisodiy ta’lim",
+      "title": "Nega Xorazm Iqtisodiyot Universiteti?",
+      "description": "Universitet talabalarni zamonaviy iqtisodiy bilim, amaliy tajriba va kelajak kasblariga tayyorlashga yo‘naltirilgan.",
+      "cardTitle": "Universitet afzalliklari",
+      "cardSubtitle": "Amaliy bilim, kuchli muhit va kelajak kasblari uchun tayyorgarlik",
+      "valuesTitle": "Qadriyatlar",
+      "valuesSubtitle": "Universitet madaniyatining asosiy yo‘nalishlari",
+      "internationalTitle": "Xalqaro hamkorlik",
+      "internationalSubtitle": "Global fikrlash va xalqaro tajriba",
+      "internationalItems": [
+        {
+          "title": "Xalqaro standartlar",
+          "text": "Ta’limda global akademik mezonlar va zamonaviy dasturlar asos qilib olinadi."
+        },
+        {
+          "title": "Hamkorlik dasturlari",
+          "text": "Xorijiy OTMlar va biznes hamjamiyatlari bilan aloqalar rivojlantiriladi."
+        },
+        {
+          "title": "Global mehnat bozori",
+          "text": "Bitiruvchilar xalqaro bozor talablari darajasida fikrlash va ishlashga tayyorlanadi."
+        }
+      ],
+      "bottomTitle": "Bilimdan amaliy natijaga",
+      "bottomText": "Xorazm Iqtisodiyot Universiteti talabalarga faqat nazariy bilim emas, balki real hayotda qo‘llanadigan iqtisodiy, biznes va boshqaruv ko‘nikmalarini ham beradi.",
+      "bottomTag": "XIU · Future Ready"
+    },
+    "campus": {
+      "title": "Kampus va o‘quv muhiti",
+      "description": "Auditoriyalar, kutubxona, seminar maydonlari va amaliy mashg‘ulot zonalari zamonaviy ta’lim talablariga mos tashkil etilgan."
+    }
+  },
+  "campusPage": {
+    "allFilter": "Barchasi",
+    "badge": "Campus Life",
+    "title": "Kampus hayoti",
+    "subtitle": "Talabalar, klublar, tadbirlar va zamonaviy kampus muhiti bir joyda.",
+    "description": "Xorazm Iqtisodiyot Universitetida ta’lim auditoriyadan tashqarida ham davom etadi: jamoalar, loyihalar, sport va xalqaro ruhdagi faol hayot bilan.",
+    "primaryCta": {
+      "label": "Qabulga ariza berish",
+      "href": "/admission"
+    },
+    "secondaryCta": {
+      "label": "Universitet bilan tanishish",
+      "href": "#campus-gallery"
+    },
+    "stats": [
+      {
+        "value": "18+",
+        "label": "Talabalar klubi"
+      },
+      {
+        "value": "75+",
+        "label": "Yillik tadbir"
+      },
+      {
+        "value": "24/7",
+        "label": "Faol kampus ruhi"
+      }
+    ],
+    "collage": [
+      {
+        "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993375/about_xq6qja.jpg",
+        "alt": "Talabalar kampus hududida"
+      },
+      {
+        "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993533/hero1_clahzh.jpg",
+        "alt": "Dars jarayonlari"
+      },
+      {
+        "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero3_ebj36t.jpg",
+        "alt": "Tadbir maydoni"
+      },
+      {
+        "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993532/hero4_b356w1.jpg",
+        "alt": "Talabalar jamoasi"
+      }
+    ],
+    "highlights": {
+      "kicker": "Campus Highlights",
+      "title": "Faol, zamonaviy va student-centered muhit",
+      "items": [
+        {
+          "title": "Talabalar klublari",
+          "text": "Qiziqish va kasbiy yo‘nalish bo‘yicha shakllangan faol jamoalar.",
+          "icon": "Users"
+        },
+        {
+          "title": "Sport faoliyati",
+          "text": "Musobaqalar, kundalik mashg‘ulotlar va sog‘lom turmush formati.",
+          "icon": "Trophy"
+        },
+        {
+          "title": "Tadbir va festivallar",
+          "text": "Forumlar, bayramlar, sahna va networking tadbirlari.",
+          "icon": "CalendarDays"
+        },
+        {
+          "title": "Talabalar loyihalari",
+          "text": "Startuplar, tadqiqotlar va real muammolar ustida jamoaviy ish.",
+          "icon": "Lightbulb"
+        }
+      ]
+    },
+    "organizations": {
+      "kicker": "Student Organizations",
+      "title": "Talabalar tashkilotlari",
+      "details": "Batafsil",
+      "membersSuffix": "a’zo",
+      "items": [
+        {
+          "title": "Marketing Club",
+          "text": "Brending, kontent va kampaniya strategiyalari ustida ishlovchi jamoa.",
+          "members": "120+",
+          "icon": "Megaphone"
+        },
+        {
+          "title": "Startup Club",
+          "text": "Biznes g‘oya, pitch va MVP ustida ishlashga yo‘naltirilgan klub.",
+          "members": "95+",
+          "icon": "Rocket"
+        },
+        {
+          "title": "Finance Club",
+          "text": "Moliyaviy tahlil, case study va investment fundamentals muhitida.",
+          "members": "84+",
+          "icon": "BadgeDollarSign"
+        },
+        {
+          "title": "English Speaking Club",
+          "text": "Speaking sessions, debate va xalqaro kommunikatsiyani kuchaytiruvchi platforma.",
+          "members": "140+",
+          "icon": "Languages"
+        },
+        {
+          "title": "IT Club",
+          "text": "Frontend, product thinking va digital tools bilan ishlash jamoasi.",
+          "members": "110+",
+          "icon": "Laptop2"
+        },
+        {
+          "title": "Book Club",
+          "text": "Kitob muhokamalari, critical reading va leadership literature uchrashuvlari.",
+          "members": "68+",
+          "icon": "BookOpen"
+        }
+      ]
+    },
+    "gallery": {
+      "kicker": "Campus Gallery",
+      "title": "Kampus galereyasi",
+      "description": "Dars jarayonlari, tadbirlar va talabalar hayotidan tanlangan lavhalar.",
+      "open": "Ko‘rish",
+      "close": "Yopish",
+      "items": [
+        {
+          "title": "Dars jarayonlari",
+          "category": "Dars jarayonlari",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993533/hero1_clahzh.jpg",
+          "alt": "Dars jarayonlari",
+          "size": "large"
+        },
+        {
+          "title": "Talabalar hayoti",
+          "category": "Talabalar hayoti",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993375/about_xq6qja.jpg",
+          "alt": "Talabalar hayoti",
+          "size": "medium"
+        },
+        {
+          "title": "Sport musobaqalari",
+          "category": "Sport musobaqalari",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero3_ebj36t.jpg",
+          "alt": "Sport musobaqalari",
+          "size": "medium"
+        },
+        {
+          "title": "Tadbirlar",
+          "category": "Tadbirlar",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993532/hero4_b356w1.jpg",
+          "alt": "Tadbirlar",
+          "size": "tall"
+        },
+        {
+          "title": "Seminarlar",
+          "category": "Seminarlar",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993533/hero1_clahzh.jpg",
+          "alt": "Seminarlar",
+          "size": "small"
+        },
+        {
+          "title": "Bitiruv marosimlari",
+          "category": "Bitiruv marosimlari",
+          "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero3_ebj36t.jpg",
+          "alt": "Bitiruv marosimlari",
+          "size": "small"
+        }
+      ]
+    },
+    "sports": {
+      "kicker": "Sports & Wellness",
+      "title": "Sport va sog‘lom muhit",
+      "description": "Talabalar o‘qish bilan bir qatorda jismoniy faollik va jamoaviy ruhni rivojlantirishi uchun imkoniyatlar yaratiladi.",
+      "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero3_ebj36t.jpg",
+      "stats": [
+        {
+          "value": 12,
+          "suffix": "+",
+          "label": "Sport yo‘nalishi"
+        },
+        {
+          "value": 6,
+          "suffix": " ta",
+          "label": "Ichki musobaqa formati"
+        },
+        {
+          "value": 4,
+          "suffix": " ta",
+          "label": "Wellness zona"
+        }
+      ],
+      "sports": [
+        "Futbol",
+        "Voleybol",
+        "Basketbol",
+        "Stol tennisi",
+        "Shaxmat",
+        "Fitness"
+      ]
+    },
+    "facilities": {
+      "kicker": "Facilities",
+      "title": "Kampus infratuzilmasi",
+      "items": [
+        {
+          "title": "Smart auditoriyalar",
+          "icon": "MonitorPlay"
+        },
+        {
+          "title": "Kutubxona",
+          "icon": "LibraryBig"
+        },
+        {
+          "title": "Kompyuter laboratoriyalari",
+          "icon": "Cpu"
+        },
+        {
+          "title": "Konferensiya zallari",
+          "icon": "Presentation"
+        },
+        {
+          "title": "Talabalar kafesi",
+          "icon": "Coffee"
+        },
+        {
+          "title": "Wi-Fi kampus",
+          "icon": "Wifi"
+        },
+        {
+          "title": "Dam olish hududlari",
+          "icon": "Trees"
+        },
+        {
+          "title": "Avtoturargoh",
+          "icon": "ParkingSquare"
+        }
+      ]
+    },
+    "cta": {
+      "kicker": "Apply Now",
+      "title": "Xorazm Iqtisodiyot Universiteti kampus hayotining bir qismiga aylaning",
+      "primary": "Qabulga ariza berish",
+      "secondary": "Bog‘lanish"
+    },
+    "lightboxClose": "Lightboxni yopish",
+    "close": "Yopish",
+    "sportsImageAlt": "Kampus sport faoliyati"
+  },
+  "leadershipPage": {
+    "back": "Rahbariyat ro‘yxatiga qaytish",
+    "tabAria": "Rahbar ma’lumotlari",
+    "sectionBadge": "Rahbariyat",
+    "notFoundTitle": "Xodim topilmadi",
+    "notFoundText": "So‘ralgan profil mavjud emas yoki manzil noto‘g‘ri kiritilgan.",
+    "notFoundCta": "Ro‘yxatga qaytish",
+    "employeeId": "ID raqam",
+    "details": "Batafsil",
+    "statusGroups": [
+      {
+        "id": "rektorat",
+        "title": "Rektorat",
+        "members": [
+          {
+            "slug": "sharifzoda-sardorbek-orazboy-tabib-ogli",
+            "name": "Sharifzoda Sardorbek O'razboy Tabib O'g'li",
+            "degree": "Fan doktori (DSc), professor",
+            "role": "Rektor vazifasini bajaruvchi",
+            "shortDescription": "Universitetning strategik rivojlanishi, akademik siyosati va tashqi hamkorlik yo‘nalishlarini muvofiqlashtiradi.",
+            "employeeId": "XIU-001",
+            "email": "rector@xiuni.uz",
+            "reception": "Dushanba, 15:00 - 17:00",
+            "accent": {
+              "from": "#f1f5f9",
+              "to": "#dbeafe",
+              "ink": "#0f2d4b"
+            },
+            "tabs": [
+              {
+                "id": "biografiya",
+                "label": "Biografiya",
+                "paragraphs": [
+                  "Sharifzoda Sardorbek O'razboy Tabib O'g'li universitet rahbari sifatida boshqaruv qarorlari, ta’lim siyosati va rivojlanish ustuvor yo‘nalishlarini yagona strategiya asosida olib boradi.",
+                  "Uning kundalik faoliyati akademik sifatni mustahkamlash, jamoa faoliyatini muvofiqlashtirish va universitetning ochiq boshqaruv tamoyillarini kuchaytirishga qaratilgan."
+                ]
+              },
+              {
+                "id": "ilmiy-faoliyat",
+                "label": "Ilmiy va pedagogik faoliyat",
+                "paragraphs": [
+                  "Rahbarlik faoliyati bilan birga ta’lim mazmunini zamonaviy yondashuvlar asosida yangilash, o‘quv jarayonida sifat monitoringini kuchaytirish va professor-o‘qituvchilar salohiyatini qo‘llab-quvvatlash masalalariga e’tibor qaratadi.",
+                  "Ilmiy va pedagogik tashabbuslarda fan, amaliyot hamda boshqaruv o‘rtasidagi bog‘liqlikni kuchaytirish ustuvor yo‘nalish sifatida ko‘riladi."
+                ]
+              },
+              {
+                "id": "loyihalar",
+                "label": "Tadqiqotlar va loyihalar",
+                "paragraphs": [
+                  "Strategik rejalashtirish, xalqaro hamkorliklarni kengaytirish va universitetning institutsional rivojlanish ko‘rsatkichlarini yaxshilash bo‘yicha loyihalarni boshqaradi.",
+                  "Ta’lim sifati, raqamlashtirish va infratuzilma yangilanishi bilan bog‘liq tashabbuslar rahbariyat darajasida muntazam nazorat qilinadi."
+                ]
+              },
+              {
+                "id": "qabul",
+                "label": "Qabul va bog‘lanish",
+                "paragraphs": [
+                  "Qabulga yozilish uchun murojaat mavzusini qisqa bayon qilib elektron pochta orqali oldindan bog‘lanish tavsiya etiladi.",
+                  "Rasmiy uchrashuvlar va xizmat yozishmalari universitet ichki tartibi asosida ko‘rib chiqiladi."
+                ]
+              }
+            ]
+          },
+          {
+            "slug": "avazov-xushnud-xolmuratovich",
+            "name": "Avazov Xushnud Xolmuratovich",
+            "degree": "Rektor maslahatchisi",
+            "role": "Talabalar orasida ijtimoiy-ma'naviy muhit barqarorligini ta'minlash bo‘yicha maslahatchi",
+            "shortDescription": "Talabalar bilan ishlash, ichki muhit barqarorligi va tarbiyaviy yo‘nalishdagi tashabbuslarni tahlil qiladi.",
+            "employeeId": "XIU-002",
+            "email": "advisor.students@xiuni.uz",
+            "reception": "Seshanba, 14:00 - 16:00",
+            "accent": {
+              "from": "#fff7ed",
+              "to": "#ffedd5",
+              "ink": "#9a3412"
+            },
+            "tabs": [
+              {
+                "id": "biografiya",
+                "label": "Biografiya",
+                "paragraphs": [
+                  "Avazov Xushnud Xolmuratovich talabalar orasida sog‘lom ijtimoiy va ma'naviy muhitni shakllantirishga doir tashabbuslarni rektorat darajasida muvofiqlashtiradi.",
+                  "Uning faoliyati ichki profilaktika, kommunikatsiya sifati va talabalar bilan ishlash jarayonlarini tizimli tashkil etishga qaratilgan."
+                ]
+              },
+              {
+                "id": "ilmiy-faoliyat",
+                "label": "Ilmiy va pedagogik faoliyat",
+                "paragraphs": [
+                  "Talabalar bilan ishlashga oid metodik yondashuvlar, ma’naviy-ma’rifiy dasturlar va tarbiyaviy jarayon samaradorligini oshirish bo‘yicha amaliy tavsiyalar tayyorlaydi.",
+                  "Pedagogik jamoa bilan birgalikda talabalarning universitet muhitiga moslashuvi va ijtimoiy faolligini qo‘llab-quvvatlashga xizmat qiluvchi mexanizmlarni ishlab chiqadi."
+                ]
+              },
+              {
+                "id": "loyihalar",
+                "label": "Tadqiqotlar va loyihalar",
+                "paragraphs": [
+                  "Talabalar murojaatlari tahlili, ichki muhit monitoringi va profilaktik faoliyatni kuchaytirish bo‘yicha loyihalarda ishtirok etadi.",
+                  "Universitetdagi ma’naviy muhitni mustahkamlash va jamoaviy madaniyatni rivojlantirishga qaratilgan ichki tashabbuslarni kuzatib boradi."
+                ]
+              },
+              {
+                "id": "qabul",
+                "label": "Qabul va bog‘lanish",
+                "paragraphs": [
+                  "Talabalar bilan bog‘liq masalalarda murojaat yuborishda vaziyat tavsifi va kutilayotgan yechim qisqa va aniq ko‘rsatilishi tavsiya etiladi.",
+                  "Murojaatlar elektron pochta va qabul vaqti doirasida qabul qilinadi."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prorektorlar",
+        "title": "Prorektorlar",
+        "members": [
+          {
+            "slug": "nurjonov-arslonbek-otanazarovich",
+            "name": "Nurjonov Arslonbek Otanazarovich",
+            "degree": "Rektor maslahatchisi",
+            "role": "Strategik rivojlantirish bo‘yicha rektor maslahatchisi",
+            "shortDescription": "Rivojlanish strategiyasi, institutsional o‘sish va boshqaruv samaradorligi bo‘yicha tahliliy takliflar tayyorlaydi.",
+            "employeeId": "XIU-003",
+            "email": "strategy@xiuni.uz",
+            "reception": "Chorshanba, 10:00 - 12:00",
+            "accent": {
+              "from": "#eff6ff",
+              "to": "#bfdbfe",
+              "ink": "#1d4ed8"
+            },
+            "tabs": [
+              {
+                "id": "biografiya",
+                "label": "Biografiya",
+                "paragraphs": [
+                  "Nurjonov Arslonbek Otanazarovich universitetning uzoq muddatli rivojlanish yo‘nalishlari, ichki samaradorlik ko‘rsatkichlari va boshqaruv jarayonlarini takomillashtirish bo‘yicha maslahat beradi.",
+                  "U strategik tashabbuslarni amaliy jarayonlar bilan bog‘lash, natijadorlik indikatorlarini kuzatish va yangi o‘sish imkoniyatlarini aniqlash bilan shug‘ullanadi."
+                ]
+              },
+              {
+                "id": "ilmiy-faoliyat",
+                "label": "Ilmiy va pedagogik faoliyat",
+                "paragraphs": [
+                  "Ta’lim boshqaruvi, rivojlanish rejalashtiruvi va ichki sifat tizimini mustahkamlashga qaratilgan tashkiliy yechimlar ustida ishlaydi.",
+                  "Akademik bo‘linmalar bilan hamkorlikda o‘quv muhitini yaxshilash va boshqaruv qarorlarini ma’lumotlarga tayangan holda shakllantirishga e’tibor qaratadi."
+                ]
+              },
+              {
+                "id": "loyihalar",
+                "label": "Tadqiqotlar va loyihalar",
+                "paragraphs": [
+                  "Strategik xarita, samaradorlik indikatorlari va bo‘limlar kesimidagi monitoring mexanizmlarini yaratish bo‘yicha loyihalarda ishtirok etadi.",
+                  "Raqamlashtirish, ichki integratsiya va jarayonlarni soddalashtirishga xizmat qiluvchi yechimlarni ishlab chiqishga ko‘maklashadi."
+                ]
+              },
+              {
+                "id": "qabul",
+                "label": "Qabul va bog‘lanish",
+                "paragraphs": [
+                  "Strategiya, rivojlanish yoki ichki jarayonlar bo‘yicha murojaatlarda masala doirasi, kutilayotgan natija va mavjud holatni qisqacha ko‘rsatish tavsiya etiladi.",
+                  "Oldindan yozilish orqali uchrashuv va maslahat shakli belgilanadi."
+                ]
+              }
+            ]
+          },
+          {
+            "slug": "rejapov-izzatbek-olimbayevich",
+            "name": "Rejapov Izzatbek Olimbayevich",
+            "degree": "Falsafa doktori (PhD), dotsent",
+            "role": "Xalqaro hamkorlik bo‘yicha prorektor",
+            "shortDescription": "Xalqaro sherikliklar, akademik almashinuv va tashqi aloqalar portfelini rivojlantiradi.",
+            "employeeId": "XIU-004",
+            "email": "international@xiuni.uz",
+            "reception": "Chorshanba, 14:00 - 16:00",
+            "accent": {
+              "from": "#eef2ff",
+              "to": "#c7d2fe",
+              "ink": "#3730a3"
+            },
+            "tabs": [
+              {
+                "id": "biografiya",
+                "label": "Biografiya",
+                "paragraphs": [
+                  "Rejapov Izzatbek Olimbayevich universitetning xalqaro ochiqligi, hamkorlik loyihalari va tashqi akademik aloqalarini rivojlantirishga mas’ul rahbarlardan biri hisoblanadi.",
+                  "U xorijiy hamkorlar bilan aloqa, memorandumlar, qo‘shma tashabbuslar va akademik mobilitet masalalarini boshqaradi."
+                ]
+              },
+              {
+                "id": "ilmiy-faoliyat",
+                "label": "Ilmiy va pedagogik faoliyat",
+                "paragraphs": [
+                  "Xalqaro standartlar, o‘quv hamkorliklari va professor-o‘qituvchilar almashinuvi asosida ta’lim jarayoniga yangi tajribalarni olib kirishga e’tibor qaratadi.",
+                  "Xorijiy ta’lim muassasalari bilan o‘zaro tajriba almashinuvi va qo‘shma dasturlarni muvofiqlashtiradi."
+                ]
+              },
+              {
+                "id": "loyihalar",
+                "label": "Tadqiqotlar va loyihalar",
+                "paragraphs": [
+                  "Hamkor universitetlar bilan qo‘shma dasturlar, konferensiyalar va delegatsion uchrashuvlar doirasidagi tashabbuslarni olib boradi.",
+                  "Universitetning xalqaro reytinglar, akademik ko‘rinish va institutsional hamkorlik salohiyatini oshirishga qaratilgan yo‘nalishlarda ishlaydi."
+                ]
+              },
+              {
+                "id": "qabul",
+                "label": "Qabul va bog‘lanish",
+                "paragraphs": [
+                  "Xalqaro hamkorlik bo‘yicha murojaatlarda hamkor tashkilot nomi, taklif turi va kutilayotgan format ko‘rsatilishi maqsadga muvofiq.",
+                  "Elektron pochta orqali oldindan yuborilgan qisqa konsepsiya ko‘rib chiqish jarayonini tezlashtiradi."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "listingPages": {
+    "news": {
+      "aria": "Barcha yangiliklar",
+      "title": "Barcha yangiliklar",
+      "description": "Universitet hayoti, kampus voqealari va akademik tashabbuslar bo‘yicha eng so‘nggi yangiliklar shu sahifada jamlandi.",
+      "chip": "So‘nggi yangiliklar",
+      "cardTitle": "Universitet yangiliklari bir joyda",
+      "cardText": "Qabul, ta’lim jarayoni va muhim tashabbuslar bo‘yicha ma’lumotlar."
+    },
+    "announcements": {
+      "aria": "Barcha e'lonlar",
+      "title": "Barcha e’lonlar",
+      "description": "Universitet faoliyati, hamkorlik va muhim tashkiliy yangilanishlarga oid dolzarb e’lonlar shu sahifada jamlandi.",
+      "miniCard": "Rasmiy e’lonlar",
+      "sideTitle": "Muhim ma’lumotlar",
+      "sideText": "Qabul, uchrashuvlar va tashkiliy jarayonlar bo‘yicha e’lonlarni kuzatib boring."
+    },
+    "newsItems": [
+      {
+        "id": "news-page-01",
+        "title": "Xorazm Iqtisodiyot Universiteti tez kunda o‘z faoliyatini boshlaydi",
+        "excerpt": "Xorazm Iqtisodiyot Universiteti iqtisodiyot, biznes, marketing va boshqaruv yo‘nalishlarida zamonaviy ta’lim berishga yo‘naltirilgan yangi oliy ta’lim muassasasi sifatida o‘z faoliyatini boshlashga tayyorgarlik ko‘rmoqda.",
+        "department": "Matbuot xizmati",
+        "date": "2026-06-08",
+        "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993457/news1_hyespo.jpg",
+        "content": [
+          "Xorazm Iqtisodiyot Universiteti tez kunda o‘z faoliyatini boshlashi kutilmoqda. Universitetning asosiy maqsadi yoshlar uchun iqtisodiyot, biznes, marketing, menejment va zamonaviy kasbiy yo‘nalishlar bo‘yicha sifatli ta’lim muhitini yaratishdir.",
+          "Universitetda nazariy bilimlarni amaliy ko‘nikmalar bilan birlashtiruvchi zamonaviy o‘quv jarayonlari, qulay ta’lim sharoitlari va talabalar rivojlanishiga xizmat qiluvchi imkoniyatlar bosqichma-bosqich yo‘lga qo‘yiladi."
+        ]
+      },
+      {
+        "id": "news-page-02",
+        "title": "2026/2027 o‘quv yili uchun qabul jarayonlari boshlandi",
+        "excerpt": "XIUda 2026/2027 o‘quv yili uchun qabul jarayonlarini tashkil etish bo‘yicha tayyorgarlik ishlari olib borilmoqda. Abituriyentlar uchun kerakli ma’lumotlar bosqichma-bosqich e’lon qilinadi.",
+        "department": "Qabul komissiyasi",
+        "date": "2026-06-06",
+        "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993444/news2_cmwhfq.png",
+        "content": [
+          "Xorazm Iqtisodiyot Universitetida 2026/2027 o‘quv yili uchun qabul jarayonlari boshlandi. Universitet abituriyentlar uchun hujjat topshirish, ta’lim yo‘nalishlari, qabul talablari va maslahat xizmatlarini qulay shaklda tashkil etmoqda.",
+          "Qabul davomida abituriyentlar yo‘nalishlar, o‘qish imkoniyatlari va hujjat topshirish tartibi haqida batafsil ma’lumot olishlari mumkin bo‘ladi. Jarayon ochiq, tushunarli va qulay shaklda olib boriladi."
+        ]
+      }
+    ],
+    "announcementItems": [
+      {
+        "id": "announcement-page-01",
+        "title": "Xorazm Iqtisodiyot Universiteti tez kunda o‘z faoliyatini boshlaydi",
+        "summary": "Xorazm Iqtisodiyot Universiteti iqtisodiyot, biznes, marketing va boshqaruv yo‘nalishlarida zamonaviy ta’lim berishga yo‘naltirilgan yangi oliy ta’lim muassasasi sifatida o‘z faoliyatini boshlashga tayyorgarlik ko‘rmoqda.",
+        "department": "Matbuot xizmati",
+        "date": "2026-06-08",
+        "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993457/news1_hyespo.jpg",
+        "content": [
+          "Universitetning ishga tushishi bilan talabalarga zamonaviy auditoriyalar, amaliy mashg‘ulotlar va real loyiha formatidagi ta’lim taklif etiladi.",
+          "Rasmiy ochilish va dasturlar bo‘yicha qo‘shimcha ma’lumotlar universitetning axborot kanallarida e’lon qilinadi."
+        ]
+      },
+      {
+        "id": "announcement-page-02",
+        "title": "Malakali kadrlarni hamkorlikka taklif qilamiz",
+        "summary": "Xorazm Iqtisodiyot Universiteti o‘z faoliyatini boshlashga tayyorgarlik jarayonida ta’lim, boshqaruv va tashkiliy yo‘nalishlarda malakali, mas’uliyatli hamda tashabbuskor kadrlarni hamkorlikka taklif qiladi.",
+        "department": "Kadrlar va rivojlanish bo‘limi",
+        "date": "2026-06-07",
+        "image": "https://res.cloudinary.com/dz5h75un2/image/upload/v1780993448/news5_yy9dpq.png",
+        "content": [
+          "Universitet o‘z sohasida tajribaga ega, yangilikka ochiq va jamoa bilan ishlay oladigan mutaxassislar uchun yangi imkoniyatlar maydonini yaratmoqda.",
+          "Batafsil ma’lumotlar va murojaat tartibi rasmiy axborot sahifalari orqali e’lon qilinadi."
+        ]
+      }
+    ]
+  },
+  "admissionPage": {
+    "aria": "Online ariza sahifasi",
+    "backHome": "Bosh sahifaga qaytish",
+    "onlineApplication": "Online ariza",
+    "sidebarTitle": "Qabulga bir necha qadamda ariza yuboring",
+    "sidebarText": "Xorazm Iqtisodiyot Universitetiga ro‘yxatdan o‘tish jarayoni soddalashtirilgan. Ariza yuboring va operator bilan bog‘lanishni kuting.",
+    "stepsAria": "Ariza bosqichlari",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Telefon raqamini kiriting",
+        "text": "Ariza jarayonini boshlash uchun asosiy raqamingizni tasdiqlang."
+      },
+      {
+        "number": "02",
+        "title": "Shaxsiy ma’lumotlarni to‘ldiring",
+        "text": "O‘zingizga mos ta’lim parametrlari va yo‘nalishni tanlang."
+      },
+      {
+        "number": "03",
+        "title": "Ariza holatini kuzating",
+        "text": "Ma’lumotlar saqlanadi va operator siz bilan bog‘lanadi."
+      }
+    ],
+    "sideNote": "Ma’lumotlaringiz faqat qabul bo‘limi tomonidan ko‘rib chiqiladi.",
+    "stepOne": {
+      "title": "Telefon raqamingiz",
+      "text": "Ariza jarayonini boshlash uchun asosiy aloqa raqamingizni kiriting.",
+      "phoneLabel": "Telefon raqam",
+      "continue": "Davom etish"
+    },
+    "stepTwo": {
+      "title": "Shaxsiy ma’lumotlar",
+      "text": "Ma’lumotlarni to‘ldirib, o‘zingizga mos ta’lim yo‘nalishini tanlang.",
+      "primaryPhone": "Asosiy raqamingiz",
+      "edit": "Tahrirlash",
+      "name": "Ism",
+      "surname": "Familiya",
+      "extraPhone": "Qo‘shimcha telefon raqam",
+      "educationTitle": "Ta’lim parametrlari",
+      "educationText": "Kerakli o‘qish turi, shakli, tili va yo‘nalishni shu blokda tanlang.",
+      "educationType": "Ta’lim turi",
+      "educationForm": "Ta’lim shakli",
+      "educationLanguage": "Ta’lim tili",
+      "direction": "Ta’lim yo‘nalishi",
+      "select": "Tanlang",
+      "selectDirection": "Yo‘nalishni tanlang",
+      "back": "Orqaga",
+      "submit": "Tasdiqlash",
+      "submitting": "Yuborilmoqda..."
+    },
+    "stepThree": {
+      "title": "Arizangiz qabul qilindi",
+      "text": "Tez orada operatorlarimiz siz bilan bog‘lanadi. Ma’lumotlaringiz muvaffaqiyatli saqlandi.",
+      "statusTitle": "Murojaat holati",
+      "statusText": "Ko‘rib chiqilmoqda. Ma’lumotlar qabul bo‘limiga yuborildi.",
+      "finish": "Bosh sahifaga qaytish"
+    },
+    "summary": {
+      "phone": "Telefon raqam",
+      "extraPhone": "Qo‘shimcha telefon",
+      "notEntered": "Kiritilmagan",
+      "fullName": "F.I.Sh",
+      "educationType": "Ta’lim turi",
+      "educationForm": "Ta’lim shakli",
+      "educationLanguage": "Ta’lim tili",
+      "direction": "Ta’lim yo‘nalishi"
+    },
+    "options": {
+      "educationTypes": [
+        "Bakalavr",
+        "Magistratura"
+      ],
+      "educationForms": [
+        "Kunduzgi"
+      ],
+      "educationLanguages": [
+        "O'zbek"
+      ],
+      "directions": [
+        "Iqtisodiyot",
+        "Tarix"
+      ]
+    },
+    "errors": {
+      "phoneRequired": "Telefon raqamni to‘liq kiriting",
+      "nameShort": "Ism kamida 2 ta belgidan iborat bo‘lishi kerak",
+      "surnameShort": "Familiya kamida 2 ta belgidan iborat bo‘lishi kerak",
+      "extraPhoneShort": "Qo‘shimcha raqamni to‘liq kiriting",
+      "educationTypeRequired": "Ta’lim turini tanlang",
+      "educationFormRequired": "Ta’lim shaklini tanlang",
+      "educationLanguageRequired": "Ta’lim tilini tanlang",
+      "directionRequired": "Ta’lim yo‘nalishini tanlang",
+      "submitFailed": "Arizani yuborishda xatolik yuz berdi."
+    }
+  },
+  "messagePage": {
+    "aria": "Xabar yozish sahifasi",
+    "toast": "Xabaringiz qabul qilindi.",
+    "backHome": "Bosh sahifaga qaytish",
+    "badge": "Universitet aloqa markazi",
+    "title": "Savolingizni universitetga yuboring",
+    "description": "Murojaatingiz mas’ul bo‘limga yetkaziladi. Ma’lumotlarni aniq yozsangiz, javob olish jarayoni tezroq bo‘ladi.",
+    "infoItems": [
+      {
+        "title": "Telefon",
+        "text": "Istasangiz raqamingizni qoldirib, tezkor aloqa olishingiz mumkin"
+      },
+      {
+        "title": "Email",
+        "text": "Javobni email orqali ham qabul qilish imkoniyati mavjud"
+      },
+      {
+        "title": "Tezkor ko‘rib chiqish",
+        "text": "Xabar matni aniq bo‘lsa, tegishli bo‘limga yo‘naltirish osonlashadi"
+      }
+    ],
+    "note": "Maslahat: murojaat matnida fakultet, yo‘nalish, guruh yoki kerakli bo‘lim nomini yozib qoldiring.",
+    "formTitle": "Murojaat formasi",
+    "name": "Ism",
+    "phone": "Telefon raqam",
+    "email": "Email",
+    "message": "Xabar matni",
+    "required": "*",
+    "namePlaceholder": "Ismingizni kiriting",
+    "phonePlaceholder": "+998 90 123 45 67",
+    "emailPlaceholder": "you@example.com",
+    "messagePlaceholder": "Yozmoqchi bo‘lgan xabaringizni kiriting",
+    "privacy": "Qoldirilgan ma’lumotlar faqat murojaatingizga javob berish uchun ishlatiladi.",
+    "cancel": "Bekor qilish",
+    "submit": "Yuborish",
+    "sending": "Yuborilmoqda...",
+    "errors": {
+      "nameShort": "Ism kamida 2 ta belgidan iborat bo‘lishi kerak",
+      "phoneShort": "Telefon raqamni to‘liq kiriting",
+      "emailInvalid": "Email manzil noto‘g‘ri kiritilgan",
+      "messageShort": "Xabar matni kamida 10 ta belgidan iborat bo‘lishi kerak",
+      "submitFailed": "Xabarni yuborishda xatolik yuz berdi."
+    }
+  },
+  "contactSection": {
+    "aria": "Biz bilan bog'laning",
+    "mapTitle": "XIU xaritada",
+    "openMap": "Xaritada ochish",
+    "locationLabel": "Bizning manzil",
+    "address": "Oyoq bogʻ MFY, Xiva ko'chasi, 41-uy",
+    "badge": "Aloqa markazi",
+    "title": [
+      "Biz bilan",
+      "bog'laning"
+    ],
+    "description": "Savol, taklif yoki qabul jarayoni bo‘yicha murojaatingiz bo‘lsa, quyidagi aloqa ma’lumotlari orqali biz bilan bog‘lanishingiz mumkin.",
+    "items": [
+      {
+        "id": "phone",
+        "label": "Telefon raqam",
+        "content": "+998999642613",
+        "href": "tel:+998999642613"
+      },
+      {
+        "id": "email",
+        "label": "Email manzil",
+        "content": "xiuniuz@gmail.com",
+        "href": "mailto:xiuniuz@gmail.com"
+      },
+      {
+        "id": "address",
+        "label": "Universitet manzili",
+        "content": "Oyoq bogʻ MFY, Xiva ko'chasi, 41-uy"
+      },
+      {
+        "id": "hours",
+        "label": "Ish vaqti",
+        "content": "Dushanba - Shanba, 09:00 - 18:00"
+      }
+    ],
+    "call": "Qo‘ng‘iroq qilish",
+    "message": "Xabar yozish",
+    "note": "Qabul, hujjatlar, yo‘nalishlar yoki universitet faoliyati bo‘yicha savollaringizga ish vaqtida javob beramiz."
+  },
+  "footer": {
+    "aria": "Footer",
+    "connect": "XIU bilan bog‘lanish",
+    "socialsAria": "Ijtimoiy tarmoqlar",
+    "addressTitle": "Xorazm Iqtisodiyot Universiteti",
+    "addressLines": [
+      "Oyoq bogʻ MFY, Xiva ko'chasi, 41-uy",
+      "Xorazm viloyati, 700000",
+      "O'zbekiston"
+    ],
+    "note": "XIU zamonaviy ta'lim, xalqaro hamkorlik va amaliy ilmiy faoliyatni birlashtirgan xususiy universitet sifatida faoliyat yuritadi.",
+    "navAria": "Footer navigatsiya",
+    "columns": [
+      {
+        "title": "Ta'lim",
+        "links": [
+          "Bakalavr yo'nalishlari",
+          "Magistratura dasturlari",
+          "Qabul talablari",
+          "Onlayn ariza topshirish",
+          "Stipendiya imkoniyatlari",
+          "Xalqaro dasturlar",
+          "Qisqa kurslar",
+          "Akademik taqvim"
+        ]
+      },
+      {
+        "title": "Tadqiqot",
+        "links": [
+          "Ilmiy markazlar",
+          "Professor-o‘qituvchilar",
+          "Konferensiyalar",
+          "Ilmiy jurnallar",
+          "Hamkorlik loyihalari",
+          "Innovatsiya laboratoriyasi",
+          "Ekspertlar bazasi"
+        ]
+      },
+      {
+        "title": "Talabalar hayoti",
+        "links": [
+          "Talabalar turar joyi",
+          "Kampus hayoti",
+          "Klublar va jamiyatlar",
+          "Karyera markazi",
+          "Kutubxona",
+          "Ko‘ngillilar dasturi",
+          "Student support",
+          "Tadbirlar kalendari"
+        ]
+      },
+      {
+        "title": "Qo'shimcha",
+        "links": [
+          "Universitet haqida",
+          "Yangiliklar va e'lonlar",
+          "Media markaz",
+          "Bo'sh ish o'rinlari",
+          "Kampus xaritasi",
+          "Bog'lanish",
+          "Maxfiylik siyosati",
+          "Foydalanish shartlari"
+        ]
+      }
+    ]
+  }
+}

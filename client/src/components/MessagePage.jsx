@@ -1,6 +1,7 @@
 import { CheckCircle2, Mail, MessageSquareText, Phone, ShieldCheck, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { postJson } from '../lib/api'
+import { useSiteContent } from '../i18n/useSiteContent'
 
 const INITIAL_FORM = {
   name: '',
@@ -10,6 +11,8 @@ const INITIAL_FORM = {
 }
 
 function MessagePage() {
+  const { content } = useSiteContent()
+  const pageContent = content.messagePage
   const [formData, setFormData] = useState(INITIAL_FORM)
   const [errors, setErrors] = useState({})
   const [showToast, setShowToast] = useState(false)
@@ -55,19 +58,19 @@ function MessagePage() {
     const nextErrors = {}
 
     if (formData.name.trim().length < 2) {
-      nextErrors.name = 'Ism kamida 2 ta belgidan iborat bo‘lishi kerak'
+      nextErrors.name = pageContent.errors.nameShort
     }
 
     if (formData.phone.trim() && formData.phone.replace(/\D/g, '').length < 12) {
-      nextErrors.phone = 'Telefon raqamni to‘liq kiriting'
+      nextErrors.phone = pageContent.errors.phoneShort
     }
 
     if (formData.email.trim() && !validateEmail(formData.email.trim())) {
-      nextErrors.email = 'Email manzil noto‘g‘ri kiritilgan'
+      nextErrors.email = pageContent.errors.emailInvalid
     }
 
     if (formData.message.trim().length < 10) {
-      nextErrors.message = 'Xabar matni kamida 10 ta belgidan iborat bo‘lishi kerak'
+      nextErrors.message = pageContent.errors.messageShort
     }
 
     setErrors(nextErrors)
@@ -105,7 +108,7 @@ function MessagePage() {
       setFormData(INITIAL_FORM)
       setErrors({})
     } catch (error) {
-      setApiError(error.message || "Xabarni yuborishda xatolik yuz berdi.")
+      setApiError(error.message || pageContent.errors.submitFailed)
       if (error.errors) {
         setErrors(error.errors)
       }
@@ -115,15 +118,15 @@ function MessagePage() {
   }
 
   return (
-    <section className="message-page" aria-label="Xabar yozish sahifasi">
+    <section className="message-page" aria-label={pageContent.aria}>
       <div className="message-page-shell">
         <div className={`message-toast ${showToast ? 'message-toast-show' : ''}`} role="status" aria-live="polite">
           <CheckCircle2 size={18} />
-          <span>Xabaringiz qabul qilindi.</span>
+          <span>{pageContent.toast}</span>
         </div>
 
         <div className="message-card">
-          <a href="/" className="message-close-btn" aria-label="Bosh sahifaga qaytish">
+          <a href="/" className="message-close-btn" aria-label={pageContent.backHome}>
             <X size={20} />
           </a>
 
@@ -131,14 +134,11 @@ function MessagePage() {
             <div>
               <div className="message-badge">
                 <MessageSquareText size={17} />
-                Universitet aloqa markazi
+                {pageContent.badge}
               </div>
 
-              <h1>Savolingizni universitetga yuboring</h1>
-              <p>
-                Murojaatingiz mas’ul bo‘limga yetkaziladi. Ma’lumotlarni aniq yozsangiz, javob olish
-                jarayoni tezroq bo‘ladi.
-              </p>
+              <h1>{pageContent.title}</h1>
+              <p>{pageContent.description}</p>
 
               <div className="message-info-list">
                 <div className="message-info-item">
@@ -146,8 +146,8 @@ function MessagePage() {
                     <Phone size={21} />
                   </div>
                   <div>
-                    <strong>Telefon</strong>
-                    <span>Istasangiz raqamingizni qoldirib, tezkor aloqa olishingiz mumkin</span>
+                    <strong>{pageContent.infoItems[0].title}</strong>
+                    <span>{pageContent.infoItems[0].text}</span>
                   </div>
                 </div>
 
@@ -156,8 +156,8 @@ function MessagePage() {
                     <Mail size={21} />
                   </div>
                   <div>
-                    <strong>Email</strong>
-                    <span>Javobni email orqali ham qabul qilish imkoniyati mavjud</span>
+                    <strong>{pageContent.infoItems[1].title}</strong>
+                    <span>{pageContent.infoItems[1].text}</span>
                   </div>
                 </div>
 
@@ -166,35 +166,32 @@ function MessagePage() {
                     <ShieldCheck size={21} />
                   </div>
                   <div>
-                    <strong>Tezkor ko‘rib chiqish</strong>
-                    <span>Xabar matni aniq bo‘lsa, tegishli bo‘limga yo‘naltirish osonlashadi</span>
+                    <strong>{pageContent.infoItems[2].title}</strong>
+                    <span>{pageContent.infoItems[2].text}</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="message-mini-note">
-              Maslahat: murojaat matnida fakultet, yo‘nalish, guruh yoki kerakli bo‘lim nomini yozib
-              qoldiring.
-            </div>
+            <div className="message-mini-note">{pageContent.note}</div>
           </aside>
 
           <main className="message-form-side">
             <div className="message-form-header">
-              <div className="message-eyebrow">Murojaat formasi</div>
+              <div className="message-eyebrow">{pageContent.formTitle}</div>
             </div>
 
             <form onSubmit={handleSubmit}>
               <div className="message-form-grid">
                 <div className={`message-field ${errors.name ? 'message-field-error' : ''}`}>
                   <label htmlFor="message-name">
-                    Ism <span className="message-required">*</span>
+                    {pageContent.name} <span className="message-required">{pageContent.required}</span>
                   </label>
                   <div className="message-input-wrap">
                     <input
                       id="message-name"
                       type="text"
-                      placeholder="Ismingizni kiriting"
+                      placeholder={pageContent.namePlaceholder}
                       value={formData.name}
                       onChange={(event) => handleChange('name', event.target.value)}
                     />
@@ -203,12 +200,12 @@ function MessagePage() {
                 </div>
 
                 <div className={`message-field ${errors.phone ? 'message-field-error' : ''}`}>
-                  <label htmlFor="message-phone">Telefon raqam</label>
+                  <label htmlFor="message-phone">{pageContent.phone}</label>
                   <div className="message-input-wrap">
                     <input
                       id="message-phone"
                       type="tel"
-                      placeholder="+998 90 123 45 67"
+                      placeholder={pageContent.phonePlaceholder}
                       value={formData.phone}
                       onChange={(event) => handleChange('phone', event.target.value)}
                     />
@@ -217,12 +214,12 @@ function MessagePage() {
                 </div>
 
                 <div className={`message-field message-field-full ${errors.email ? 'message-field-error' : ''}`}>
-                  <label htmlFor="message-email">Email</label>
+                  <label htmlFor="message-email">{pageContent.email}</label>
                   <div className="message-input-wrap">
                     <input
                       id="message-email"
                       type="email"
-                      placeholder="you@example.com"
+                      placeholder={pageContent.emailPlaceholder}
                       value={formData.email}
                       onChange={(event) => handleChange('email', event.target.value)}
                     />
@@ -232,12 +229,12 @@ function MessagePage() {
 
                 <div className={`message-field message-field-full ${errors.message ? 'message-field-error' : ''}`}>
                   <label htmlFor="message-body">
-                    Xabar matni <span className="message-required">*</span>
+                    {pageContent.message} <span className="message-required">{pageContent.required}</span>
                   </label>
                   <div className="message-input-wrap">
                     <textarea
                       id="message-body"
-                      placeholder="Yozmoqchi bo‘lgan xabaringizni kiriting"
+                      placeholder={pageContent.messagePlaceholder}
                       value={formData.message}
                       onChange={(event) => handleChange('message', event.target.value)}
                     />
@@ -252,16 +249,16 @@ function MessagePage() {
               <div className="message-form-footer">
                 <div className="message-privacy">
                   <ShieldCheck size={18} />
-                  <span>Qoldirilgan ma’lumotlar faqat murojaatingizga javob berish uchun ishlatiladi.</span>
+                  <span>{pageContent.privacy}</span>
                 </div>
 
                 <div className="message-actions">
                   <a href="/" className="message-btn message-btn-secondary">
-                    Bekor qilish
+                    {pageContent.cancel}
                   </a>
                   <button type="submit" className="message-btn message-btn-primary" disabled={isSubmitting}>
                     <MessageSquareText size={18} />
-                    {isSubmitting ? 'Yuborilmoqda...' : 'Xabarni yuborish'}
+                    {isSubmitting ? pageContent.sending : pageContent.submit}
                   </button>
                 </div>
               </div>

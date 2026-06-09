@@ -7256,7 +7256,7 @@ a {
 .spotlight-section {
   position: relative;
   min-height: 92svh;
-  background: url('/hero/hero2.jpg') center / cover no-repeat;
+  background: url('https://res.cloudinary.com/dz5h75un2/image/upload/v1780993534/hero2_fbqst2.jpg') center / cover no-repeat;
   overflow: hidden;
 }
 

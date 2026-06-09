@@ -1,4 +1,6 @@
 import { ArrowRight } from 'lucide-react'
+import { useSiteContent } from '../i18n/useSiteContent'
+import { CLOUDINARY_ASSETS } from '../lib/assets'
 
 const SOCIALS = [
   { label: 'Facebook', href: 'https://facebook.com', icon: 'https://cdn.simpleicons.org/facebook/ffffff' },
@@ -62,16 +64,19 @@ const FOOTER_COLUMNS = [
 ]
 
 function FooterSection() {
+  const { content } = useSiteContent()
+  const footerContent = content.footer
+
   return (
-    <footer id="contact" className="footer-section" aria-label="Footer">
+    <footer id="contact" className="footer-section" aria-label={footerContent.aria}>
       <div className="footer-shell">
         <div className="footer-meta-row">
           <a href="#contact-section" className="footer-connect-link">
-            Connect with XIU
+            {footerContent.connect}
             <ArrowRight size={23} />
           </a>
 
-          <div className="footer-socials" aria-label="Ijtimoiy tarmoqlar">
+          <div className="footer-socials" aria-label={footerContent.socialsAria}>
             {SOCIALS.map((social) => (
               <a
                 key={social.label}
@@ -96,31 +101,28 @@ function FooterSection() {
         <div className="footer-main">
           <div className="footer-brand">
             <a href="#" className="logo-lockup footer-logo-lockup" aria-label="XIU logotipi">
-              <img src="/logo.png" alt="XIU" className="logo-image footer-logo-image" loading="lazy" />
+              <img src={CLOUDINARY_ASSETS.logo} alt="XIU" className="logo-image footer-logo-image" loading="lazy" />
               <span className="logo-title footer-logo-title">
-                <span>Xorazm</span>
-                <span>Iqtisodiyot Universiteti</span>
+                <span>{content.app.brand[0]}</span>
+                <span>{content.app.brand[1]}</span>
               </span>
             </a>
 
             <div className="footer-address">
-              <p className="footer-address-strong">Xorazm Iqtisodiyot Universiteti</p>
-              <p>Oyoq bogʻ MFY, Xiva ko'chasi , 41-uy</p>
-              <p>Xorazm viloyati, 700000</p>
-              <p>O'zbekiston</p>
+              <p className="footer-address-strong">{footerContent.addressTitle}</p>
+              {footerContent.addressLines.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
               <a href="tel:+998999642613">+998999642613</a>
             </div>
 
-            <p className="footer-note">
-              XIU zamonaviy ta'lim, xalqaro hamkorlik va amaliy ilmiy faoliyatni birlashtirgan
-              xususiy universitet sifatida faoliyat yuritadi.
-            </p>
+            <p className="footer-note">{footerContent.note}</p>
 
             <p className="footer-copy">© {new Date().getFullYear()} XIU</p>
           </div>
 
-          <div className="footer-nav-grid" aria-label="Footer navigatsiya">
-            {FOOTER_COLUMNS.map((column) => (
+          <div className="footer-nav-grid" aria-label={footerContent.navAria}>
+            {footerContent.columns.map((column) => (
               <div key={column.title} className="footer-links">
                 <h3 className="footer-block-title">{column.title}</h3>
 

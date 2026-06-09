@@ -1,15 +1,16 @@
 import { AnimatePresence, motion, useMotionTemplate, useScroll, useTransform } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Images, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
+import { CLOUDINARY_ASSETS, resolveAssetUrl } from '../lib/assets'
 
 const GALLERY_IMAGES = [
-  { id: 'g1', src: '/hero/hero1.jpeg', alt: 'Universitet kampusi umumiy ko‘rinish', className: 'gallery-item-a' },
-  { id: 'g2', src: '/hero/hero2.jpg', alt: 'Markaziy bino va hovli', className: 'gallery-item-b' },
-  { id: 'g3', src: '/hero/hero3.jpg', alt: 'Talabalar hayoti lavhasi', className: 'gallery-item-c' },
-  { id: 'g4', src: '/hero/hero2.jpg', alt: 'Ilmiy markaz old qismi', className: 'gallery-item-d' },
-  { id: 'g5', src: '/hero/hero1.jpeg', alt: 'Kampusning yuqoridan ko‘rinishi', className: 'gallery-item-e' },
-  { id: 'g6', src: '/hero/hero3.jpg', alt: 'Auditoriya va ta’lim muhiti', className: 'gallery-item-f' },
-  { id: 'g7', src: '/hero/hero2.jpg', alt: 'Universitet arxitekturasi', className: 'gallery-item-g' },
+  { id: 'g1', src: CLOUDINARY_ASSETS.hero1, alt: 'Universitet kampusi umumiy ko‘rinish', className: 'gallery-item-a' },
+  { id: 'g2', src: CLOUDINARY_ASSETS.hero2, alt: 'Markaziy bino va hovli', className: 'gallery-item-b' },
+  { id: 'g3', src: CLOUDINARY_ASSETS.hero3, alt: 'Talabalar hayoti lavhasi', className: 'gallery-item-c' },
+  { id: 'g4', src: CLOUDINARY_ASSETS.hero2, alt: 'Ilmiy markaz old qismi', className: 'gallery-item-d' },
+  { id: 'g5', src: CLOUDINARY_ASSETS.hero1, alt: 'Kampusning yuqoridan ko‘rinishi', className: 'gallery-item-e' },
+  { id: 'g6', src: CLOUDINARY_ASSETS.hero3, alt: 'Auditoriya va ta’lim muhiti', className: 'gallery-item-f' },
+  { id: 'g7', src: CLOUDINARY_ASSETS.hero2, alt: 'Universitet arxitekturasi', className: 'gallery-item-g' },
 ]
 
 function GallerySection() {
@@ -95,7 +96,7 @@ function GallerySection() {
                 transition={{ duration: 0.52, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
               >
                 <img
-                  src={`${import.meta.env.BASE_URL}${item.src.replace(/^\//, '')}`}
+                  src={item.src}
                   alt={item.alt}
                   className="gallery-image"
                   loading="lazy"
@@ -133,7 +134,7 @@ function GallerySection() {
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             >
               <img
-                src={`${import.meta.env.BASE_URL}${GALLERY_IMAGES[activeIndex].src.replace(/^\//, '')}`}
+                src={resolveAssetUrl(GALLERY_IMAGES[activeIndex].src)}
                 alt={GALLERY_IMAGES[activeIndex].alt}
                 className="gallery-lightbox-image"
               />

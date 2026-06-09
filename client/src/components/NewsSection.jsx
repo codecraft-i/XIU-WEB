@@ -3,20 +3,19 @@ import { ArrowRight, CalendarDays, ChevronLeft, ChevronRight } from 'lucide-reac
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useRef } from 'react'
-import { announcementsPageItems, newsPageItems } from '../data/newsPagesData'
+import { useSiteContent } from '../i18n/useSiteContent'
+import { formatLocalizedDate } from '../i18n/formatters'
+import { resolveAssetUrl } from '../lib/assets'
 import 'swiper/css'
-
-const formatDate = (value) =>
-  new Intl.DateTimeFormat('uz-UZ', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  }).format(new Date(value))
 
 const sortLatest = (items) =>
   [...items].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
 function NewsSection() {
+  const { content, locale } = useSiteContent()
+  const sectionContent = content.home.news
+  const newsPageItems = content.listingPages.newsItems
+  const announcementsPageItems = content.listingPages.announcementItems
   const sectionRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -33,7 +32,7 @@ function NewsSection() {
   const latestAnnouncements = sortLatest(announcementsPageItems).slice(0, 10)
 
   return (
-    <section id="news" ref={sectionRef} className="news-section" aria-label="Yangiliklar va e'lonlar">
+    <section id="news" ref={sectionRef} className="news-section" aria-label={sectionContent.aria}>
       <motion.div
         className="news-shell"
         style={{
@@ -56,11 +55,8 @@ function NewsSection() {
             <div className="news-head">
               <span className="news-kicker" aria-hidden="true" />
               <div className="news-intro">
-                <h2 className="news-title">Universitet hayotidan yangiliklar</h2>
-                <p className="news-lead">
-                  Talabalar, professor-o‘qituvchilar va universitet jamoasi ishtirokidagi
-                  eng so‘nggi voqealar, tashabbuslar va muhim uchrashuvlarni kuzatib boring.
-                </p>
+                <h2 className="news-title">{sectionContent.title}</h2>
+                <p className="news-lead">{sectionContent.lead}</p>
               </div>
             </div>
 
@@ -68,7 +64,7 @@ function NewsSection() {
               {latestNews.map((item) => (
                 <article key={item.id} className="news-card">
                   <img
-                    src={`${import.meta.env.BASE_URL}${item.image.replace(/^\//, '')}`}
+                    src={resolveAssetUrl(item.image)}
                     alt={item.title}
                     className="news-card-image"
                     loading="lazy"
@@ -79,7 +75,7 @@ function NewsSection() {
                     <div className="news-card-meta">
                       <span>
                         <CalendarDays size={15} />
-                        {formatDate(item.date)}
+                        {formatLocalizedDate(item.date, locale)}
                       </span>
                     </div>
                     <a href="/news" className="news-card-link">
@@ -91,7 +87,7 @@ function NewsSection() {
             </div>
 
             <a href="/news" className="news-link-btn news-link-btn-bottom">
-              Barcha yangiliklar
+              {sectionContent.allNews}
               <ArrowRight size={18} />
             </a>
           </motion.div>
@@ -105,23 +101,20 @@ function NewsSection() {
           >
             <div className="announcements-layout">
               <div className="announcements-intro">
-                <span className="announcements-kicker">E'lonlar</span>
-                <h2 className="announcements-title">Muhim e'lonlar va imkoniyatlar</h2>
-                <p className="announcements-description">
-                  Qabul, grant, kurs va almashinuv dasturlariga oid dolzarb e'lonlarni shu
-                  bo‘limda kuzatib boring.
-                </p>
+                <span className="announcements-kicker">{sectionContent.announcementsKicker}</span>
+                <h2 className="announcements-title">{sectionContent.announcementsTitle}</h2>
+                <p className="announcements-description">{sectionContent.announcementsDescription}</p>
 
                 <a href="/announcements" className="announcements-all-link">
-                  Barcha e'lonlar
+                  {sectionContent.allAnnouncements}
                   <ArrowRight size={16} />
                 </a>
 
                 <div className="announcements-nav">
-                  <button type="button" className="announcements-prev" aria-label="Oldingi e'lon">
+                  <button type="button" className="announcements-prev" aria-label={sectionContent.prevAnnouncement}>
                     <ChevronLeft size={18} />
                   </button>
-                  <button type="button" className="announcements-next" aria-label="Keyingi e'lon">
+                  <button type="button" className="announcements-next" aria-label={sectionContent.nextAnnouncement}>
                     <ChevronRight size={18} />
                   </button>
                 </div>
@@ -149,7 +142,7 @@ function NewsSection() {
                       <article className="announcement-card">
                         {item.image && (
                           <img
-                            src={`${import.meta.env.BASE_URL}${item.image.replace(/^\//, '')}`}
+                            src={resolveAssetUrl(item.image)}
                             alt={item.title}
                             className="announcement-card-image"
                             loading="lazy"
@@ -163,11 +156,11 @@ function NewsSection() {
                             <span>{item.department}</span>
                             <span>
                               <CalendarDays size={15} />
-                              {formatDate(item.date)}
+                              {formatLocalizedDate(item.date, locale)}
                             </span>
                           </div>
                           <a href="/announcements" className="announcement-cta">
-                            Batafsil
+                            {sectionContent.details}
                             <ArrowRight size={16} />
                           </a>
                         </div>

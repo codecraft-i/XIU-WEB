@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion'
 import { Briefcase, ChevronDown, FilePenLine, Mail, MapPin, Menu, MessageSquare, Phone, Users } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import MobileMenu from './MobileMenu'
+import { LANGUAGE_META, SUPPORTED_LANGUAGES } from '../i18n/content'
+import { useSiteContent } from '../i18n/useSiteContent'
+import { CLOUDINARY_ASSETS } from '../lib/assets'
 
 function DropdownIcon({ name }) {
   if (name === 'building') {
@@ -326,14 +330,20 @@ const HEMIS_LINKS = [
 ]
 
 function Header() {
+  const { i18n } = useTranslation()
+  const { content, language } = useSiteContent()
+  const headerContent = content.header
   const [isHeaderInteractive, setIsHeaderInteractive] = useState(true)
   const [isAfterHero, setIsAfterHero] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [activeLanguage, setActiveLanguage] = useState('UZ')
   const [isLanguageOpen, setIsLanguageOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
   const languageRef = useRef(null)
   const navListRef = useRef(null)
+  const languages = SUPPORTED_LANGUAGES.map((code) => ({
+    code,
+    ...LANGUAGE_META[code],
+  }))
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY || 0
@@ -384,33 +394,37 @@ function Header() {
     }
   }, [])
 
+  const handleLanguageSelect = (nextLanguage) => {
+    i18n.changeLanguage(nextLanguage)
+  }
+
   const navContent = (
     <nav className="top-nav top-nav-top">
       {!isAfterHero && (
         <div className="top-header-row">
           <div className="top-header-meta">
-            {TOP_CONTACT_ITEMS.map((item) => (
+            {headerContent.topContacts.map((item) => (
               <a key={item.id} href={item.href} className="top-header-meta-link">
-                <item.Icon size={14} />
+                {item.id === 'address' ? <MapPin size={14} /> : item.id === 'phone' ? <Phone size={14} /> : <Mail size={14} />}
                 <span>{item.text}</span>
               </a>
             ))}
             <a href="/send-message" className="top-header-action-link top-header-message-link">
               <MessageSquare size={14} />
-              <span>Xabar yozish</span>
+              <span>{headerContent.messageLink}</span>
             </a>
           </div>
           <div className="top-header-links">
             <div className="top-header-action-dropdown">
               <button type="button" className="top-header-action-link top-header-dropdown-trigger">
                 <HemisIcon />
-                <span>Hemis</span>
+                <span>{headerContent.hemis.label}</span>
                 <ChevronDown size={13} className="top-header-dropdown-chevron" />
               </button>
               <div className="top-header-dropdown-menu">
-                {HEMIS_LINKS.map((item) => (
+                {headerContent.hemis.links.map((item) => (
                   <a key={item.id} href={item.href} className="top-header-dropdown-link">
-                    <item.Icon size={14} />
+                    {item.id === 'hemis-students' ? <Users size={14} /> : <Briefcase size={14} />}
                     <span>{item.label}</span>
                   </a>
                 ))}
@@ -422,41 +436,41 @@ function Header() {
                 className={`lang-toggle-btn ${isLanguageOpen ? 'lang-toggle-btn-open' : ''}`}
                 onClick={() => setIsLanguageOpen((current) => !current)}
                 aria-expanded={isLanguageOpen}
-                aria-label="Tilni tanlash"
+                aria-label={headerContent.languageLabel}
               >
                 <span className="lang-flag-wrap">
                   <img
-                    src={LANGUAGE_FLAGS[activeLanguage]}
+                    src={LANGUAGE_META[language]?.flag}
                     alt=""
                     aria-hidden="true"
                     className="lang-flag"
                     loading="lazy"
                   />
                 </span>
-                <span className="lang-code">{activeLanguage}</span>
+                <span className="lang-code">{LANGUAGE_META[language]?.shortLabel}</span>
                 <ChevronDown size={13} className="nav-chevron language-chevron" />
               </button>
               <div className={`lang-menu ${isLanguageOpen ? 'lang-menu-open' : ''}`}>
-                {LANGUAGES.map((language) => (
+                {languages.map((item) => (
                   <button
-                    key={language}
+                    key={item.code}
                     type="button"
                     onClick={() => {
-                      setActiveLanguage(language)
+                      handleLanguageSelect(item.code)
                       setIsLanguageOpen(false)
                     }}
-                    className={`lang-item ${activeLanguage === language ? 'lang-item-active' : ''}`}
+                    className={`lang-item ${language === item.code ? 'lang-item-active' : ''}`}
                   >
                     <span className="lang-flag-wrap">
                       <img
-                        src={LANGUAGE_FLAGS[language]}
+                        src={item.flag}
                         alt=""
                         aria-hidden="true"
                         className="lang-flag"
                         loading="lazy"
                       />
                     </span>
-                    <span className="lang-code">{language}</span>
+                    <span className="lang-code">{item.shortLabel}</span>
                   </button>
                 ))}
               </div>
@@ -466,16 +480,16 @@ function Header() {
       )}
 
       <div className="main-nav-row">
-        <a href="#" className="logo-lockup">
-          <img src="/logo.png" alt="XIUNI" className="logo-image" loading="eager" />
+        <a href="/" className="logo-lockup">
+          <img src={CLOUDINARY_ASSETS.logo} alt="XIUNI" className="logo-image" loading="eager" />
           <span className="logo-title">
-            <span>Xorazm</span>
-            <span>Iqtisodiyot Universiteti</span>
+            <span>{content.app.brand[0]}</span>
+            <span>{content.app.brand[1]}</span>
           </span>
         </a>
 
         <ul className="nav-list" ref={navListRef}>
-          {NAV_ITEMS.map((item) => (
+          {headerContent.navItems.map((item) => (
             <li
               key={item.label}
               className={`nav-item ${activeDropdown === item.label ? 'nav-item-open' : ''}`}
@@ -509,7 +523,7 @@ function Header() {
 
                   <div
                     className={`nav-dropdown-grid ${
-                      item.label === "Yo'nalishlar" ? 'nav-dropdown-grid-compact' : ''
+                      item.id === 'programs' ? 'nav-dropdown-grid-compact' : ''
                     }`}
                   >
                     {item.submenu.map((link) => (
@@ -517,7 +531,7 @@ function Header() {
                         key={link.label}
                         href={link.href}
                         className={`nav-dropdown-link ${
-                          item.label === "Yo'nalishlar" ? 'nav-dropdown-link-compact' : ''
+                          item.id === 'programs' ? 'nav-dropdown-link-compact' : ''
                         }`}
                       >
                         <div className="nav-dropdown-icon-box">
@@ -540,14 +554,14 @@ function Header() {
         <div className="header-actions">
           <a href="/admission" className="btn-primary header-cta">
             <FilePenLine size={17} />
-            Online Ariza
+            {headerContent.mobileMenu.cta}
           </a>
 
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(true)}
             className="icon-button menu-toggle-btn"
-            aria-label="Menyu ochish"
+            aria-label={headerContent.mobileMenu.title}
           >
             <Menu size={20} />
           </button>
@@ -581,10 +595,11 @@ function Header() {
       <MobileMenu
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
-        navItems={NAV_ITEMS}
-        languages={LANGUAGES}
-        activeLanguage={activeLanguage}
-        onLanguageSelect={setActiveLanguage}
+        navItems={headerContent.navItems}
+        languages={languages}
+        activeLanguage={language}
+        onLanguageSelect={handleLanguageSelect}
+        content={headerContent.mobileMenu}
       />
     </>
   )

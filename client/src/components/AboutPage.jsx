@@ -5,12 +5,8 @@ import {
   Building2,
 } from 'lucide-react'
 import { useEffect } from 'react'
-import {
-  benefits,
-  campusImages,
-  programs,
-  values,
-} from '../data/aboutPageData'
+import { useSiteContent } from '../i18n/useSiteContent'
+import { CLOUDINARY_ASSETS, resolveAssetUrl } from '../lib/assets'
 
 const fadeUp = {
   initial: { opacity: 0, y: 18 },
@@ -35,20 +31,22 @@ function RevealShell({ className, children, motionProps }) {
 }
 
 function AboutPage() {
+  const { content } = useSiteContent()
+  const pageContent = content.aboutPage
+
   useEffect(() => {
-    document.title = 'Universitet haqida | Xorazm Iqtisodiyot Universiteti'
+    document.title = content.app.pageTitles.about
     const meta = document.querySelector('meta[name="description"]')
-    const content =
-      'Xorazm Iqtisodiyot Universiteti haqida: missiya, ta’lim yo‘nalishlari, afzalliklar, qadriyatlar va kampus muhiti.'
+    const metaContent = content.app.meta.about
     if (meta) {
-      meta.setAttribute('content', content)
+      meta.setAttribute('content', metaContent)
     } else {
       const metaTag = document.createElement('meta')
       metaTag.setAttribute('name', 'description')
-      metaTag.setAttribute('content', content)
+      metaTag.setAttribute('content', metaContent)
       document.head.appendChild(metaTag)
     }
-  }, [])
+  }, [content.app.meta.about, content.app.pageTitles.about])
 
   return (
     <main className="about-page about-page-v2">
@@ -80,23 +78,16 @@ function AboutPage() {
                       strokeLinecap="round"
                     />
                   </svg>
-                  Biz haqimizda
+                  {pageContent.introBadge}
                 </span>
 
-                <h1 className="about-title">Xorazm Iqtisodiyot Universiteti</h1>
+                <h1 className="about-title">{pageContent.title}</h1>
 
-                <p className="about-page-intro-text">
-                  Xorazm Iqtisodiyot Universiteti iqtisodiyot, biznes va boshqaruv
-                  yo‘nalishlarida amaliy fikrlaydigan, zamonaviy mutaxassislar
-                  tayyorlashga yo‘naltirilgan oliy ta’lim maskanidir.
-                </p>
-
-                <p className="about-page-intro-text">
-                  Bu yerda nazariy bilimlar real loyihalar, raqamli ko‘nikmalar va
-                  talabaga yo‘naltirilgan muhit bilan uyg‘unlashadi. Maqsadimiz
-                  mehnat bozoriga tayyor, tahliliy va tashabbuskor kadrlarni
-                  shakllantirishdir.
-                </p>
+                {pageContent.intro.map((paragraph) => (
+                  <p key={paragraph} className="about-page-intro-text">
+                    {paragraph}
+                  </p>
+                ))}
 
                 <div className="about-page-intro-features">
                   <article className="about-page-intro-feature">
@@ -118,8 +109,8 @@ function AboutPage() {
                       </svg>
                     </span>
                     <div>
-                      <h3>Amaliy ta’lim</h3>
-                      <p>Real loyiha va biznes holatlariga asoslangan o‘qitish.</p>
+                      <h3>{pageContent.features[0].title}</h3>
+                      <p>{pageContent.features[0].text}</p>
                     </div>
                   </article>
 
@@ -137,19 +128,19 @@ function AboutPage() {
                       </svg>
                     </span>
                     <div>
-                      <h3>Iqtisodiy fikrlash</h3>
-                      <p>Biznes, moliya va boshqaruv ko‘nikmalarini rivojlantirish.</p>
+                      <h3>{pageContent.features[1].title}</h3>
+                      <p>{pageContent.features[1].text}</p>
                     </div>
                   </article>
                 </div>
 
                 <div className="about-page-actions about-page-intro-actions">
                   <a href="#talim-yonalishlari" className="about-page-btn about-page-intro-btn-primary">
-                    Yo‘nalishlarni ko‘rish
+                    {pageContent.primaryCta}
                     <ArrowRight size={18} />
                   </a>
                   <a href="#contact-section" className="about-page-btn about-page-intro-btn-secondary">
-                    Qabul haqida
+                    {pageContent.secondaryCta}
                   </a>
                 </div>
               </motion.article>
@@ -157,8 +148,8 @@ function AboutPage() {
               <motion.div className="about-page-intro-media" {...fadeUp}>
                 <figure className="about-page-intro-image-card">
                   <img
-                    src={`${import.meta.env.BASE_URL}about.jpg`}
-                    alt="Xorazm Iqtisodiyot Universiteti binosi"
+                    src={CLOUDINARY_ASSETS.about}
+                    alt={pageContent.introImageAlt}
                     className="about-page-intro-image"
                     loading="lazy"
                   />
@@ -184,11 +175,8 @@ function AboutPage() {
                   </div>
 
                   <div>
-                    <h3>Zamonaviy universitet muhiti</h3>
-                    <p>
-                      Talabaga qulay, amaliy bilimga yo‘naltirilgan va kelajak
-                      kasblariga mos ta’lim yondashuvi.
-                    </p>
+                    <h3>{pageContent.floatingCard.title}</h3>
+                    <p>{pageContent.floatingCard.text}</p>
                   </div>
                 </article>
               </motion.div>
@@ -198,7 +186,7 @@ function AboutPage() {
           <motion.a
             href="#talim-yonalishlari"
             className="about-page-scroll-btn"
-            aria-label="Keyingi bo‘limga o‘tish"
+            aria-label={pageContent.nextSection}
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.8, ease: 'easeInOut', repeat: Infinity }}
           >
@@ -210,16 +198,13 @@ function AboutPage() {
           <RevealShell className="about-page-shell about-programs-shell">
             <div className="about-programs-header">
               <div className="about-programs-header-content">
-                <span className="about-programs-eyebrow">Ta’lim yo‘nalishlari</span>
-                <h2>Asosiy ta’lim yo‘nalishlari</h2>
-                <p>
-                  Universitet iqtisodiyot, biznes va boshqaruv sohasining eng muhim
-                  yo‘nalishlari bo‘yicha zamonaviy ta’lim dasturlarini taklif etadi.
-                </p>
+                <span className="about-programs-eyebrow">{pageContent.programs.eyebrow}</span>
+                <h2>{pageContent.programs.title}</h2>
+                <p>{pageContent.programs.description}</p>
               </div>
 
               <a href="#" className="about-programs-all-link">
-                Barcha yo‘nalishlar
+                {pageContent.programs.all}
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path
                     d="M5 12H19M13 6L19 12L13 18"
@@ -233,7 +218,7 @@ function AboutPage() {
             </div>
 
             <div className="about-programs-grid">
-              {programs.map((program, index) => (
+              {pageContent.programs.items.map((program, index) => (
                 <motion.a key={program.title} href="#" className="about-program-card" {...fadeUp}>
                   <div className="about-program-card-top">
                     <div className="about-program-icon">{index + 1}</div>
@@ -255,7 +240,7 @@ function AboutPage() {
                   <p>{program.text}</p>
 
                   <div className="about-program-card-bottom">
-                    <span>Batafsil ko‘rish</span>
+                    <span>{pageContent.programs.details}</span>
                   </div>
                 </motion.a>
               ))}
@@ -271,15 +256,12 @@ function AboutPage() {
                   <path d="M12 3L21 8L12 13L3 8L12 3Z" />
                   <path d="M6 10.5V15.5C6 17.2 8.7 19 12 19C15.3 19 18 17.2 18 15.5V10.5" />
                 </svg>
-                Zamonaviy iqtisodiy ta’lim
+                {pageContent.why.badge}
               </span>
 
-              <h2>Nega Xorazm Iqtisodiyot Universiteti?</h2>
+              <h2>{pageContent.why.title}</h2>
 
-              <p>
-                Universitet talabalarni zamonaviy iqtisodiy bilim, amaliy tajriba
-                va kelajak kasblariga tayyorlashga yo‘naltirilgan.
-              </p>
+              <p>{pageContent.why.description}</p>
             </div>
 
             <div className="about-why-layout">
@@ -294,13 +276,13 @@ function AboutPage() {
                   </span>
 
                   <div>
-                    <h3>Universitet afzalliklari</h3>
-                    <span>Amaliy bilim, kuchli muhit va kelajak kasblari uchun tayyorgarlik</span>
+                    <h3>{pageContent.why.cardTitle}</h3>
+                    <span>{pageContent.why.cardSubtitle}</span>
                   </div>
                 </div>
 
                 <div className="about-why-feature-grid">
-                  {benefits.map((item, index) => (
+                  {pageContent.benefits.items.map((item, index) => (
                     <article className="about-why-feature-card" key={item.title}>
                       <div className="about-why-feature-top">
                         <span className="about-why-mini-icon">
@@ -362,13 +344,13 @@ function AboutPage() {
                     </span>
 
                     <div>
-                      <h3>Qadriyatlar</h3>
-                      <span>Universitet madaniyatining asosiy yo‘nalishlari</span>
+                      <h3>{pageContent.why.valuesTitle}</h3>
+                      <span>{pageContent.why.valuesSubtitle}</span>
                     </div>
                   </div>
 
                   <div className="about-why-list">
-                    {values.slice(0, 5).map((item) => (
+                    {pageContent.values.items.slice(0, 5).map((item) => (
                       <article className="about-why-list-item" key={item.title}>
                         <span className="about-why-dot" />
                         <div>
@@ -390,26 +372,13 @@ function AboutPage() {
                     </span>
 
                     <div>
-                      <h3>Xalqaro hamkorlik</h3>
-                      <span>Global fikrlash va xalqaro tajriba</span>
+                      <h3>{pageContent.why.internationalTitle}</h3>
+                      <span>{pageContent.why.internationalSubtitle}</span>
                     </div>
                   </div>
 
                   <div className="about-why-list">
-                    {[
-                      {
-                        title: 'Xalqaro standartlar',
-                        text: 'Ta’limda global akademik mezonlar va zamonaviy dasturlar asos qilib olinadi.',
-                      },
-                      {
-                        title: 'Hamkorlik dasturlari',
-                        text: 'Xorijiy OTMlar va biznes hamjamiyatlari bilan aloqalar rivojlantiriladi.',
-                      },
-                      {
-                        title: 'Global mehnat bozori',
-                        text: 'Bitiruvchilar xalqaro bozor talablari darajasida fikrlash va ishlashga tayyorlanadi.',
-                      },
-                    ].map((item) => (
+                    {pageContent.why.internationalItems.map((item) => (
                       <article className="about-why-list-item" key={item.title}>
                         <span className="about-why-dot" />
                         <div>
@@ -425,31 +394,24 @@ function AboutPage() {
 
             <motion.div className="about-why-bottom" {...fadeUp}>
               <div>
-                <h3>Bilimdan amaliy natijaga</h3>
-                <p>
-                  Xorazm Iqtisodiyot Universiteti talabalarga faqat nazariy bilim
-                  emas, balki real hayotda qo‘llanadigan iqtisodiy, biznes va
-                  boshqaruv ko‘nikmalarini ham beradi.
-                </p>
+                <h3>{pageContent.why.bottomTitle}</h3>
+                <p>{pageContent.why.bottomText}</p>
               </div>
 
-              <span>XIU · Future Ready</span>
+              <span>{pageContent.why.bottomTag}</span>
             </motion.div>
           </RevealShell>
         </section>
 
             <section className="about-page-section" id="kampus-muhiti">
               <RevealShell className="about-page-shell">
-                <h2 className="about-page-h2">Kampus va o‘quv muhiti</h2>
-                <p className="about-page-p">
-                  Auditoriyalar, kutubxona, seminar maydonlari va amaliy mashg‘ulot zonalari zamonaviy ta’lim talablariga mos
-                  tashkil etilgan.
-                </p>
+                <h2 className="about-page-h2">{pageContent.campus.title}</h2>
+                <p className="about-page-p">{pageContent.campus.description}</p>
                 <div className="about-page-grid-4">
-                  {campusImages.map((item, idx) => (
+                  {pageContent.gallery.images.map((item, idx) => (
                     <motion.figure key={item.alt} className="about-page-cp-item" {...fadeUp}>
                       {item.image ? (
-                        <img src={`${import.meta.env.BASE_URL}${item.image}`} alt={item.alt} loading="lazy" />
+                        <img src={resolveAssetUrl(item.image)} alt={item.alt} loading="lazy" />
                       ) : (
                         <CampusPlaceholder title={item.alt} />
                       )}

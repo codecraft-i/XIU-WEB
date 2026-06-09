@@ -12,6 +12,8 @@ import {
 } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { postJson } from '../lib/api'
+import { useSiteContent } from '../i18n/useSiteContent'
+import { CLOUDINARY_ASSETS } from '../lib/assets'
 
 const INITIAL_FORM = {
   phone: '',
@@ -23,29 +25,6 @@ const INITIAL_FORM = {
   educationLanguage: '',
   direction: '',
 }
-
-const EDUCATION_TYPES = ['Bakalavr', 'Magistratura']
-const EDUCATION_FORMS = ['Kunduzgi']
-const EDUCATION_LANGUAGES = ["O'zbek"]
-const DIRECTIONS = ['Iqtisodiyot', 'Tarix']
-
-const STEP_ITEMS = [
-  {
-    number: '01',
-    title: 'Telefon raqamini kiriting',
-    text: 'Ariza jarayonini boshlash uchun asosiy raqamingizni tasdiqlang.',
-  },
-  {
-    number: '02',
-    title: 'Shaxsiy ma’lumotlarni to‘ldiring',
-    text: 'O‘zingizga mos ta’lim parametrlari va yo‘nalishni tanlang.',
-  },
-  {
-    number: '03',
-    title: 'Ariza holatini kuzating',
-    text: 'Ma’lumotlar saqlanadi va operator siz bilan bog‘lanadi.',
-  },
-]
 
 function formatUzPhone(value) {
   let digits = value.replace(/\D/g, '')
@@ -71,6 +50,8 @@ function formatUzPhoneFull(value) {
 }
 
 function AdmissionPage() {
+  const { content } = useSiteContent()
+  const pageContent = content.admissionPage
   const [step, setStep] = useState(1)
   const [formData, setFormData] = useState(INITIAL_FORM)
   const [errors, setErrors] = useState({})
@@ -78,23 +59,23 @@ function AdmissionPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
-    document.title = 'Online Ariza | Xorazm Iqtisodiyot Universiteti'
-  }, [])
+    document.title = content.app.pageTitles.admission
+  }, [content.app.pageTitles.admission])
 
   const summaryRows = useMemo(
     () => [
-      { label: 'Telefon raqam', value: formatUzPhoneFull(formData.phone) },
+      { label: pageContent.summary.phone, value: formatUzPhoneFull(formData.phone) },
       {
-        label: 'Qo‘shimcha telefon',
-        value: formData.extraPhone ? formatUzPhoneFull(formData.extraPhone) : 'Kiritilmagan',
+        label: pageContent.summary.extraPhone,
+        value: formData.extraPhone ? formatUzPhoneFull(formData.extraPhone) : pageContent.summary.notEntered,
       },
-      { label: 'F.I.Sh', value: `${formData.name} ${formData.surname}`.trim() },
-      { label: 'Ta’lim turi', value: formData.educationType },
-      { label: 'Ta’lim shakli', value: formData.educationForm },
-      { label: 'Ta’lim tili', value: formData.educationLanguage },
-      { label: 'Ta’lim yo‘nalishi', value: formData.direction },
+      { label: pageContent.summary.fullName, value: `${formData.name} ${formData.surname}`.trim() },
+      { label: pageContent.summary.educationType, value: formData.educationType },
+      { label: pageContent.summary.educationForm, value: formData.educationForm },
+      { label: pageContent.summary.educationLanguage, value: formData.educationLanguage },
+      { label: pageContent.summary.direction, value: formData.direction },
     ],
-    [formData],
+    [formData, pageContent.summary],
   )
 
   const handleChange = (field, value) => {
@@ -116,7 +97,7 @@ function AdmissionPage() {
     const nextErrors = {}
 
     if (formData.phone.replace(/\D/g, '').length < 9) {
-      nextErrors.phone = 'Telefon raqamni to‘liq kiriting'
+      nextErrors.phone = pageContent.errors.phoneRequired
     }
 
     setErrors(nextErrors)
@@ -126,17 +107,17 @@ function AdmissionPage() {
   const validateStepTwo = () => {
     const nextErrors = {}
 
-    if (formData.name.trim().length < 2) nextErrors.name = 'Ism kamida 2 ta belgidan iborat bo‘lishi kerak'
-    if (formData.surname.trim().length < 2) nextErrors.surname = 'Familiya kamida 2 ta belgidan iborat bo‘lishi kerak'
+    if (formData.name.trim().length < 2) nextErrors.name = pageContent.errors.nameShort
+    if (formData.surname.trim().length < 2) nextErrors.surname = pageContent.errors.surnameShort
 
     if (formData.extraPhone.trim() && formData.extraPhone.replace(/\D/g, '').length < 9) {
-      nextErrors.extraPhone = 'Qo‘shimcha raqamni to‘liq kiriting'
+      nextErrors.extraPhone = pageContent.errors.extraPhoneShort
     }
 
-    if (!formData.educationType) nextErrors.educationType = 'Ta’lim turini tanlang'
-    if (!formData.educationForm) nextErrors.educationForm = 'Ta’lim shaklini tanlang'
-    if (!formData.educationLanguage) nextErrors.educationLanguage = 'Ta’lim tilini tanlang'
-    if (!formData.direction) nextErrors.direction = 'Ta’lim yo‘nalishini tanlang'
+    if (!formData.educationType) nextErrors.educationType = pageContent.errors.educationTypeRequired
+    if (!formData.educationForm) nextErrors.educationForm = pageContent.errors.educationFormRequired
+    if (!formData.educationLanguage) nextErrors.educationLanguage = pageContent.errors.educationLanguageRequired
+    if (!formData.direction) nextErrors.direction = pageContent.errors.directionRequired
 
     setErrors(nextErrors)
     return Object.keys(nextErrors).length === 0
@@ -161,7 +142,7 @@ function AdmissionPage() {
       await postJson('/api/admissions/', formData)
       setStep(3)
     } catch (error) {
-      setApiError(error.message || "Arizani yuborishda xatolik yuz berdi.")
+      setApiError(error.message || pageContent.errors.submitFailed)
       if (error.errors) {
         setErrors(error.errors)
       }
@@ -171,24 +152,21 @@ function AdmissionPage() {
   }
 
   return (
-    <section className="admission-page" aria-label="Online ariza sahifasi">
+    <section className="admission-page" aria-label={pageContent.aria}>
       <div className="admission-shell">
         <aside className="admission-side">
-          <a href="/" className="admission-side-logo" aria-label="Bosh sahifaga qaytish">
-            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="XIU logotipi" />
+          <a href="/" className="admission-side-logo" aria-label={pageContent.backHome}>
+            <img src={CLOUDINARY_ASSETS.logo} alt="XIU logotipi" />
           </a>
 
           <div className="admission-side-copy">
-            <span className="admission-side-kicker">Online Ariza</span>
-            <h2>Qabulga bir necha qadamda ariza yuboring</h2>
-            <p>
-              Xorazm Iqtisodiyot Universitetiga ro‘yxatdan o‘tish jarayoni soddalashtirilgan.
-              Ariza yuboring va operator bilan bog‘lanishni kuting.
-            </p>
+            <span className="admission-side-kicker">{pageContent.onlineApplication}</span>
+            <h2>{pageContent.sidebarTitle}</h2>
+            <p>{pageContent.sidebarText}</p>
           </div>
 
-          <div className="admission-step-list" aria-label="Ariza bosqichlari">
-            {STEP_ITEMS.map((item, index) => {
+          <div className="admission-step-list" aria-label={pageContent.stepsAria}>
+            {pageContent.steps.map((item, index) => {
               const isActive = step === index + 1
               const isComplete = step > index + 1
 
@@ -211,12 +189,12 @@ function AdmissionPage() {
 
           <div className="admission-side-note">
             <ShieldCheck size={18} />
-            <span>Ma’lumotlaringiz faqat qabul bo‘limi tomonidan ko‘rib chiqiladi.</span>
+            <span>{pageContent.sideNote}</span>
           </div>
         </aside>
 
         <main className="admission-main">
-          <a href="/" className="admission-close-btn" aria-label="Bosh sahifaga qaytish">
+          <a href="/" className="admission-close-btn" aria-label={pageContent.backHome}>
             <X size={18} />
           </a>
 
@@ -227,13 +205,13 @@ function AdmissionPage() {
                   <span className="admission-icon-shell">
                     <Phone size={28} />
                   </span>
-                  <h1>Telefon raqamingiz</h1>
-                  <p>Ariza jarayonini boshlash uchun asosiy aloqa raqamingizni kiriting.</p>
+                  <h1>{pageContent.stepOne.title}</h1>
+                  <p>{pageContent.stepOne.text}</p>
                 </div>
 
                 <form className="admission-form-card" onSubmit={handleStepOneSubmit}>
                   <div className={`admission-field ${errors.phone ? 'admission-field-error' : ''}`}>
-                    <label htmlFor="admission-phone">Telefon raqam</label>
+                    <label htmlFor="admission-phone">{pageContent.stepOne.phoneLabel}</label>
                     <div className="admission-input-wrap admission-phone-wrap admission-phone-wrap-primary">
                       <span className="admission-phone-prefix">+998</span>
                       <span className="admission-phone-divider" aria-hidden="true" />
@@ -250,7 +228,7 @@ function AdmissionPage() {
                   </div>
 
                   <button type="submit" className="admission-primary-btn">
-                    Davom etish
+                    {pageContent.stepOne.continue}
                     <ArrowRight size={18} />
                   </button>
                 </form>
@@ -263,8 +241,8 @@ function AdmissionPage() {
                   <span className="admission-icon-shell">
                     <ClipboardList size={28} />
                   </span>
-                  <h1>Shaxsiy ma’lumotlar</h1>
-                  <p>Ma’lumotlarni to‘ldirib, o‘zingizga mos ta’lim yo‘nalishini tanlang.</p>
+                  <h1>{pageContent.stepTwo.title}</h1>
+                  <p>{pageContent.stepTwo.text}</p>
                 </div>
 
                 <form className="admission-form-card admission-form-card-large" onSubmit={handleStepTwoSubmit}>
@@ -273,11 +251,11 @@ function AdmissionPage() {
                       <Phone size={18} />
                     </div>
                     <div>
-                      <span>Asosiy raqamingiz</span>
+                      <span>{pageContent.stepTwo.primaryPhone}</span>
                       <strong>{formatUzPhoneFull(formData.phone)}</strong>
                     </div>
                     <button type="button" className="admission-edit-btn" onClick={() => setStep(1)}>
-                      Tahrirlash
+                      {pageContent.stepTwo.edit}
                     </button>
                   </div>
 
@@ -330,8 +308,8 @@ function AdmissionPage() {
 
                   <div className="admission-education-block">
                     <div className="admission-education-head">
-                      <h3>Ta’lim parametrlari</h3>
-                      <p>Kerakli o‘qish turi, shakli, tili va yo‘nalishni shu blokda tanlang.</p>
+                      <h3>{pageContent.stepTwo.educationTitle}</h3>
+                      <p>{pageContent.stepTwo.educationText}</p>
                     </div>
 
                     <div className="admission-education-grid">
@@ -343,8 +321,8 @@ function AdmissionPage() {
                           value={formData.educationType}
                           onChange={(event) => handleChange('educationType', event.target.value)}
                         >
-                          <option value="">Tanlang</option>
-                          {EDUCATION_TYPES.map((item) => (
+                          <option value="">{pageContent.stepTwo.select}</option>
+                          {pageContent.options.educationTypes.map((item) => (
                             <option key={item} value={item}>
                               {item}
                             </option>
@@ -363,8 +341,8 @@ function AdmissionPage() {
                           value={formData.educationForm}
                           onChange={(event) => handleChange('educationForm', event.target.value)}
                         >
-                          <option value="">Tanlang</option>
-                          {EDUCATION_FORMS.map((item) => (
+                          <option value="">{pageContent.stepTwo.select}</option>
+                          {pageContent.options.educationForms.map((item) => (
                             <option key={item} value={item}>
                               {item}
                             </option>
@@ -383,8 +361,8 @@ function AdmissionPage() {
                           value={formData.educationLanguage}
                           onChange={(event) => handleChange('educationLanguage', event.target.value)}
                         >
-                          <option value="">Tanlang</option>
-                          {EDUCATION_LANGUAGES.map((item) => (
+                          <option value="">{pageContent.stepTwo.select}</option>
+                          {pageContent.options.educationLanguages.map((item) => (
                             <option key={item} value={item}>
                               {item}
                             </option>
@@ -403,8 +381,8 @@ function AdmissionPage() {
                           value={formData.direction}
                           onChange={(event) => handleChange('direction', event.target.value)}
                         >
-                          <option value="">Yo‘nalishni tanlang</option>
-                          {DIRECTIONS.map((item) => (
+                          <option value="">{pageContent.stepTwo.selectDirection}</option>
+                          {pageContent.options.directions.map((item) => (
                             <option key={item} value={item}>
                               {item}
                             </option>
@@ -422,10 +400,10 @@ function AdmissionPage() {
                   <div className="admission-actions">
                     <button type="button" className="admission-secondary-btn" onClick={() => setStep(1)}>
                       <ArrowLeft size={18} />
-                      Orqaga
+                      {pageContent.stepTwo.back}
                     </button>
                     <button type="submit" className="admission-primary-btn" disabled={isSubmitting}>
-                      {isSubmitting ? 'Yuborilmoqda...' : 'Tasdiqlash'}
+                      {isSubmitting ? pageContent.stepTwo.submitting : pageContent.stepTwo.submit}
                       <ArrowRight size={18} />
                     </button>
                   </div>
@@ -439,8 +417,8 @@ function AdmissionPage() {
                   <span className="admission-icon-shell admission-icon-shell-success">
                     <BadgeCheck size={28} />
                   </span>
-                  <h1>Arizangiz qabul qilindi</h1>
-                  <p>Tez orada operatorlarimiz siz bilan bog‘lanadi. Ma’lumotlaringiz muvaffaqiyatli saqlandi.</p>
+                  <h1>{pageContent.stepThree.title}</h1>
+                  <p>{pageContent.stepThree.text}</p>
                 </div>
 
                 <div className="admission-form-card admission-form-card-large">
@@ -463,13 +441,13 @@ function AdmissionPage() {
                       <CheckCheck size={18} />
                     </span>
                     <div>
-                      <strong>Murojaat holati</strong>
-                      <p>Ko‘rib chiqilmoqda. Ma’lumotlar qabul bo‘limiga yuborildi.</p>
+                      <strong>{pageContent.stepThree.statusTitle}</strong>
+                      <p>{pageContent.stepThree.statusText}</p>
                     </div>
                   </div>
 
                   <a href="/" className="admission-finish-btn">
-                    Bosh sahifaga qaytish
+                    {pageContent.stepThree.finish}
                   </a>
                 </div>
               </>

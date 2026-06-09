@@ -21,14 +21,8 @@ import {
   Trees,
 } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import {
-  campusFacilities,
-  campusGallery,
-  campusHero,
-  campusHighlights,
-  sportsData,
-  studentOrganizations,
-} from '../data/campusLifePageData'
+import { useSiteContent } from '../i18n/useSiteContent'
+import { resolveAssetUrl } from '../lib/assets'
 
 const ICONS = {
   Users,
@@ -109,35 +103,55 @@ function StatCounter({ value, suffix, label }) {
 }
 
 function CampusLifePage() {
-  const [activeGalleryFilter, setActiveGalleryFilter] = useState('Barchasi')
+  const { content } = useSiteContent()
+  const pageContent = content.campusPage
+  const [activeGalleryFilter, setActiveGalleryFilter] = useState(pageContent.allFilter)
   const [activeImageIndex, setActiveImageIndex] = useState(null)
+  const campusHero = {
+    badge: pageContent.badge,
+    title: pageContent.title,
+    subtitle: pageContent.subtitle,
+    description: pageContent.description,
+    primaryCta: pageContent.primaryCta,
+    secondaryCta: pageContent.secondaryCta,
+    collage: pageContent.collage,
+    stats: pageContent.stats,
+  }
+  const campusHighlights = pageContent.highlights.items
+  const studentOrganizations = pageContent.organizations.items
+  const campusGallery = pageContent.gallery.items
+  const sportsData = pageContent.sports
+  const campusFacilities = pageContent.facilities.items
 
   const galleryFilters = useMemo(
-    () => ['Barchasi', ...new Set(campusGallery.map((item) => item.category))],
-    [],
+    () => [pageContent.allFilter, ...new Set(campusGallery.map((item) => item.category))],
+    [campusGallery, pageContent.allFilter],
   )
 
   const filteredGallery = useMemo(() => {
-    if (activeGalleryFilter === 'Barchasi') {
+    if (activeGalleryFilter === pageContent.allFilter) {
       return campusGallery
     }
     return campusGallery.filter((item) => item.category === activeGalleryFilter)
-  }, [activeGalleryFilter])
+  }, [activeGalleryFilter, campusGallery, pageContent.allFilter])
 
   useEffect(() => {
-    document.title = 'Kampus Hayoti | Xorazm Iqtisodiyot Universiteti'
+    setActiveGalleryFilter(pageContent.allFilter)
+  }, [pageContent.allFilter])
+
+  useEffect(() => {
+    document.title = content.app.pageTitles.campus
     const meta = document.querySelector('meta[name="description"]')
-    const content =
-      'Xorazm Iqtisodiyot Universiteti kampus hayoti: klublar, tadbirlar, sport, galereya va talabalar loyihalari.'
+    const metaContent = content.app.meta.campus
     if (meta) {
-      meta.setAttribute('content', content)
+      meta.setAttribute('content', metaContent)
     } else {
       const metaTag = document.createElement('meta')
       metaTag.setAttribute('name', 'description')
-      metaTag.setAttribute('content', content)
+      metaTag.setAttribute('content', metaContent)
       document.head.appendChild(metaTag)
     }
-  }, [])
+  }, [content.app.meta.campus, content.app.pageTitles.campus])
 
   useEffect(() => {
     if (activeImageIndex === null) return undefined
@@ -193,7 +207,7 @@ function CampusLifePage() {
                     className={`campus-hero-collage-item campus-collage-item-${index + 1}`}
                   >
                     <img
-                      src={`${import.meta.env.BASE_URL}${item.image}`}
+                      src={resolveAssetUrl(item.image)}
                       alt={item.alt}
                       loading="lazy"
                     />
@@ -215,8 +229,8 @@ function CampusLifePage() {
         <section className="about-page-section">
           <RevealShell className="about-page-shell campus-section-shell">
             <div className="campus-section-heading">
-              <span className="campus-section-kicker">Campus Highlights</span>
-              <h2 className="about-page-h2">Faol, zamonaviy va student-centered muhit</h2>
+              <span className="campus-section-kicker">{pageContent.highlights.kicker}</span>
+              <h2 className="about-page-h2">{pageContent.highlights.title}</h2>
             </div>
             <div className="campus-highlights-grid">
               {campusHighlights.map((item) => {
@@ -238,8 +252,8 @@ function CampusLifePage() {
         <section className="about-page-section">
           <RevealShell className="about-page-shell campus-section-shell">
             <div className="campus-section-heading">
-              <span className="campus-section-kicker">Student Organizations</span>
-              <h2 className="about-page-h2">Talabalar tashkilotlari</h2>
+              <span className="campus-section-kicker">{pageContent.organizations.kicker}</span>
+              <h2 className="about-page-h2">{pageContent.organizations.title}</h2>
             </div>
             <div className="campus-org-grid">
               {studentOrganizations.map((item) => {
@@ -250,12 +264,12 @@ function CampusLifePage() {
                       <span className="campus-org-icon">
                         <Icon size={20} />
                       </span>
-                      <span className="campus-org-members">{item.members} a’zo</span>
+                      <span className="campus-org-members">{item.members} {pageContent.organizations.membersSuffix}</span>
                     </div>
                     <h3>{item.title}</h3>
                     <p>{item.text}</p>
                     <a href="#contact-section" className="campus-inline-link">
-                      Batafsil
+                      {pageContent.organizations.details}
                     </a>
                   </motion.article>
                 )
@@ -267,8 +281,8 @@ function CampusLifePage() {
         <section className="about-page-section" id="campus-gallery">
           <RevealShell className="about-page-shell campus-section-shell">
             <div className="campus-section-heading">
-              <span className="campus-section-kicker">Campus Gallery</span>
-              <h2 className="about-page-h2">Kampus hayotidan kadrlar</h2>
+              <span className="campus-section-kicker">{pageContent.gallery.kicker}</span>
+              <h2 className="about-page-h2">{pageContent.gallery.title}</h2>
             </div>
             <div className="campus-filter-row">
               {galleryFilters.map((filter) => (
@@ -295,7 +309,7 @@ function CampusLifePage() {
                   onClick={() => setActiveImageIndex(index)}
                 >
                   <img
-                    src={`${import.meta.env.BASE_URL}${item.image}`}
+                    src={resolveAssetUrl(item.image)}
                     alt={item.alt}
                     loading="lazy"
                   />
@@ -313,14 +327,15 @@ function CampusLifePage() {
           <RevealShell className="about-page-shell campus-section-shell campus-sports-shell">
             <div className="campus-sports-media">
               <img
-                src={`${import.meta.env.BASE_URL}${sportsData.image}`}
-                alt="Kampus sport faoliyati"
+                src={resolveAssetUrl(sportsData.image)}
+                alt={pageContent.sportsImageAlt}
                 loading="lazy"
               />
             </div>
             <div className="campus-sports-copy">
-              <span className="campus-section-kicker">Sports & Wellness</span>
-              <h2 className="about-page-h2">Sport va sog‘lom turmush imkoniyatlari</h2>
+              <span className="campus-section-kicker">{pageContent.sports.kicker}</span>
+              <h2 className="about-page-h2">{pageContent.sports.title}</h2>
+              <p className="about-page-p">{pageContent.sports.description}</p>
               <div className="campus-sports-list">
                 {sportsData.sports.map((sport) => (
                   <div key={sport} className="campus-sport-pill">
@@ -346,8 +361,8 @@ function CampusLifePage() {
         <section className="about-page-section">
           <RevealShell className="about-page-shell campus-section-shell">
             <div className="campus-section-heading">
-              <span className="campus-section-kicker">Facilities</span>
-              <h2 className="about-page-h2">Kampus infratuzilmasi</h2>
+              <span className="campus-section-kicker">{pageContent.facilities.kicker}</span>
+              <h2 className="about-page-h2">{pageContent.facilities.title}</h2>
             </div>
             <div className="campus-facilities-grid">
               {campusFacilities.map((item) => {
@@ -368,17 +383,15 @@ function CampusLifePage() {
         <section className="about-page-section campus-cta-section">
           <RevealShell className="about-page-shell campus-cta-shell">
             <div>
-              <span className="campus-section-kicker campus-section-kicker-light">Apply Now</span>
-              <h2 className="about-page-h2">
-                Xorazm Iqtisodiyot Universiteti Kampus Hayotining Bir Qismiga Aylaning
-              </h2>
+              <span className="campus-section-kicker campus-section-kicker-light">{pageContent.cta.kicker}</span>
+              <h2 className="about-page-h2">{pageContent.cta.title}</h2>
             </div>
             <div className="campus-cta-actions">
               <a href="/admission" className="about-page-btn about-page-btn-primary campus-cta-primary">
-                Qabulga Ariza Berish
+                {pageContent.cta.primary}
               </a>
               <a href="#contact-section" className="about-page-btn about-page-btn-ghost campus-cta-secondary">
-                Bog&apos;lanish
+                {pageContent.cta.secondary}
               </a>
             </div>
           </RevealShell>
@@ -396,7 +409,7 @@ function CampusLifePage() {
             <button
               type="button"
               className="campus-lightbox-backdrop"
-              aria-label="Yopish"
+              aria-label={pageContent.close}
               onClick={() => setActiveImageIndex(null)}
             />
             <motion.div
@@ -413,12 +426,12 @@ function CampusLifePage() {
                 type="button"
                 className="campus-lightbox-close"
                 onClick={() => setActiveImageIndex(null)}
-                aria-label="Lightboxni yopish"
+                aria-label={pageContent.lightboxClose}
               >
                 <X size={18} />
               </button>
               <img
-                src={`${import.meta.env.BASE_URL}${activeLightboxItem.image}`}
+                src={resolveAssetUrl(activeLightboxItem.image)}
                 alt={activeLightboxItem.alt}
               />
               <div className="campus-lightbox-meta">

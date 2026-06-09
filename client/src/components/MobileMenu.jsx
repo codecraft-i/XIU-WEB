@@ -9,6 +9,7 @@ function MobileMenu({
   languages,
   activeLanguage,
   onLanguageSelect,
+  content,
 }) {
   const [expandedItem, setExpandedItem] = useState(null)
 
@@ -47,12 +48,12 @@ function MobileMenu({
             className="mobile-menu-panel"
           >
             <div className="mobile-menu-head">
-              <p className="mobile-menu-title">Menyu</p>
+              <p className="mobile-menu-title">{content.title}</p>
               <button
                 type="button"
                 onClick={onClose}
                 className="icon-button"
-                aria-label="Yopish"
+                aria-label={content.close}
               >
                 <X size={18} />
               </button>
@@ -119,25 +120,25 @@ function MobileMenu({
               <div className="mobile-menu-lang">
                 {languages.map((language) => (
                   <button
-                    key={language}
+                    key={language.shortLabel}
                     type="button"
-                    onClick={() => onLanguageSelect(language)}
+                    onClick={() => onLanguageSelect(language.code)}
                     className={`mobile-menu-lang-item ${
-                      activeLanguage === language
+                      activeLanguage === language.code
                         ? 'mobile-menu-lang-item-active'
                         : ''
                     }`}
                   >
-                    {language}
+                    {language.shortLabel}
                   </button>
                 ))}
               </div>
 
               <a href="/admission" className="btn-primary mobile-menu-cta" onClick={onClose}>
-                Online Ariza
+                {content.cta}
               </a>
 
-              <p className="mobile-menu-footnote">Xorazm Iqtisodiyot Universiteti</p>
+              <p className="mobile-menu-footnote">{content.footnote}</p>
             </div>
           </motion.aside>
         </motion.div>
