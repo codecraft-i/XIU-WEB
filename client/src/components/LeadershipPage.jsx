@@ -70,7 +70,6 @@ function LeadershipCard({ member, labels }) {
         <LeaderPortrait member={member} className="leadership-directory-image" />
       </div>
       <div className="leadership-directory-body">
-        <p className="leadership-directory-degree">{member.degree}</p>
         <h3>{member.name}</h3>
         <p className="leadership-directory-role">{member.role}</p>
         <p className="leadership-directory-summary">{member.shortDescription}</p>
